@@ -11,3 +11,5 @@ How to use git:
 `git commit -m "Commit message"`
 
 `git push -u origin main`
+
+`git pull`
