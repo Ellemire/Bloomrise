@@ -11,5 +11,39 @@ config_version=5
 [application]
 
 config/name="Bloomrise"
+run/main_scene="uid://c0pi0h4sidru1"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_height"
+window/stretch/scale_mode="integer"
+
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
+
+[file_customization]
+
+folder_colors={
+"res://assetss/": "orange",
+"res://scenes/": "teal",
+"res://scripts/": "pink"
+}
+
+[layer_names]
+
+2d_physics/layer_1="Ground"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Interactions"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

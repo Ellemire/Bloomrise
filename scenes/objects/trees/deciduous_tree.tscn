@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://3ko8e5gckmav"]
+
+[ext_resource type="Texture2D" uid="uid://dd2yyd374xwq1" path="res://assetss/TileSets/Nature Tileset.png" id="1_x7hc6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvnfu"]
+atlas = ExtResource("1_x7hc6")
+region = Rect2(17, 27, 30, 36)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a05ue"]
+radius = 11.0
+height = 22.0
+
+[node name="Tree" type="Sprite2D"]
+texture = SubResource("AtlasTexture_mvnfu")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 8)
+shape = SubResource("CapsuleShape2D_a05ue")
