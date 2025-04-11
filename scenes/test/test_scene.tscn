@@ -56,6 +56,8 @@ tile_map_data = PackedByteArray("AAA2AP//AAALAAEAAAA9AAUAAAALAAEAAAA+AAUAAAALAAE
 tile_set = ExtResource("2_4b6mq")
 
 [node name="House" parent="." instance=ExtResource("3_rjb07")]
+light_mask = 2
+visibility_layer = 5
 
 [node name="Shop" parent="." instance=ExtResource("4_5xd30")]
 position = Vector2(176, 242)

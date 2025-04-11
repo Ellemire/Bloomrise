@@ -472,9 +472,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kbkvr"]
-radius = 9.0
+radius = 6.0
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_mk55u")
 current_tool = 1
 
@@ -485,6 +486,8 @@ animation = &"mining_front"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 2
+visibility_layer = 2
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_kbkvr")
 

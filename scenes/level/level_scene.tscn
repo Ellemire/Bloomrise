@@ -7,7 +7,8 @@
 [ext_resource type="TileSet" uid="uid://bvljdxewp36qm" path="res://Tilesets/exterior_tile_set.tres" id="5_5xd30"]
 [ext_resource type="PackedScene" uid="uid://c13tmr8qqiem0" path="res://scenes/characters/player/player.tscn" id="6_lx40h"]
 
-[node name="TestScene" type="Node2D"]
+[node name="MainScene" type="Node2D"]
+position = Vector2(115, 65)
 
 [node name="GameTileMap" type="Node2D" parent="."]
 
