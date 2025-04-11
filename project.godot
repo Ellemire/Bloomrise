@@ -33,6 +33,7 @@ version_control/autoload_on_startup=true
 [file_customization]
 
 folder_colors={
+"res://Tilesets/": "yellow",
 "res://assetss/": "orange",
 "res://scenes/": "teal",
 "res://scripts/": "pink"
