@@ -1,6 +1,7 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bvljdxewp36qm"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bvljdxewp36qm"]
 
 [ext_resource type="Texture2D" uid="uid://drnfop7spjx6d" path="res://assetss/TileSets/Exterior Tileset.png" id="1_h4afp"]
+[ext_resource type="Texture2D" uid="uid://dgorv0ku6mej5" path="res://assetss/Campfire/Campfire.png" id="2_1w2om"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1w2om"]
 texture = ExtResource("1_h4afp")
@@ -63,5 +64,20 @@ texture = ExtResource("1_h4afp")
 22:1/size_in_atlas = Vector2i(2, 2)
 22:1/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_os6h1"]
+texture = ExtResource("2_1w2om")
+0:0/size_in_atlas = Vector2i(1, 2)
+0:0/animation_columns = 7
+0:0/animation_speed = 0.7
+0:0/animation_frame_0/duration = 0.1
+0:0/animation_frame_1/duration = 0.1
+0:0/animation_frame_2/duration = 0.1
+0:0/animation_frame_3/duration = 0.1
+0:0/animation_frame_4/duration = 0.1
+0:0/animation_frame_5/duration = 0.1
+0:0/animation_frame_6/duration = 0.1
+0:0/0 = 0
+
 [resource]
 sources/0 = SubResource("TileSetAtlasSource_1w2om")
+sources/1 = SubResource("TileSetAtlasSource_os6h1")

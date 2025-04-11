@@ -71,3 +71,7 @@ tile_set = ExtResource("5_5xd30")
 [node name="Flowers" type="TileMapLayer" parent="Exterior"]
 tile_map_data = PackedByteArray("AAAZAAsAAAAFAAUAAAAbAAwAAAACAAQAAAAkABsAAAABAAQAAAAlABsAAAABAAQAAAApABsAAAABAAQAAAAjABsAAAADAAQAAAAmABsAAAADAAQAAAAoABsAAAADAAQAAAAqABsAAAADAAQAAAA=")
 tile_set = ExtResource("5_5xd30")
+
+[node name="Campfire" type="TileMapLayer" parent="Exterior"]
+tile_map_data = PackedByteArray("AAAiAAUAAQAAAAAAAAAjAAsAAAAQAAEAAAA=")
+tile_set = ExtResource("5_5xd30")
