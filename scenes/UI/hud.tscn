@@ -1,9 +1,41 @@
-[gd_scene format=3 uid="uid://b85mj7o2gdhgr"]
+[gd_scene load_steps=5 format=3 uid="uid://563kxmf2s8ca"]
 
-[node name="HUD" type="Control"]
-layout_mode = 3
+[ext_resource type="Theme" uid="uid://dr7jls8tp4rcw" path="res://scenes/UI/game_ui_theme.tres" id="1_vphgt"]
+[ext_resource type="PackedScene" uid="uid://cgbkjuwpfe3rc" path="res://scenes/ui/day_and_night_panel.tscn" id="2_5ip4n"]
+[ext_resource type="Texture2D" uid="uid://dxsclv770aya0" path="res://assetss/UI/coin.png" id="3_l8xe2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t76gd"]
+atlas = ExtResource("3_l8xe2")
+region = Rect2(210, 2, 12, 12)
+
+[node name="GameScreen" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_vertical = 0
+theme = ExtResource("1_vphgt")
+
+[node name="DayAndNightPanel" parent="MarginContainer" instance=ExtResource("2_5ip4n")]
+layout_mode = 2
+
+[node name="CoinsContainer" type="HBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+theme = ExtResource("1_vphgt")
+
+[node name="Label" type="Label" parent="MarginContainer/CoinsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "0"
+
+[node name="Coin" type="TextureRect" parent="MarginContainer/CoinsContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+texture = SubResource("AtlasTexture_t76gd")
+stretch_mode = 5

@@ -13,47 +13,44 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_iv8ii")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
 theme = ExtResource("1_iv8ii")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer"]
-custom_minimum_size = Vector2(200, 200)
+[node name="StartGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+theme = ExtResource("1_iv8ii")
+text = "START"
+
+[node name="SaveGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+theme = ExtResource("1_iv8ii")
+text = "SAVE
+"
+
+[node name="ExitGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+theme = ExtResource("1_iv8ii")
+text = "EXIT"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
-[node name="Label" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 text = "BLOOMRISE"
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("2_ttouv")
 expand_mode = 3
-
-[node name="BoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-
-[node name="StartGameButton" type="Button" parent="MarginContainer/BoxContainer"]
-custom_minimum_size = Vector2(100, 29)
-layout_mode = 2
-theme_type_variation = &"GameMenuButton"
-text = "START"
-
-[node name="SaveGameButton" type="Button" parent="MarginContainer/BoxContainer"]
-custom_minimum_size = Vector2(100, 29)
-layout_mode = 2
-theme_type_variation = &"GameMenuButton"
-text = "SAVE
-"
-
-[node name="ExitGameButton" type="Button" parent="MarginContainer/BoxContainer"]
-custom_minimum_size = Vector2(100, 29)
-layout_mode = 2
-theme_type_variation = &"GameMenuButton"
-text = "EXIT"

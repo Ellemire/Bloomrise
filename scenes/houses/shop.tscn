@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=4 uid="uid://ct8iq1b80ne1i"]
+[gd_scene load_steps=3 format=4 uid="uid://ct8iq1b80ne1i"]
 
-[ext_resource type="TileSet" uid="uid://b3vgc03nqb44g" path="res://Tilesets/house_tile_sets.tres" id="1_b52l1"]
+[ext_resource type="TileSet" uid="uid://b3vgc03nqb44g" path="res://Tilesets/house_tile_set.tres" id="1_b52l1"]
+[ext_resource type="PackedScene" uid="uid://mj10nai3evys" path="res://scenes/houses/door.tscn" id="2_iw88i"]
 
 [node name="Shop" type="Node2D"]
 
@@ -15,5 +16,8 @@ tile_map_data = PackedByteArray("AAAZAAcABAABAAAAAAAaAAcABAABAAAAAAAbAAcABAABAAA
 tile_set = ExtResource("1_b52l1")
 
 [node name="Furniture" type="TileMapLayer" parent="ShopTilemap"]
-tile_map_data = PackedByteArray("AAAdAAkAAwAAAAAAAAAeAAkAAwABAAAAAAAfAAkAAwACAAAAAAAYAAoABQAHAAAAAAAdAAgABQAHAAAAAAAfAAgABQAIAAAAAAAfAAoABQAIAAAAAAAZAAoABQAGAAAAAAAaAAoABQAGAAAAAAAbAAoABQAGAAAAAAAcAAoABQAGAAAAAAAdAAoABQAGAAAAAAAeAAoABQAGAAAAAAAeAAgABQAGAAAAAAAYAAgAAQADAAIAAAAZAAgAAQADAAIAAAAaAAgAAQADAAIAAAAbAAgAAQADAAIAAAAcAAgAAQAFAAAAAAAbAAwAAQADAAAAAAAdAAwAAQADAAAAAAAZAAcAAQABAAAAAAAcAAcAAQAHAAMAAAAbAAcAAQABAAAAAAAdAAcAAQABAAAAAAA=")
+tile_map_data = PackedByteArray("AAAdAAkAAwAAAAAAAAAeAAkAAwABAAAAAAAfAAkAAwACAAAAAAAYAAoABQAHAAAAAAAdAAgABQAHAAAAAAAfAAgABQAIAAAAAAAfAAoABQAIAAAAAAAZAAoABQAGAAAAAAAaAAoABQAGAAAAAAAbAAoABQAGAAAAAAAcAAoABQAGAAAAAAAdAAoABQAGAAAAAAAeAAoABQAGAAAAAAAeAAgABQAGAAAAAAAYAAgAAQADAAIAAAAZAAgAAQADAAIAAAAaAAgAAQADAAIAAAAbAAgAAQADAAIAAAAcAAgAAQAFAAAAAAAZAAcAAQABAAAAAAAcAAcAAQAHAAMAAAAbAAcAAQABAAAAAAAdAAcAAQABAAAAAAA=")
 tile_set = ExtResource("1_b52l1")
+
+[node name="Door" parent="ShopTilemap/Furniture" instance=ExtResource("2_iw88i")]
+position = Vector2(456, 184)

@@ -1,8 +1,82 @@
-[gd_resource type="Theme" load_steps=19 format=3 uid="uid://dr7jls8tp4rcw"]
+[gd_resource type="Theme" load_steps=42 format=3 uid="uid://dr7jls8tp4rcw"]
 
 [ext_resource type="Texture2D" uid="uid://cfjjirh0vpain" path="res://assetss/UI/Buttons/Square Buttons 26x26.png" id="1_63rmd"]
+[ext_resource type="Texture2D" uid="uid://bqk36fh0oaear" path="res://assetss/UI/Buttons/Small Square Buttons.png" id="1_vespo"]
 [ext_resource type="FontFile" uid="uid://d2s6ogr3tyrcb" path="res://assetss/Fonts/SFPixelate.ttf" id="2_k5kyg"]
 [ext_resource type="FontFile" uid="uid://bcp2rkph7vcfw" path="res://assetss/Fonts/SFPixelateShaded-Bold.ttf" id="2_vespo"]
+[ext_resource type="Texture2D" uid="uid://bk3ise18mgwvp" path="res://assetss/UI/WeatherIcons/Weather_UI_Free.png" id="3_hrplk"]
+[ext_resource type="Texture2D" uid="uid://7w4aj2d87rma" path="res://assetss/UI/Buttons/Square Buttons 26x19.png" id="5_qbwhy"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rvk2n"]
+load_path = "res://.godot/imported/Square Buttons 26x26.png-0f2b6c522f9a1ee1dfd6a73bd57b5e67.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lqly"]
+atlas = SubResource("CompressedTexture2D_rvk2n")
+region = Rect2(11, 11, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mymdo"]
+texture = SubResource("AtlasTexture_3lqly")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_64sb7"]
+load_path = "res://.godot/imported/Square Buttons 26x26.png-0f2b6c522f9a1ee1dfd6a73bd57b5e67.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxjhn"]
+atlas = SubResource("CompressedTexture2D_64sb7")
+region = Rect2(11, 59, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5gi0c"]
+texture = SubResource("AtlasTexture_qxjhn")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hrplk"]
+load_path = "res://.godot/imported/Square Buttons 26x26.png-0f2b6c522f9a1ee1dfd6a73bd57b5e67.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbwhy"]
+atlas = SubResource("CompressedTexture2D_hrplk")
+region = Rect2(11, 107, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wgy6h"]
+texture = SubResource("AtlasTexture_qbwhy")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egbks"]
+atlas = ExtResource("1_63rmd")
+region = Rect2(11, 155, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3lqly"]
+texture = SubResource("AtlasTexture_egbks")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1d4xv"]
+load_path = "res://.godot/imported/Square Buttons 26x26.png-0f2b6c522f9a1ee1dfd6a73bd57b5e67.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7osq"]
+atlas = SubResource("CompressedTexture2D_1d4xv")
+region = Rect2(11, 59, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kxiar"]
+texture = SubResource("AtlasTexture_d7osq")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrplk"]
+atlas = ExtResource("1_vespo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qbwhy"]
+texture = SubResource("AtlasTexture_hrplk")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mymdo"]
+atlas = ExtResource("3_hrplk")
+region = Rect2(7, 7, 64, 33)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_64sb7"]
+texture = SubResource("AtlasTexture_mymdo")
+region_rect = Rect2(9, 9, 16, 15)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vespo"]
 load_path = "res://.godot/imported/Square Buttons 26x26.png-0f2b6c522f9a1ee1dfd6a73bd57b5e67.ctex"
@@ -43,7 +117,6 @@ region = Rect2(11, 155, 26, 28)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qxjhn"]
 texture = SubResource("AtlasTexture_taxkl")
-region_rect = Rect2(3, 3, 20, 20)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5gi0c"]
 load_path = "res://.godot/imported/Square Buttons 26x26.png-0f2b6c522f9a1ee1dfd6a73bd57b5e67.ctex"
@@ -56,12 +129,32 @@ region = Rect2(11, 107, 26, 28)
 texture = SubResource("AtlasTexture_1d4xv")
 region_rect = Rect2(3, 3, 20, 20)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gi0c"]
+atlas = ExtResource("5_qbwhy")
+region = Rect2(11, 70, 26, 19)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1d4xv"]
+texture = SubResource("AtlasTexture_5gi0c")
+texture_margin_left = 4.02191
+texture_margin_top = 4.0
+texture_margin_right = 1.0
+region_rect = Rect2(0, 0, 23, 13)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k5kyg"]
 
 [resource]
 default_font = ExtResource("2_k5kyg")
 default_font_size = 20
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/styles/disabled = SubResource("StyleBoxTexture_mymdo")
+Button/styles/focus = SubResource("StyleBoxTexture_5gi0c")
+Button/styles/hover = SubResource("StyleBoxTexture_wgy6h")
+Button/styles/normal = SubResource("StyleBoxTexture_3lqly")
+Button/styles/pressed = SubResource("StyleBoxTexture_kxiar")
+DarkWoodPanel/base_type = &"PanelContainer"
+DarkWoodPanel/styles/panel = SubResource("StyleBoxTexture_qbwhy")
+DaysAndNightCounterPanel/base_type = &"PanelContainer"
+DaysAndNightCounterPanel/styles/panel = SubResource("StyleBoxTexture_64sb7")
 GameMenuButton/base_type = &"Button"
 GameMenuButton/styles/disabled = SubResource("StyleBoxTexture_hrplk")
 GameMenuButton/styles/focus = SubResource("StyleBoxTexture_egbks")
@@ -74,4 +167,5 @@ MarginContainer/constants/margin_bottom = 10
 MarginContainer/constants/margin_left = 10
 MarginContainer/constants/margin_right = 10
 MarginContainer/constants/margin_top = 10
+Panel/styles/panel = SubResource("StyleBoxTexture_1d4xv")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_k5kyg")
