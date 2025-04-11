@@ -69,7 +69,7 @@ tile_map_data = PackedByteArray("AAAXAAsAAAAWAAEAAAAmABwAAAABAAMAAAAoABwAAAACAAE
 tile_set = ExtResource("5_5xd30")
 
 [node name="Flowers" type="TileMapLayer" parent="Exterior"]
-tile_map_data = PackedByteArray("AAAZAAsAAAAFAAUAAAAbAAwAAAACAAQAAAAkABsAAAABAAQAAAAlABsAAAABAAQAAAApABsAAAABAAQAAAAjABsAAAADAAQAAAAmABsAAAADAAQAAAAoABsAAAADAAQAAAAqABsAAAADAAQAAAA=")
+tile_map_data = PackedByteArray("AAAZAAsAAAAFAAUAAAAbAAwAAAACAAQAAAAlABsAAAABAAQAAAApABsAAAABAAQAAAAmABsAAAADAAQAAAAoABsAAAADAAQAAAAqABsAAAADAAQAAAAkABsAAAADAAQAAAA=")
 tile_set = ExtResource("5_5xd30")
 
 [node name="Campfire" type="TileMapLayer" parent="Exterior"]
