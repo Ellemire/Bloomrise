@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bj6vpwuf06c77"]
+[gd_scene load_steps=11 format=3 uid="uid://bjn7v5mhuia0u"]
 
-[ext_resource type="Theme" uid="uid://dkqwfa2nlyk0c" path="res://scenes/UI/tool_panel.tres" id="1_kf3o0"]
-[ext_resource type="Script" uid="uid://b7qexdirjl7hn" path="res://scenes/UI/tools_panel.gd" id="2_bcghl"]
+[ext_resource type="Theme" uid="uid://1xnp12064f86" path="res://scenes/UI/tool_panel.tres" id="1_kf3o0"]
+[ext_resource type="Script" path="res://scenes/UI/tools_panel.gd" id="2_bcghl"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kf3o0"]
 load_path = "res://.godot/imported/pickaxe.png-9539731d819bbdade10f6d49e3f5d95f.ctex"

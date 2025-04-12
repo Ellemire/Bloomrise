@@ -14,16 +14,16 @@ var local_cell_position: Vector2
 var cell_source_id: int
 var distance: float
 
-#func _unhandled_input(event: InputEvent) -> void:
-	#if event.is_action_pressed("remove_dirt"):
-		#if ToolManager.selected_tool == DataTypes.Tools.TillGround:
-			#get_cell_under_mouse()
-			#remove_tilled_dirt_cell()
-			#
-	#elif event.is_action_pressed("hit"):
-		#if ToolManager.selected_tool == DataTypes.Tools.TillGround:
-			#get_cell_under_mouse()
-			#add_tilled_dirt_cell()
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("remove_dirt"):
+		if ToolManager.selected_tool == DataTypes.Tools.TillGround:
+			get_cell_under_mouse()
+			remove_tilled_dirt_cell()
+			
+	elif event.is_action_pressed("hit"):
+		if ToolManager.selected_tool == DataTypes.Tools.TillGround:
+			get_cell_under_mouse()
+			add_tilled_dirt_cell()
 
 func get_cell_under_mouse() -> void:
 	mouse_position = grass_tilemap_layer.get_local_mouse_position()
