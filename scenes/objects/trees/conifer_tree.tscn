@@ -16,9 +16,8 @@ shader_parameter/shake_speed = 20.0
 atlas = ExtResource("1_dmx1f")
 region = Rect2(53, 32, 22, 32)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a05ue"]
-radius = 7.0
-height = 20.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1t1wu"]
+size = Vector2(10, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vvogs"]
 size = Vector2(16, 26)
@@ -31,10 +30,11 @@ script = ExtResource("2_0dukl")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 5)
-shape = SubResource("CapsuleShape2D_a05ue")
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_1t1wu")
 
 [node name="HurtComponent" parent="." instance=ExtResource("2_v8t3o")]
+tool = 1
 
 [node name="HurtComponentCollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
 position = Vector2(0, 2)

@@ -17,8 +17,8 @@ atlas = ExtResource("1_ugw73")
 region = Rect2(227, 20, 24, 24)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a05ue"]
-radius = 8.0
-height = 16.0
+radius = 7.0
+height = 14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hkwjw"]
 radius = 13.0
@@ -31,9 +31,11 @@ script = ExtResource("2_tyh6e")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_a05ue")
 
 [node name="HurtComponent" parent="." instance=ExtResource("2_jri35")]
+tool = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
 shape = SubResource("CircleShape2D_hkwjw")
