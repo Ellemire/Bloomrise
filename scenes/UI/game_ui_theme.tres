@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=42 format=3 uid="uid://dr7jls8tp4rcw"]
 
 [ext_resource type="Texture2D" uid="uid://cfjjirh0vpain" path="res://assetss/UI/Buttons/Square Buttons 26x26.png" id="1_63rmd"]
-[ext_resource type="Texture2D" uid="uid://bqk36fh0oaear" path="res://assetss/UI/Buttons/Small Square Buttons.png" id="1_vespo"]
+[ext_resource type="Texture2D" uid="uid://baq6ybmknhspc" path="res://assetss/UI/Sprite sheet for Basic Pack.png" id="2_hrplk"]
 [ext_resource type="FontFile" uid="uid://d2s6ogr3tyrcb" path="res://assetss/Fonts/SFPixelate.ttf" id="2_k5kyg"]
 [ext_resource type="FontFile" uid="uid://bcp2rkph7vcfw" path="res://assetss/Fonts/SFPixelateShaded-Bold.ttf" id="2_vespo"]
 [ext_resource type="Texture2D" uid="uid://bk3ise18mgwvp" path="res://assetss/UI/WeatherIcons/Weather_UI_Free.png" id="3_hrplk"]
@@ -64,11 +64,17 @@ texture = SubResource("AtlasTexture_d7osq")
 texture_margin_left = 4.0
 texture_margin_right = 4.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hrplk"]
-atlas = ExtResource("1_vespo")
+[sub_resource type="AtlasTexture" id="AtlasTexture_64sb7"]
+atlas = ExtResource("2_hrplk")
+region = Rect2(201, 9, 30, 30)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qbwhy"]
-texture = SubResource("AtlasTexture_hrplk")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_taxkl"]
+texture = SubResource("AtlasTexture_64sb7")
+texture_margin_left = 7.0
+texture_margin_top = 6.70069
+texture_margin_right = 7.0
+texture_margin_bottom = 7.0
+region_rect = Rect2(0, 0, 30, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mymdo"]
 atlas = ExtResource("3_hrplk")
@@ -151,8 +157,8 @@ Button/styles/focus = SubResource("StyleBoxTexture_5gi0c")
 Button/styles/hover = SubResource("StyleBoxTexture_wgy6h")
 Button/styles/normal = SubResource("StyleBoxTexture_3lqly")
 Button/styles/pressed = SubResource("StyleBoxTexture_kxiar")
-DarkWoodPanel/base_type = &"PanelContainer"
-DarkWoodPanel/styles/panel = SubResource("StyleBoxTexture_qbwhy")
+DarkWoodPanel/base_type = &"l"
+DarkWoodPanel/styles/panel = SubResource("StyleBoxTexture_taxkl")
 DaysAndNightCounterPanel/base_type = &"PanelContainer"
 DaysAndNightCounterPanel/styles/panel = SubResource("StyleBoxTexture_64sb7")
 GameMenuButton/base_type = &"Button"

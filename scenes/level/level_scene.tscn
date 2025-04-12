@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=4 uid="uid://ckorr1pj0dt5a"]
 
 [ext_resource type="PackedScene" uid="uid://cglryq6nbfl75" path="res://scenes/components/day_and_night_cycle_component.tscn" id="1_5rubo"]
-[ext_resource type="PackedScene" uid="uid://563kxmf2s8ca" path="res://scenes/UI/HUD.tscn" id="1_nm8e3"]
+[ext_resource type="PackedScene" uid="uid://563kxmf2s8ca" path="res://scenes/UI/hud.tscn" id="1_nm8e3"]
 [ext_resource type="TileSet" uid="uid://dnuof7ol07rqb" path="res://Tilesets/game_tile_set.tres" id="1_wvq6k"]
 [ext_resource type="TileSet" uid="uid://b6tspch8jexw2" path="res://Tilesets/trees_tile_set.tres" id="2_4b6mq"]
 [ext_resource type="PackedScene" uid="uid://k44nvo25cul3" path="res://scenes/houses/house.tscn" id="3_rjb07"]
