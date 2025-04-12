@@ -82,10 +82,10 @@ texture_margin_bottom = 7.0
 region_rect = Rect2(0, 0, 30, 30)
 
 [resource]
-MarginContainer/constants/margin_bottom = 10
-MarginContainer/constants/margin_left = 10
-MarginContainer/constants/margin_right = 10
-MarginContainer/constants/margin_top = 10
+MarginContainer/constants/margin_bottom = 4
+MarginContainer/constants/margin_left = 4
+MarginContainer/constants/margin_right = 4
+MarginContainer/constants/margin_top = 4
 ToolsButton/base_type = &"Button"
 ToolsButton/styles/disabled = SubResource("StyleBoxTexture_b8uqu")
 ToolsButton/styles/focus = SubResource("StyleBoxTexture_qv7jx")
