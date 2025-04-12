@@ -1,6 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://3ko8e5gckmav"]
+[gd_scene load_steps=10 format=3 uid="uid://3ko8e5gckmav"]
 
+[ext_resource type="Shader" uid="uid://dpnxt546rl3bo" path="res://scenes/objects/trees/shake.gdshader" id="1_ionkb"]
 [ext_resource type="Texture2D" uid="uid://dd2yyd374xwq1" path="res://assetss/TileSets/Nature Tileset.png" id="1_x7hc6"]
+[ext_resource type="Script" uid="uid://cutdaq7mc4daw" path="res://scenes/objects/trees/deciduous_tree.gd" id="2_08a8y"]
+[ext_resource type="PackedScene" uid="uid://cgrgr0ktanmkk" path="res://scenes/components/hurt_component.tscn" id="2_bni3j"]
+[ext_resource type="PackedScene" uid="uid://5ump5ohdukpt" path="res://scenes/components/damage_component.tscn" id="2_pni18"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kdpqe"]
+resource_local_to_scene = true
+shader = ExtResource("1_ionkb")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mvnfu"]
 atlas = ExtResource("1_x7hc6")
@@ -10,11 +20,26 @@ region = Rect2(17, 27, 30, 36)
 radius = 11.0
 height = 22.0
 
-[node name="Tree" type="Sprite2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08a8y"]
+size = Vector2(22, 25)
+
+[node name="DeciduousTree" type="Sprite2D"]
+material = SubResource("ShaderMaterial_kdpqe")
 texture = SubResource("AtlasTexture_mvnfu")
+script = ExtResource("2_08a8y")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_a05ue")
+
+[node name="HurtComponent" parent="." instance=ExtResource("2_bni3j")]
+
+[node name="HurtComponentCollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_08a8y")
+debug_color = Color(0.96188, 0, 0.507808, 0.42)
+
+[node name="DamageComponent" parent="." instance=ExtResource("2_pni18")]
+max_damage = 5
