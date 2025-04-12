@@ -483,7 +483,6 @@ y_sort_enabled = true
 collision_layer = 2
 collision_mask = 33
 script = ExtResource("1_mk55u")
-current_tool = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
@@ -534,7 +533,6 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
 [node name="HitComponent" parent="." instance=ExtResource("12_bsn6e")]
 position = Vector2(0, -3)
-current_tool = 1
 
 [node name="HitComponentCollisionShape2D" type="CollisionShape2D" parent="HitComponent"]
 shape = SubResource("CircleShape2D_bsn6e")
