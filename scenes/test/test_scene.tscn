@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=4 uid="uid://cc1l888cdaams"]
+[gd_scene load_steps=13 format=4 uid="uid://cc1l888cdaams"]
 
-[ext_resource type="PackedScene" uid="uid://563kxmf2s8ca" path="res://scenes/UI/hud.tscn" id="1_47ptp"]
+[ext_resource type="PackedScene" uid="uid://dumhg3qnfib2g" path="res://scenes/UI/HUD.tscn" id="1_47ptp"]
 [ext_resource type="TileSet" uid="uid://dnuof7ol07rqb" path="res://Tilesets/game_tile_set.tres" id="1_wvq6k"]
 [ext_resource type="TileSet" uid="uid://b6tspch8jexw2" path="res://Tilesets/trees_tile_set.tres" id="2_4b6mq"]
 [ext_resource type="PackedScene" uid="uid://cglryq6nbfl75" path="res://scenes/components/day_and_night_cycle_component.tscn" id="2_k0t8k"]
@@ -8,6 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://ct8iq1b80ne1i" path="res://scenes/houses/shop.tscn" id="4_5xd30"]
 [ext_resource type="TileSet" uid="uid://bvljdxewp36qm" path="res://Tilesets/exterior_tile_set.tres" id="5_5xd30"]
 [ext_resource type="PackedScene" uid="uid://c13tmr8qqiem0" path="res://scenes/characters/player/player.tscn" id="6_0eyv0"]
+[ext_resource type="PackedScene" uid="uid://qkitahuoo31" path="res://scenes/components/filed_cursor_component.tscn" id="8_nr2x3"]
+[ext_resource type="Script" uid="uid://da4tk12m42xnm" path="res://scenes/components/filed_cursor_component.gd" id="9_7xtry"]
+[ext_resource type="PackedScene" uid="uid://c27t8i6lyao4c" path="res://scenes/components/crops_cursor_component.tscn" id="11_x44rx"]
+[ext_resource type="Script" uid="uid://nsjvkuuu5hso" path="res://scenes/components/crops_cursor_component.gd" id="12_f5gst"]
 
 [node name="TestScene" type="Node2D"]
 y_sort_enabled = true
@@ -97,8 +101,20 @@ tile_set = ExtResource("5_5xd30")
 tile_map_data = PackedByteArray("AAAlABsAAAABAAQAAAApABsAAAABAAQAAAAkABsAAAADAAQAAAAmABsAAAADAAQAAAAoABsAAAADAAQAAAAqABsAAAADAAQAAAAbAAwAAAACAAQAAAA=")
 tile_set = ExtResource("5_5xd30")
 
+[node name="Cropfields" type="Node2D" parent="."]
+
+[node name="FiledCursorComponent" parent="." node_paths=PackedStringArray("grass_tilemap_layer", "dirt_tilemap_layer") instance=ExtResource("8_nr2x3")]
+script = ExtResource("9_7xtry")
+grass_tilemap_layer = NodePath("../GameTileMap/Grass")
+dirt_tilemap_layer = NodePath("../GameTileMap/Dirt")
+
 [node name="Player" parent="." instance=ExtResource("6_0eyv0")]
 z_index = 1
 position = Vector2(236, 102)
+current_tool = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="CropsCursorComponent" parent="." node_paths=PackedStringArray("dirt_tilemap_layer") instance=ExtResource("11_x44rx")]
+script = ExtResource("12_f5gst")
+dirt_tilemap_layer = NodePath("../GameTileMap/Dirt")
