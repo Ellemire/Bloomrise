@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cgbkjuwpfe3rc"]
+[gd_scene load_steps=19 format=3 uid="uid://bqjy53b1temuo"]
 
 [ext_resource type="Theme" uid="uid://dr7jls8tp4rcw" path="res://scenes/UI/game_ui_theme.tres" id="1_fnqby"]
 [ext_resource type="Script" uid="uid://cagoxom74hie1" path="res://scripts/day_and_night_panel.gd" id="2_dhdt6"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://bviwccsvpj1fe" path="res://assetss/Fonts/SFPixelate-Bold.ttf" id="4_k3f4j"]
 [ext_resource type="Texture2D" uid="uid://duu3wrhqwbier" path="res://assetss/UI/Buttons/Sprite sheet for Basic Pack.png" id="6_na6h5"]
 [ext_resource type="Texture2D" uid="uid://bqk36fh0oaear" path="res://assetss/UI/Buttons/Small Square Buttons.png" id="6_xl2hn"]
+[ext_resource type="PackedScene" uid="uid://bxcsbnh35hgh6" path="res://scenes/UI/arrow-indicator.tscn" id="8_2ucba"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bmtoy"]
 atlas = ExtResource("2_xc6ft")
@@ -81,6 +82,12 @@ offset_top = 96.0
 offset_right = 85.0
 offset_bottom = 133.0
 texture = SubResource("AtlasTexture_5brvh")
+
+[node name="ArrowIndicator" parent="." instance=ExtResource("8_2ucba")]
+offset_left = 65.0
+offset_top = 17.0
+offset_right = 65.0
+offset_bottom = 17.0
 
 [node name="Wheather_img" type="TextureRect" parent="."]
 layout_mode = 2
