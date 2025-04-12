@@ -15,6 +15,10 @@ run/main_scene="uid://c0pi0h4sidru1"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DayAndNightCycleManager="*res://scripts/globals/day_and_night_cycle_manager.gd"
+
 [display]
 
 window/size/viewport_width=640
