@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxcsbnh35hgh6"]
+
+[ext_resource type="Texture2D" uid="uid://bk3ise18mgwvp" path="res://assetss/UI/WeatherIcons/Weather_UI_Free.png" id="1_lbgho"]
+[ext_resource type="Script" uid="uid://cefp2ws4x6esq" path="res://scripts/arrow_indicator.gd" id="2_ghhwd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxrsw"]
+atlas = ExtResource("1_lbgho")
+region = Rect2(4, 68, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg7r5"]
+atlas = ExtResource("1_lbgho")
+region = Rect2(4, 85, 10, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0palu"]
+atlas = ExtResource("1_lbgho")
+region = Rect2(4, 100, 9, 9)
+
+[node name="ArrowIndicator" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("2_ghhwd")
+
+[node name="ArrowDay" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 10.0
+offset_bottom = 10.0
+texture = SubResource("AtlasTexture_pxrsw")
+stretch_mode = 5
+
+[node name="ArrowTransition" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 10.0
+offset_right = 14.0
+offset_bottom = 18.0
+texture = SubResource("AtlasTexture_hg7r5")
+stretch_mode = 5
+
+[node name="ArrowNight" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 18.0
+offset_right = 10.0
+offset_bottom = 27.0
+texture = SubResource("AtlasTexture_0palu")
+stretch_mode = 5
