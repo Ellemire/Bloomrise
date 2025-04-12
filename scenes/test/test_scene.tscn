@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://cc1l888cdaams"]
+[gd_scene load_steps=9 format=4 uid="uid://cc1l888cdaams"]
 
+[ext_resource type="PackedScene" uid="uid://563kxmf2s8ca" path="res://scenes/UI/hud.tscn" id="1_47ptp"]
 [ext_resource type="TileSet" uid="uid://dnuof7ol07rqb" path="res://Tilesets/game_tile_set.tres" id="1_wvq6k"]
 [ext_resource type="TileSet" uid="uid://b6tspch8jexw2" path="res://Tilesets/trees_tile_set.tres" id="2_4b6mq"]
+[ext_resource type="PackedScene" uid="uid://cglryq6nbfl75" path="res://scenes/components/day_and_night_cycle_component.tscn" id="2_k0t8k"]
 [ext_resource type="PackedScene" uid="uid://k44nvo25cul3" path="res://scenes/houses/house.tscn" id="3_rjb07"]
 [ext_resource type="PackedScene" uid="uid://ct8iq1b80ne1i" path="res://scenes/houses/shop.tscn" id="4_5xd30"]
 [ext_resource type="TileSet" uid="uid://bvljdxewp36qm" path="res://Tilesets/exterior_tile_set.tres" id="5_5xd30"]
@@ -9,6 +11,10 @@
 
 [node name="TestScene" type="Node2D"]
 y_sort_enabled = true
+
+[node name="GameScreen" parent="." instance=ExtResource("1_47ptp")]
+
+[node name="DayAndNightCycleComponent" parent="." instance=ExtResource("2_k0t8k")]
 
 [node name="GameTileMap" type="Node2D" parent="."]
 y_sort_enabled = true
