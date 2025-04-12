@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bj6vpwuf06c77"]
+[gd_scene load_steps=11 format=3 uid="uid://bj6vpwuf06c77"]
 
 [ext_resource type="Theme" uid="uid://dkqwfa2nlyk0c" path="res://scenes/UI/tool_panel.tres" id="1_kf3o0"]
+[ext_resource type="Script" uid="uid://b7qexdirjl7hn" path="res://scenes/UI/tools_panel.gd" id="2_bcghl"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kf3o0"]
 load_path = "res://.godot/imported/pickaxe.png-9539731d819bbdade10f6d49e3f5d95f.ctex"
@@ -35,6 +36,7 @@ offset_right = 40.0
 offset_bottom = 33.0
 theme = ExtResource("1_kf3o0")
 theme_type_variation = &"WoodPanel"
+script = ExtResource("2_bcghl")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -81,3 +83,8 @@ custom_minimum_size = Vector2(26, 26)
 layout_mode = 2
 theme_type_variation = &"ToolsButton"
 icon_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolPickaxe" to="." method="_on_tool_pickaxe_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolAxe" to="." method="_on_tool_axe_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTilling" to="." method="_on_tool_tilling_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolWatering" to="." method="_on_tool_watering_pressed"]
