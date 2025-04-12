@@ -1,19 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqsb26p0bh4dp"]
+[gd_scene load_steps=10 format=3 uid="uid://bqsb26p0bh4dp"]
 
 [ext_resource type="Texture2D" uid="uid://dd2yyd374xwq1" path="res://assetss/TileSets/Nature Tileset.png" id="1_ugw73"]
+[ext_resource type="Shader" uid="uid://bsrwn1elp04i8" path="res://scenes/objects/stones/shake.gdshader" id="1_v8yax"]
+[ext_resource type="PackedScene" uid="uid://cgrgr0ktanmkk" path="res://scenes/components/hurt_component.tscn" id="2_jri35"]
+[ext_resource type="Script" uid="uid://ca4cbb7cd33kd" path="res://scenes/objects/stones/big_stone.gd" id="2_tyh6e"]
+[ext_resource type="PackedScene" uid="uid://5ump5ohdukpt" path="res://scenes/components/damage_component.tscn" id="3_hkwjw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u2txt"]
+resource_local_to_scene = true
+shader = ExtResource("1_v8yax")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mvnfu"]
 atlas = ExtResource("1_ugw73")
 region = Rect2(227, 20, 24, 24)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a05ue"]
-radius = 11.0
-height = 22.0
+radius = 8.0
+height = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hkwjw"]
+radius = 13.0
 
 [node name="BigStone" type="Sprite2D"]
+material = SubResource("ShaderMaterial_u2txt")
 texture = SubResource("AtlasTexture_mvnfu")
+script = ExtResource("2_tyh6e")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("CapsuleShape2D_a05ue")
+
+[node name="HurtComponent" parent="." instance=ExtResource("2_jri35")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+shape = SubResource("CircleShape2D_hkwjw")
+debug_color = Color(0.957396, 0, 0.532799, 0.42)
+
+[node name="DamageComponent" parent="." instance=ExtResource("3_hkwjw")]
+max_damage = 5

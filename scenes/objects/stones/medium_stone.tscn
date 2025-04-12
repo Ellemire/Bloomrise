@@ -1,21 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://crp5imj662u71"]
+[gd_scene load_steps=10 format=3 uid="uid://crp5imj662u71"]
 
 [ext_resource type="Texture2D" uid="uid://dd2yyd374xwq1" path="res://assetss/TileSets/Nature Tileset.png" id="1_di04q"]
+[ext_resource type="Shader" uid="uid://bsrwn1elp04i8" path="res://scenes/objects/stones/shake.gdshader" id="1_uyktb"]
+[ext_resource type="Script" uid="uid://bys384gpp2fjf" path="res://scenes/objects/stones/medium_stone.gd" id="2_3ms50"]
+[ext_resource type="PackedScene" uid="uid://cgrgr0ktanmkk" path="res://scenes/components/hurt_component.tscn" id="2_hbqm5"]
+[ext_resource type="PackedScene" uid="uid://5ump5ohdukpt" path="res://scenes/components/damage_component.tscn" id="3_3ms50"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c70rm"]
+resource_local_to_scene = true
+shader = ExtResource("1_uyktb")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mvnfu"]
 atlas = ExtResource("1_di04q")
 region = Rect2(305, 16, 14, 16)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a05ue"]
-radius = 7.93333
-height = 16.0
+radius = 5.0
+height = 10.0
 
-[node name="Stone" type="Sprite2D"]
-position = Vector2(-0.5, 0)
+[sub_resource type="CircleShape2D" id="CircleShape2D_hbqm5"]
+radius = 8.39999
+
+[node name="MediumStone" type="Sprite2D"]
+material = SubResource("ShaderMaterial_c70rm")
 scale = Vector2(1.07143, 1)
 texture = SubResource("AtlasTexture_mvnfu")
+script = ExtResource("2_3ms50")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("CapsuleShape2D_a05ue")
+
+[node name="HurtComponent" parent="." instance=ExtResource("2_hbqm5")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+shape = SubResource("CircleShape2D_hbqm5")
+debug_color = Color(0.958116, 1.44392e-06, 0.528897, 0.42)
+
+[node name="DamageComponent" parent="." instance=ExtResource("3_3ms50")]
+max_damage = 3

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://rjkv7pg6t4lo"]
+
+[ext_resource type="Texture2D" uid="uid://dd2yyd374xwq1" path="res://assetss/TileSets/Nature Tileset.png" id="1_e2a05"]
+[ext_resource type="PackedScene" uid="uid://c6f8lhamjo7uw" path="res://scenes/components/collectable_component.tscn" id="2_e2a05"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2a05"]
+atlas = ExtResource("1_e2a05")
+region = Rect2(48, 160, 32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5rqd"]
+size = Vector2(22, 12)
+
+[node name="Log" type="Sprite2D"]
+light_mask = 32
+visibility_layer = 2
+texture = SubResource("AtlasTexture_e2a05")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_e2a05")]
+collectable_name = "log"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+light_mask = 32
+visibility_layer = 2
+shape = SubResource("RectangleShape2D_s5rqd")
