@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwjmh1u8mmla1"]
+
+[ext_resource type="Script" uid="uid://wr3ax5owr5a1" path="res://scenes/characters/shopkeeper/seller.gd" id="1_0a238"]
+[ext_resource type="Texture2D" uid="uid://ctcc2h1mdfkl4" path="res://assetss/NPC/seller.png" id="1_gb4p0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0a238"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gb4p0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o6c4i"]
+radius = 8.0
+height = 16.0
+
+[node name="Seller" type="Node2D"]
+script = ExtResource("1_0a238")
+
+[node name="Seller" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0a238")
+
+[node name="ClickArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+shape = SubResource("CapsuleShape2D_o6c4i")

@@ -1,13 +1,15 @@
-[gd_scene load_steps=9 format=4 uid="uid://ckorr1pj0dt5a"]
+[gd_scene load_steps=11 format=4 uid="uid://ckorr1pj0dt5a"]
 
 [ext_resource type="PackedScene" uid="uid://cglryq6nbfl75" path="res://scenes/components/day_and_night_cycle_component.tscn" id="1_5rubo"]
-[ext_resource type="PackedScene" uid="uid://dumhg3qnfib2g" path="res://scenes/UI/HUD.tscn" id="1_nm8e3"]
+[ext_resource type="PackedScene" uid="uid://dumhg3qnfib2g" path="res://scenes/UI/hud.tscn" id="1_nm8e3"]
 [ext_resource type="TileSet" uid="uid://dnuof7ol07rqb" path="res://Tilesets/game_tile_set.tres" id="1_wvq6k"]
 [ext_resource type="TileSet" uid="uid://b6tspch8jexw2" path="res://Tilesets/trees_tile_set.tres" id="2_4b6mq"]
 [ext_resource type="PackedScene" uid="uid://k44nvo25cul3" path="res://scenes/houses/house.tscn" id="3_rjb07"]
 [ext_resource type="PackedScene" uid="uid://ct8iq1b80ne1i" path="res://scenes/houses/shop.tscn" id="4_5xd30"]
 [ext_resource type="TileSet" uid="uid://bvljdxewp36qm" path="res://Tilesets/exterior_tile_set.tres" id="5_5xd30"]
 [ext_resource type="PackedScene" uid="uid://c13tmr8qqiem0" path="res://scenes/characters/player/player.tscn" id="6_lx40h"]
+[ext_resource type="PackedScene" uid="uid://b3kpwsmb2oe6h" path="res://scenes/UI/ShopUI.tscn" id="7_e8kwp"]
+[ext_resource type="PackedScene" uid="uid://bwjmh1u8mmla1" path="res://scenes/characters/shopkeeper/seller.tscn" id="8_mwav5"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -60,6 +62,10 @@ tile_set = ExtResource("2_4b6mq")
 
 [node name="Shop" parent="." instance=ExtResource("4_5xd30")]
 position = Vector2(176, 242)
+
+[node name="ShopUI" parent="Shop" instance=ExtResource("7_e8kwp")]
+
+[node name="Seller" parent="Shop" instance=ExtResource("8_mwav5")]
 
 [node name="Exterior" type="Node2D" parent="."]
 
