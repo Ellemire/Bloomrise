@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=3 uid="uid://b3nmavruf8eeb"]
+
+[ext_resource type="Theme" uid="uid://dr7jls8tp4rcw" path="res://scenes/UI/game_ui_theme.tres" id="1_wj65w"]
+[ext_resource type="Theme" uid="uid://1xnp12064f86" path="res://scenes/UI/tool_panel.tres" id="2_udfg0"]
+[ext_resource type="Texture2D" uid="uid://ydvy2ab7au4j" path="res://assetss/Terrain/Plants/flowers.png" id="3_sh4m0"]
+[ext_resource type="FontFile" uid="uid://d2s6ogr3tyrcb" path="res://assetss/Fonts/SFPixelate.ttf" id="4_2jwl7"]
+[ext_resource type="Texture2D" uid="uid://dxsclv770aya0" path="res://assetss/UI/coin.png" id="5_a7dsx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1atw"]
+atlas = ExtResource("3_sh4m0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38bbl"]
+atlas = ExtResource("5_a7dsx")
+region = Rect2(2, 2, 12, 12)
+
+[node name="ShopItem" type="Control"]
+custom_minimum_size = Vector2(96, 108)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="VBoxContainer" parent="."]
+self_modulate = Color(0.37568, 0.285668, 0.159271, 1)
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 0
+offset_right = 65.0
+offset_bottom = 83.0
+theme = ExtResource("1_wj65w")
+alignment = 1
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 2
+theme = ExtResource("2_udfg0")
+theme_type_variation = &"WoodPanel"
+
+[node name="MarginContainer" type="VBoxContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.5
+offset_top = -32.0
+offset_right = 21.5
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/Panel/MarginContainer"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = SubResource("AtlasTexture_i1atw")
+stretch_mode = 5
+
+[node name="NameLabel" type="Label" parent="MarginContainer/Panel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_2jwl7")
+theme_override_font_sizes/font_size = 10
+text = "Rose"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PrizeLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_2jwl7")
+theme_override_font_sizes/font_size = 10
+text = "5"
+
+[node name="Coin" type="TextureRect" parent="MarginContainer/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_38bbl")
+stretch_mode = 5
+
+[node name="BuyButton" type="Button" parent="MarginContainer"]
+custom_minimum_size = Vector2(20, 15)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("1_wj65w")
+theme_override_font_sizes/font_size = 10
+text = "Buy"
