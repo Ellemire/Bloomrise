@@ -1,6 +1,18 @@
-[gd_resource type="Theme" load_steps=18 format=3 uid="uid://1xnp12064f86"]
+[gd_resource type="Theme" load_steps=21 format=3 uid="uid://1xnp12064f86"]
 
 [ext_resource type="Texture2D" uid="uid://baq6ybmknhspc" path="res://assetss/UI/Sprite sheet for Basic Pack.png" id="1_jlpml"]
+[ext_resource type="FontVariation" uid="uid://clnii2kkairg7" path="res://assetss/Fonts/font_variation.tres" id="2_12o7y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8uqu"]
+atlas = ExtResource("1_jlpml")
+region = Rect2(107, 59, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_knspl"]
+texture = SubResource("AtlasTexture_b8uqu")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hhlyi"]
 load_path = "res://.godot/imported/Sprite sheet for Basic Pack.png-25c0da971ca28e2959f1cff2a9418927.ctex"
@@ -82,6 +94,11 @@ texture_margin_bottom = 7.0
 region_rect = Rect2(0, 0, 30, 30)
 
 [resource]
+InventoryItemPanel/base_type = &"PanelContainer"
+InventoryItemPanel/styles/panel = SubResource("StyleBoxTexture_knspl")
+InventoryLabel/base_type = &"Label"
+InventoryLabel/font_sizes/font_size = 8
+InventoryLabel/fonts/font = ExtResource("2_12o7y")
 MarginContainer/constants/margin_bottom = 4
 MarginContainer/constants/margin_left = 4
 MarginContainer/constants/margin_right = 4
