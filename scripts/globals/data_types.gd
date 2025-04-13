@@ -9,3 +9,12 @@ enum Tools {
 	PlantRose,
 	PlantSunflower
 }
+
+enum GrowthStates {
+	Seed,
+	Germination,
+	Vegetative,
+	Reproduction,
+	Maturity,
+	Harvesting
+}
