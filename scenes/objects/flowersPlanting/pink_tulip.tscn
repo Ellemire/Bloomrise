@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwf3u38tdkgdc"]
+
+[ext_resource type="Texture2D" uid="uid://ck7kbtmq3m7ya" path="res://assetss/Terrain/Plants/flowers.png" id="1_p0fo7"]
+[ext_resource type="PackedScene" uid="uid://c6f8lhamjo7uw" path="res://scenes/components/collectable_component.tscn" id="2_kf150"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0d21n"]
+radius = 8.0
+
+[node name="PinkTulip" type="Sprite2D"]
+texture = ExtResource("1_p0fo7")
+hframes = 9
+vframes = 8
+frame = 16
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_kf150")]
+collectable_name = "PinkTulip"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_0d21n")
+debug_color = Color(0.724295, 0.243623, 1, 0.42)
