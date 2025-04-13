@@ -1,6 +1,7 @@
 extends Node2D
 
-#var rose_harvest_scane = preload()
+var rose_harvest_scane = preload("res://scenes/objects/flowersPlanting/red_rose.tscn")
+
 @export var start_frame_offset: int = 5 # W której kolumnie zaczyna się dany kwiat (0 = róża, 1 = stokrotka itd.)
 @export var frames_per_stage: int = 9 # Ile kwiatów w atlasie w poziomie
 @export var is_large_at_end: bool = true # Czy ostatnie 2 stany zajmują 2 kratki
@@ -59,9 +60,8 @@ func on_crop_maturity() -> void:
 	flowering_particles.emitting = true
 
 func on_crop_harvesting() -> void:
-	pass
-	#var rose_harvest_instance = rose_harvest_scane.instantiate() as Node2D
-	#rose_harvest_instance.global_position = global_position
-	#get_parent().add_child(rose_harvest_instance)
-	#
-	#queue_free()
+	var rose_harvest_instance = rose_harvest_scane.instantiate() as Node2D
+	rose_harvest_instance.global_position = global_position
+	get_parent().add_child(rose_harvest_instance)
+	
+	queue_free()

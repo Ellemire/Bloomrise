@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dk0cbooslwrly"]
 
 [ext_resource type="Script" uid="uid://bk78cwn05vn5d" path="res://scenes/objects/plants/rose.gd" id="1_6uksv"]
-[ext_resource type="Texture2D" uid="uid://ydvy2ab7au4j" path="res://assetss/Terrain/Plants/flowers.png" id="2_6uksv"]
+[ext_resource type="Texture2D" uid="uid://cakp6ynjpfcgn" path="res://assetss/Terrain/Plants/flowers.png" id="2_6uksv"]
 [ext_resource type="PackedScene" uid="uid://r5ujv8gtxkkt" path="res://scenes/objects/plants/watering_particles.tscn" id="2_l8fdw"]
 [ext_resource type="PackedScene" uid="uid://cgrgr0ktanmkk" path="res://scenes/components/hurt_component.tscn" id="2_ovkd4"]
 [ext_resource type="PackedScene" uid="uid://b5c6qgol4j50w" path="res://scenes/objects/plants/flowering_particles.tscn" id="3_yopfj"]

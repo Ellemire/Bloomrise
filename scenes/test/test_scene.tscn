@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-[gd_scene load_steps=16 format=4 uid="uid://cc1l888cdaams"]
-=======
-[gd_scene load_steps=24 format=4 uid="uid://cc1l888cdaams"]
->>>>>>> 712460638208d2e86ed6e00e26688d0d50eb66dc
+[gd_scene load_steps=26 format=4 uid="uid://drtifjr4qsex2"]
 
 [ext_resource type="PackedScene" uid="uid://dumhg3qnfib2g" path="res://scenes/UI/hud.tscn" id="1_47ptp"]
-[ext_resource type="PackedScene" uid="uid://bwjmh1u8mmla1" path="res://scenes/characters/shopkeeper/seller.tscn" id="1_ktudl"]
 [ext_resource type="TileSet" uid="uid://dnuof7ol07rqb" path="res://Tilesets/game_tile_set.tres" id="1_wvq6k"]
 [ext_resource type="TileSet" uid="uid://b6tspch8jexw2" path="res://Tilesets/trees_tile_set.tres" id="2_4b6mq"]
 [ext_resource type="PackedScene" uid="uid://cglryq6nbfl75" path="res://scenes/components/day_and_night_cycle_component.tscn" id="2_k0t8k"]
@@ -13,14 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://ct8iq1b80ne1i" path="res://scenes/houses/shop.tscn" id="4_5xd30"]
 [ext_resource type="TileSet" uid="uid://bvljdxewp36qm" path="res://Tilesets/exterior_tile_set.tres" id="5_5xd30"]
 [ext_resource type="PackedScene" uid="uid://c13tmr8qqiem0" path="res://scenes/characters/player/player.tscn" id="6_0eyv0"]
+[ext_resource type="PackedScene" uid="uid://bwjmh1u8mmla1" path="res://scenes/characters/shopkeeper/seller.tscn" id="7_42x5e"]
+[ext_resource type="PackedScene" uid="uid://b3kpwsmb2oe6h" path="res://scenes/UI/ShopUI.tscn" id="8_0p08d"]
 [ext_resource type="PackedScene" uid="uid://qkitahuoo31" path="res://scenes/components/filed_cursor_component.tscn" id="8_nr2x3"]
 [ext_resource type="Script" uid="uid://da4tk12m42xnm" path="res://scenes/components/filed_cursor_component.gd" id="9_7xtry"]
 [ext_resource type="PackedScene" uid="uid://c27t8i6lyao4c" path="res://scenes/components/crops_cursor_component.tscn" id="11_x44rx"]
 [ext_resource type="Script" uid="uid://nsjvkuuu5hso" path="res://scenes/components/crops_cursor_component.gd" id="12_f5gst"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://dk0cbooslwrly" path="res://scenes/objects/plants/rose.tscn" id="13_f5gst"]
-[ext_resource type="PackedScene" uid="uid://b3kpwsmb2oe6h" path="res://scenes/UI/ShopUI.tscn" id="15_eo0ll"]
-=======
 [ext_resource type="PackedScene" uid="uid://rjkv7pg6t4lo" path="res://scenes/objects/trees/log.tscn" id="13_ktudl"]
 [ext_resource type="PackedScene" uid="uid://dtfcj210ly5jp" path="res://scenes/objects/stones/stone.tscn" id="14_eo0ll"]
 [ext_resource type="PackedScene" uid="uid://dcxa1htdvk7np" path="res://scenes/objects/flowersPlanting/bluebell.tscn" id="15_f38r3"]
@@ -32,7 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://c6jttq6e83nn6" path="res://scenes/objects/flowersPlanting/purple_orchid.tscn" id="21_teij2"]
 [ext_resource type="PackedScene" uid="uid://dng7ott7jseyk" path="res://scenes/objects/flowersPlanting/red_rose.tscn" id="22_f360t"]
 [ext_resource type="PackedScene" uid="uid://ccjl5tsi0ml0d" path="res://scenes/objects/flowersPlanting/sunflower.tscn" id="23_7wlr4"]
->>>>>>> 712460638208d2e86ed6e00e26688d0d50eb66dc
 
 [node name="TestScene" type="Node2D"]
 y_sort_enabled = true
@@ -103,10 +95,9 @@ z_index = 1
 z_index = 1
 position = Vector2(176, 242)
 
-[node name="ShopUI" parent="Shop" instance=ExtResource("15_eo0ll")]
+[node name="Seller" parent="Shop" instance=ExtResource("7_42x5e")]
 
-[node name="Seller" parent="Shop" instance=ExtResource("1_ktudl")]
-position = Vector2(496, 134)
+[node name="ShopUI" parent="Shop" instance=ExtResource("8_0p08d")]
 
 [node name="Exterior" type="Node2D" parent="."]
 z_index = 1
@@ -145,10 +136,6 @@ current_tool = 2
 script = ExtResource("12_f5gst")
 dirt_tilemap_layer = NodePath("../GameTileMap/Dirt")
 
-<<<<<<< HEAD
-[node name="Rose" parent="." instance=ExtResource("13_f5gst")]
-position = Vector2(360, 80)
-=======
 [node name="Log" parent="." instance=ExtResource("13_ktudl")]
 position = Vector2(277, 113)
 
@@ -181,4 +168,12 @@ position = Vector2(350, 209)
 
 [node name="Sunflower" parent="." instance=ExtResource("23_7wlr4")]
 position = Vector2(385, 232)
->>>>>>> 712460638208d2e86ed6e00e26688d0d50eb66dc
+
+[node name="Stone2" parent="." instance=ExtResource("14_eo0ll")]
+position = Vector2(308, 101)
+
+[node name="Stone3" parent="." instance=ExtResource("14_eo0ll")]
+position = Vector2(323, 102)
+
+[node name="Stone4" parent="." instance=ExtResource("14_eo0ll")]
+position = Vector2(326, 117)
