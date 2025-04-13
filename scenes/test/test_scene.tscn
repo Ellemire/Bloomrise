@@ -162,3 +162,12 @@ position = Vector2(350, 209)
 
 [node name="Sunflower" parent="." instance=ExtResource("23_7wlr4")]
 position = Vector2(385, 232)
+
+[node name="Stone2" parent="." instance=ExtResource("14_eo0ll")]
+position = Vector2(308, 101)
+
+[node name="Stone3" parent="." instance=ExtResource("14_eo0ll")]
+position = Vector2(323, 102)
+
+[node name="Stone4" parent="." instance=ExtResource("14_eo0ll")]
+position = Vector2(326, 117)
