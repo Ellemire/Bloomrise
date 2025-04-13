@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=16 format=4 uid="uid://cc1l888cdaams"]
+=======
+[gd_scene load_steps=24 format=4 uid="uid://cc1l888cdaams"]
+>>>>>>> 712460638208d2e86ed6e00e26688d0d50eb66dc
 
 [ext_resource type="PackedScene" uid="uid://dumhg3qnfib2g" path="res://scenes/UI/hud.tscn" id="1_47ptp"]
 [ext_resource type="PackedScene" uid="uid://bwjmh1u8mmla1" path="res://scenes/characters/shopkeeper/seller.tscn" id="1_ktudl"]
@@ -13,8 +17,22 @@
 [ext_resource type="Script" uid="uid://da4tk12m42xnm" path="res://scenes/components/filed_cursor_component.gd" id="9_7xtry"]
 [ext_resource type="PackedScene" uid="uid://c27t8i6lyao4c" path="res://scenes/components/crops_cursor_component.tscn" id="11_x44rx"]
 [ext_resource type="Script" uid="uid://nsjvkuuu5hso" path="res://scenes/components/crops_cursor_component.gd" id="12_f5gst"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://dk0cbooslwrly" path="res://scenes/objects/plants/rose.tscn" id="13_f5gst"]
 [ext_resource type="PackedScene" uid="uid://b3kpwsmb2oe6h" path="res://scenes/UI/ShopUI.tscn" id="15_eo0ll"]
+=======
+[ext_resource type="PackedScene" uid="uid://rjkv7pg6t4lo" path="res://scenes/objects/trees/log.tscn" id="13_ktudl"]
+[ext_resource type="PackedScene" uid="uid://dtfcj210ly5jp" path="res://scenes/objects/stones/stone.tscn" id="14_eo0ll"]
+[ext_resource type="PackedScene" uid="uid://dcxa1htdvk7np" path="res://scenes/objects/flowersPlanting/bluebell.tscn" id="15_f38r3"]
+[ext_resource type="PackedScene" uid="uid://chc0knmtitpo6" path="res://scenes/objects/flowersPlanting/blue_daisy.tscn" id="16_c4b2i"]
+[ext_resource type="PackedScene" uid="uid://dfkms4timy3i3" path="res://scenes/objects/flowersPlanting/lavendar.tscn" id="17_42x5e"]
+[ext_resource type="PackedScene" uid="uid://bkhqeirms72kf" path="res://scenes/objects/flowersPlanting/orange_lily.tscn" id="18_0p08d"]
+[ext_resource type="PackedScene" uid="uid://t7aouy68mmax" path="res://scenes/objects/flowersPlanting/pink_peony.tscn" id="19_v3mus"]
+[ext_resource type="PackedScene" uid="uid://cwf3u38tdkgdc" path="res://scenes/objects/flowersPlanting/pink_tulip.tscn" id="20_qs20u"]
+[ext_resource type="PackedScene" uid="uid://c6jttq6e83nn6" path="res://scenes/objects/flowersPlanting/purple_orchid.tscn" id="21_teij2"]
+[ext_resource type="PackedScene" uid="uid://dng7ott7jseyk" path="res://scenes/objects/flowersPlanting/red_rose.tscn" id="22_f360t"]
+[ext_resource type="PackedScene" uid="uid://ccjl5tsi0ml0d" path="res://scenes/objects/flowersPlanting/sunflower.tscn" id="23_7wlr4"]
+>>>>>>> 712460638208d2e86ed6e00e26688d0d50eb66dc
 
 [node name="TestScene" type="Node2D"]
 y_sort_enabled = true
@@ -127,5 +145,40 @@ current_tool = 2
 script = ExtResource("12_f5gst")
 dirt_tilemap_layer = NodePath("../GameTileMap/Dirt")
 
+<<<<<<< HEAD
 [node name="Rose" parent="." instance=ExtResource("13_f5gst")]
 position = Vector2(360, 80)
+=======
+[node name="Log" parent="." instance=ExtResource("13_ktudl")]
+position = Vector2(277, 113)
+
+[node name="Stone" parent="." instance=ExtResource("14_eo0ll")]
+position = Vector2(305, 115)
+
+[node name="Bluebell" parent="." instance=ExtResource("15_f38r3")]
+position = Vector2(291, 136)
+
+[node name="BlueDaisy" parent="." instance=ExtResource("16_c4b2i")]
+position = Vector2(314, 136)
+
+[node name="Lavendar" parent="." instance=ExtResource("17_42x5e")]
+position = Vector2(316, 166)
+
+[node name="OrangeLily" parent="." instance=ExtResource("18_0p08d")]
+position = Vector2(315, 192)
+
+[node name="PinkPeony" parent="." instance=ExtResource("19_v3mus")]
+position = Vector2(322, 219)
+
+[node name="PinkTulip" parent="." instance=ExtResource("20_qs20u")]
+position = Vector2(349, 234)
+
+[node name="PurpleOrchid" parent="." instance=ExtResource("21_teij2")]
+position = Vector2(369, 265)
+
+[node name="RedRose" parent="." instance=ExtResource("22_f360t")]
+position = Vector2(350, 209)
+
+[node name="Sunflower" parent="." instance=ExtResource("23_7wlr4")]
+position = Vector2(385, 232)
+>>>>>>> 712460638208d2e86ed6e00e26688d0d50eb66dc
