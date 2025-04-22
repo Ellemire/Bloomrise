@@ -23,7 +23,6 @@ var growth_state_to_frame_index := {
 	DataTypes.GrowthStates.Harvesting: 1,
 }
 
-
 func _ready() -> void:
 	watering_particles.emitting = false
 	flowering_particles.emitting = false
@@ -31,7 +30,7 @@ func _ready() -> void:
 	hurt_component.hurt.connect(on_hurt)
 	growth_cycle_component.crop_maturity.connect(on_crop_maturity)
 	growth_cycle_component.crop_harvesting.connect(on_crop_harvesting)
-	
+
 func _process(delta: float) -> void:
 	var growth_state = growth_cycle_component.get_current_growth_state()
 	update_sprite_for_state(growth_state)
@@ -48,14 +47,14 @@ func update_sprite_for_state(state: int) -> void:
 		sprite_2d.scale.x = 2
 	else:
 		sprite_2d.scale.x = 1
-		
+
 func on_hurt() -> void:
 	if !growth_cycle_component.is_watered:
 		watering_particles.emitting = true
 		await get_tree().create_timer(5.0).timeout
 		watering_particles.emitting = false
 		growth_cycle_component.is_watered = true
-		
+
 func on_crop_maturity() -> void:
 	flowering_particles.emitting = true
 

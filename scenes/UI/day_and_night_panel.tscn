@@ -89,7 +89,7 @@ offset_top = 17.0
 offset_right = 65.0
 offset_bottom = 17.0
 
-[node name="Wheather_img" type="TextureRect" parent="."]
+[node name="Weather_img" type="TextureRect" parent="."]
 layout_mode = 2
 offset_left = 16.0
 offset_top = 17.0

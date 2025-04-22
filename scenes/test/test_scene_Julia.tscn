@@ -1,9 +1,11 @@
-[gd_scene load_steps=26 format=4 uid="uid://by8lc17e863it"]
+[gd_scene load_steps=28 format=4 uid="uid://by8lc17e863it"]
 
-[ext_resource type="PackedScene" path="res://scenes/UI/hud.tscn" id="1_47ptp"]
+[ext_resource type="PackedScene" uid="uid://dumhg3qnfib2g" path="res://scenes/UI/hud.tscn" id="1_47ptp"]
+[ext_resource type="PackedScene" uid="uid://dk0cbooslwrly" path="res://scenes/objects/plants/rose.tscn" id="1_n0w7j"]
 [ext_resource type="TileSet" uid="uid://dnuof7ol07rqb" path="res://Tilesets/game_tile_set.tres" id="1_wvq6k"]
 [ext_resource type="TileSet" uid="uid://b6tspch8jexw2" path="res://Tilesets/trees_tile_set.tres" id="2_4b6mq"]
 [ext_resource type="PackedScene" uid="uid://cglryq6nbfl75" path="res://scenes/components/day_and_night_cycle_component.tscn" id="2_k0t8k"]
+[ext_resource type="PackedScene" uid="uid://cpulfwlny6ucj" path="res://scenes/components/WeatherEffectComponent.tscn" id="3_lpu25"]
 [ext_resource type="PackedScene" uid="uid://k44nvo25cul3" path="res://scenes/houses/house.tscn" id="3_rjb07"]
 [ext_resource type="PackedScene" uid="uid://ct8iq1b80ne1i" path="res://scenes/houses/shop.tscn" id="4_5xd30"]
 [ext_resource type="TileSet" uid="uid://bvljdxewp36qm" path="res://Tilesets/exterior_tile_set.tres" id="5_5xd30"]
@@ -29,9 +31,13 @@
 [node name="TestScene" type="Node2D"]
 y_sort_enabled = true
 
-[node name="GameScreen" parent="." instance=ExtResource("1_47ptp")]
+[node name="WeatherEffectComponent" parent="." instance=ExtResource("3_lpu25")]
 
 [node name="DayAndNightCycleComponent" parent="." instance=ExtResource("2_k0t8k")]
+
+[node name="GameScreen" parent="." instance=ExtResource("1_47ptp")]
+
+[node name="Plant" parent="." instance=ExtResource("1_n0w7j")]
 
 [node name="GameTileMap" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -96,6 +102,7 @@ z_index = 1
 position = Vector2(176, 242)
 
 [node name="ShopUI" parent="Shop" instance=ExtResource("7_3kgl4")]
+visible = false
 
 [node name="Seller" parent="Shop" instance=ExtResource("8_n0w7j")]
 
@@ -177,3 +184,11 @@ position = Vector2(323, 102)
 
 [node name="Stone4" parent="." instance=ExtResource("14_eo0ll")]
 position = Vector2(326, 117)
+
+[node name="Plant2" parent="." instance=ExtResource("1_n0w7j")]
+position = Vector2(192, 88)
+start_frame_offset = 30
+
+[node name="Plant3" parent="." instance=ExtResource("1_n0w7j")]
+position = Vector2(224, 120)
+start_frame_offset = 1

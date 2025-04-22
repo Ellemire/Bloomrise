@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpulfwlny6ucj"]
+
+[ext_resource type="Script" uid="uid://bbts5nq4moyj" path="res://scenes/components/weather_effect_component.gd" id="1_ll4ck"]
+[ext_resource type="Texture2D" uid="uid://mhmwovygnjwp" path="res://assetss/UI/WeatherIcons/Weather.png" id="2_3nvje"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1v1tf"]
+atlas = ExtResource("2_3nvje")
+region = Rect2(69, 10, 1, 6)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t3rve"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(650, 0, 0)
+direction = Vector3(0, 1, 0)
+spread = 10.0
+gravity = Vector3(0, 1200, 0)
+
+[node name="WeatherEffectComponent" type="CanvasLayer"]
+script = ExtResource("1_ll4ck")
+
+[node name="CloudOverlay" type="ColorRect" parent="."]
+clip_contents = true
+offset_right = 640.0
+offset_bottom = 360.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.6, 0.6, 0.7, 0.503)
+
+[node name="RainParticles" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 200
+texture = SubResource("AtlasTexture_1v1tf")
+lifetime = 1.2
+speed_scale = 1.5
+visibility_rect = Rect2(0, 0, 640, 360)
+process_material = SubResource("ParticleProcessMaterial_t3rve")
+
+[node name="RainSound" type="AudioStreamPlayer2D" parent="."]
