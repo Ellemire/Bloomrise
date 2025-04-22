@@ -7,6 +7,8 @@ extends CanvasLayer
 func _ready():
 	WeatherManager.weather_changed.connect(apply_weather)
 	apply_weather(WeatherManager.current_weather)
+	cloud_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
 
 func apply_weather(weather):
 	match weather:

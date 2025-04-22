@@ -45,7 +45,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 3
-columns = 3
+columns = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2

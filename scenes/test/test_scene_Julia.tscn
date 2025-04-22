@@ -31,9 +31,9 @@
 [node name="TestScene" type="Node2D"]
 y_sort_enabled = true
 
-[node name="WeatherEffectComponent" parent="." instance=ExtResource("3_lpu25")]
-
 [node name="DayAndNightCycleComponent" parent="." instance=ExtResource("2_k0t8k")]
+
+[node name="WeatherEffectComponent" parent="." instance=ExtResource("3_lpu25")]
 
 [node name="GameScreen" parent="." instance=ExtResource("1_47ptp")]
 
@@ -101,10 +101,9 @@ z_index = 1
 z_index = 1
 position = Vector2(176, 242)
 
-[node name="ShopUI" parent="Shop" instance=ExtResource("7_3kgl4")]
-visible = false
-
 [node name="Seller" parent="Shop" instance=ExtResource("8_n0w7j")]
+
+[node name="ShopUI" parent="Shop" instance=ExtResource("7_3kgl4")]
 
 [node name="Exterior" type="Node2D" parent="."]
 z_index = 1

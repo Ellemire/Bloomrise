@@ -15,9 +15,9 @@ func _ready():
 
 func _on_new_day(day: int) -> void:
 	var roll = rng.randf()
-	if roll < 0.3:
+	if roll < 0.6:
 		current_weather = Weather.SUNNY
-	elif roll < 0.7:
+	elif roll < 0.8:
 		current_weather = Weather.RAINY
 	else:
 		current_weather = Weather.CLOUDY
