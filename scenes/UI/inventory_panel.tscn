@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://1xnp12064f86" path="res://scenes/UI/tool_panel.tres" id="1_rl7gc"]
 [ext_resource type="Script" uid="uid://dlqantjr0otnq" path="res://scenes/UI/inventory_panel.gd" id="2_owml0"]
-[ext_resource type="Texture2D" uid="uid://ck7kbtmq3m7ya" path="res://assetss/Terrain/Plants/flowers.png" id="2_rl7gc"]
+[ext_resource type="Texture2D" uid="uid://cakp6ynjpfcgn" path="res://assetss/Terrain/Plants/flowers.png" id="2_rl7gc"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_owml0"]
 load_path = "res://.godot/imported/Basic_tools_and_meterials.png-ae6f87fd2af7e7885e9941e46c89d68d.ctex"

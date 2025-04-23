@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://dr7jls8tp4rcw" path="res://scenes/UI/game_ui_theme.tres" id="1_wj65w"]
 [ext_resource type="Theme" uid="uid://1xnp12064f86" path="res://scenes/UI/tool_panel.tres" id="2_udfg0"]
-[ext_resource type="Texture2D" uid="uid://ydvy2ab7au4j" path="res://assetss/Terrain/Plants/flowers.png" id="3_sh4m0"]
+[ext_resource type="Texture2D" uid="uid://cakp6ynjpfcgn" path="res://assetss/Terrain/Plants/flowers.png" id="3_sh4m0"]
 [ext_resource type="FontFile" uid="uid://d2s6ogr3tyrcb" path="res://assetss/Fonts/SFPixelate.ttf" id="4_2jwl7"]
 [ext_resource type="Texture2D" uid="uid://dxsclv770aya0" path="res://assetss/UI/coin.png" id="5_a7dsx"]
 
