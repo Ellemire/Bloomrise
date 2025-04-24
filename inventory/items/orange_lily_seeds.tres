@@ -9,6 +9,6 @@ region = Rect2(16, 0, 16, 16)
 
 [resource]
 script = ExtResource("1_tjjpi")
-name = "orange_lily_seeds"
+name = "OrangeLilySeeds"
 texture = SubResource("AtlasTexture_r3ul3")
 metadata/_custom_type_script = "uid://cfyvouwltvh6q"

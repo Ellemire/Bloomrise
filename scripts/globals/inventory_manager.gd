@@ -25,6 +25,35 @@ var item_db: Dictionary = {
 	"Stone": preload("res://inventory/items/stone.tres")
 }
 
+var drop_scene_db := {
+	# Flowers Planting
+	"Bluebell": preload("res://scenes/objects/flowersPlanting/bluebell.tscn"),
+	"BlueDaisy": preload("res://scenes/objects/flowersPlanting/blue_daisy.tscn"),
+	"Lavendar": preload("res://scenes/objects/flowersPlanting/lavendar.tscn"),
+	"OrangeLily": preload("res://scenes/objects/flowersPlanting/orange_lily.tscn"),
+	"PinkPeony": preload("res://scenes/objects/flowersPlanting/pink_peony.tscn"),
+	"PinkTulip": preload("res://scenes/objects/flowersPlanting/pink_tulip.tscn"),
+	"PurpleOrchid": preload("res://scenes/objects/flowersPlanting/purple_orchid.tscn"),
+	"RedRose": preload("res://scenes/objects/flowersPlanting/red_rose.tscn"),
+	"Sunflower": preload("res://scenes/objects/flowersPlanting/sunflower.tscn"),
+
+	# Flowers Seeds
+	"BluebellSeeds": preload("res://scenes/objects/flowersSeeds/bluebell_seeds.tscn"),
+	"BlueDaisySeeds": preload("res://scenes/objects/flowersSeeds/blue_daisy_seeds.tscn"),
+	"LavendarSeeds": preload("res://scenes/objects/flowersSeeds/lavendar_seeds.tscn"),
+	"OrangeLilySeeds": preload("res://scenes/objects/flowersSeeds/orange_lily_seeds.tscn"),
+	"PinkPeonySeeds": preload("res://scenes/objects/flowersSeeds/pink_peony_seeds.tscn"),
+	"PinkTulipSeeds": preload("res://scenes/objects/flowersSeeds/pink_tulip_seeds.tscn"),
+	"PurpleOrchidSeeds": preload("res://scenes/objects/flowersSeeds/purple_orchid_seeds.tscn"),
+	"RedRoseSeeds": preload("res://scenes/objects/flowersSeeds/red_rose_seeds.tscn"),
+	"SunflowerSeeds": preload("res://scenes/objects/flowersSeeds/sunflower_seeds.tscn"),
+	
+	"Log": preload("res://scenes/objects/trees/log.tscn"),
+	"Stone": preload("res://scenes/objects/stones/stone.tscn")
+}
+
+
+var player: Player
 
 func add_collectable(name: String) -> bool:
 	if item_db.has(name):

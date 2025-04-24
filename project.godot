@@ -21,6 +21,7 @@ DayAndNightCycleManager="*res://scripts/globals/day_and_night_cycle_manager.gd"
 ToolManager="*res://scripts/globals/tool_manager.gd"
 InventoryManager="*res://scripts/globals/inventory_manager.gd"
 WeatherManager="*res://scripts/globals/weather_manager.gd"
+ItemDropManager="*res://scripts/globals/item_drop_manager.gd"
 
 [display]
 
