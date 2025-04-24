@@ -27,13 +27,13 @@ func _on_enter() -> void:
 		hit_component_collision_shape.position = Vector2(0, -18)
 	elif player.player_direction == Vector2.RIGHT:
 		animated_sprite_2d.play("watering_right")
-		hit_component_collision_shape.position = Vector2(9, 0)
+		hit_component_collision_shape.position = Vector2(20, 0)
 	elif player.player_direction == Vector2.DOWN:
 		animated_sprite_2d.play("watering_front")
 		hit_component_collision_shape.position = Vector2(0, 3)
 	elif player.player_direction == Vector2.LEFT:
 		animated_sprite_2d.play("watering_left")
-		hit_component_collision_shape.position = Vector2(-9, 0)
+		hit_component_collision_shape.position = Vector2(-20, 0)
 	else:
 		animated_sprite_2d.play("watering_front")
 		hit_component_collision_shape.position = Vector2(0, 3)

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=4 format=3 uid="uid://djgdjrpojlhrk"]
+
+[ext_resource type="Script" uid="uid://cfyvouwltvh6q" path="res://inventory/inventory_item.gd" id="1_ron3j"]
+[ext_resource type="Texture2D" uid="uid://cakp6ynjpfcgn" path="res://assetss/Terrain/Plants/flowers.png" id="2_guf2n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3ul3"]
+atlas = ExtResource("2_guf2n")
+region = Rect2(80, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_ron3j")
+name = "lavendar_seeds"
+texture = SubResource("AtlasTexture_r3ul3")
+metadata/_custom_type_script = "uid://cfyvouwltvh6q"

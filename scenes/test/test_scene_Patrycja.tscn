@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://cc1l888cdaams"]
+[gd_scene load_steps=28 format=4 uid="uid://cc1l888cdaams"]
 
 [ext_resource type="PackedScene" uid="uid://dumhg3qnfib2g" path="res://scenes/UI/hud.tscn" id="1_47ptp"]
 [ext_resource type="TileSet" uid="uid://dnuof7ol07rqb" path="res://Tilesets/game_tile_set.tres" id="1_wvq6k"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://k44nvo25cul3" path="res://scenes/houses/house.tscn" id="3_rjb07"]
 [ext_resource type="PackedScene" uid="uid://ct8iq1b80ne1i" path="res://scenes/houses/shop.tscn" id="4_5xd30"]
 [ext_resource type="TileSet" uid="uid://bvljdxewp36qm" path="res://Tilesets/exterior_tile_set.tres" id="5_5xd30"]
+[ext_resource type="PackedScene" uid="uid://dyheah7t6ggk4" path="res://scenes/objects/flowersSeeds/sunflower_seeds.tscn" id="5_tdwgn"]
 [ext_resource type="PackedScene" uid="uid://c13tmr8qqiem0" path="res://scenes/characters/player/player.tscn" id="6_0eyv0"]
 [ext_resource type="PackedScene" uid="uid://qkitahuoo31" path="res://scenes/components/filed_cursor_component.tscn" id="8_nr2x3"]
 [ext_resource type="Script" uid="uid://da4tk12m42xnm" path="res://scenes/components/filed_cursor_component.gd" id="9_7xtry"]
@@ -23,6 +24,9 @@
 [ext_resource type="PackedScene" uid="uid://c6jttq6e83nn6" path="res://scenes/objects/flowersPlanting/purple_orchid.tscn" id="21_teij2"]
 [ext_resource type="PackedScene" uid="uid://dng7ott7jseyk" path="res://scenes/objects/flowersPlanting/red_rose.tscn" id="22_f360t"]
 [ext_resource type="PackedScene" uid="uid://ccjl5tsi0ml0d" path="res://scenes/objects/flowersPlanting/sunflower.tscn" id="23_7wlr4"]
+[ext_resource type="PackedScene" uid="uid://b8tuys5jq3wy4" path="res://scenes/objects/flowersSeeds/pink_peony_seeds.tscn" id="25_i0bve"]
+[ext_resource type="PackedScene" uid="uid://bcarux4cu0y8p" path="res://scenes/objects/flowersSeeds/orange_lily_seeds.tscn" id="26_n0sr7"]
+[ext_resource type="PackedScene" uid="uid://dqwf8ripqptru" path="res://scenes/objects/flowersSeeds/lavendar_seeds.tscn" id="27_078tc"]
 
 [node name="TestScene" type="Node2D"]
 y_sort_enabled = true
@@ -83,6 +87,9 @@ tile_set = ExtResource("1_wvq6k")
 z_index = 1
 tile_map_data = PackedByteArray("AAAPAA0ADgADAAAAAAAQAA0ADgADAAAAAAAOAA0ADgACAAAAAAARAA0ADgAEAAEAAADg/zcADgADAAEAAADf/zcADgACAAAAAADh/zcADgADAAAAAADi/zcADgAEAAEAAADr/zkADgAAAAEAAADr/zgADgAAAAAAAADr/zoADgABAAIAAABWACcADgAAAAAAAABWACgADgAAAAIAAAA=")
 tile_set = ExtResource("1_wvq6k")
+
+[node name="SunflowerSeeds" parent="GameTileMap" instance=ExtResource("5_tdwgn")]
+position = Vector2(475, 332)
 
 [node name="House" parent="." instance=ExtResource("3_rjb07")]
 light_mask = 2
@@ -171,3 +178,12 @@ position = Vector2(323, 102)
 
 [node name="Stone4" parent="." instance=ExtResource("14_eo0ll")]
 position = Vector2(326, 117)
+
+[node name="PinkPeonySeeds" parent="." instance=ExtResource("25_i0bve")]
+position = Vector2(414, 264)
+
+[node name="OrangeLilySeeds" parent="." instance=ExtResource("26_n0sr7")]
+position = Vector2(423, 298)
+
+[node name="LavendarSeeds" parent="." instance=ExtResource("27_078tc")]
+position = Vector2(463, 296)

@@ -53,6 +53,25 @@ texture = ExtResource("1_jedpl")
 11:3/0 = 0
 11:4/0 = 0
 12:4/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+14:5/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+15:5/0 = 0
+16:7/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+16:5/0 = 0
+14:3/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ytjcr"]
 scenes/1/scene = ExtResource("2_icqvn")

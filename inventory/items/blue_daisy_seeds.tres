@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=4 format=3 uid="uid://bpuyjtq1kmcfx"]
+
+[ext_resource type="Script" uid="uid://cfyvouwltvh6q" path="res://inventory/inventory_item.gd" id="1_dibnp"]
+[ext_resource type="Texture2D" uid="uid://cakp6ynjpfcgn" path="res://assetss/Terrain/Plants/flowers.png" id="2_mljws"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3ul3"]
+atlas = ExtResource("2_mljws")
+region = Rect2(32, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_dibnp")
+name = "blue_daisy_seeds"
+texture = SubResource("AtlasTexture_r3ul3")
+metadata/_custom_type_script = "uid://cfyvouwltvh6q"

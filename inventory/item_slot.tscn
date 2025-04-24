@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpypub51uutso"]
+
+[ext_resource type="Theme" uid="uid://1xnp12064f86" path="res://scenes/UI/tool_panel.tres" id="1_8kgv2"]
+[ext_resource type="Script" uid="uid://ca6r7dvdi64v6" path="res://inventory/item_slot.gd" id="2_xs2ts"]
+
+[node name="Item_slot" type="Panel"]
+custom_minimum_size = Vector2(32, 32)
+offset_right = 32.0
+offset_bottom = 32.0
+theme = ExtResource("1_8kgv2")
+theme_type_variation = &"InventoryItemPanel"
+script = ExtResource("2_xs2ts")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 24.0
+
+[node name="Item_icon" type="TextureRect" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="AmountLabel" type="Label" parent="."]
+layout_mode = 2
+offset_left = 3.0
+offset_top = 21.0
+offset_right = 29.0
+offset_bottom = 30.0
+theme = ExtResource("1_8kgv2")
+theme_type_variation = &"InventoryLabel"
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1

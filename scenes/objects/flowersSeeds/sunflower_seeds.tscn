@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccjl5tsi0ml0d"]
+[gd_scene load_steps=4 format=3 uid="uid://dyheah7t6ggk4"]
 
 [ext_resource type="Texture2D" uid="uid://cakp6ynjpfcgn" path="res://assetss/Terrain/Plants/flowers.png" id="1_ivb7s"]
 [ext_resource type="PackedScene" uid="uid://c6f8lhamjo7uw" path="res://scenes/components/collectable_component.tscn" id="2_73g53"]
@@ -6,14 +6,14 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_0d21n"]
 radius = 8.0
 
-[node name="Sunflower" type="Sprite2D"]
+[node name="SunflowerSeeds" type="Sprite2D"]
 texture = ExtResource("1_ivb7s")
 hframes = 9
 vframes = 8
-frame = 12
+frame = 3
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_73g53")]
-collectable_name = "Sunflower"
+collectable_name = "SunflowerSeeds"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
 shape = SubResource("CircleShape2D_0d21n")

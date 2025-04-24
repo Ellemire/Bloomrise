@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://t7aouy68mmax"]
+[gd_scene load_steps=4 format=3 uid="uid://b8tuys5jq3wy4"]
 
 [ext_resource type="Texture2D" uid="uid://cakp6ynjpfcgn" path="res://assetss/Terrain/Plants/flowers.png" id="1_hj8mb"]
 [ext_resource type="PackedScene" uid="uid://c6f8lhamjo7uw" path="res://scenes/components/collectable_component.tscn" id="2_hejc0"]
@@ -6,14 +6,14 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_0d21n"]
 radius = 8.0
 
-[node name="PinkPeony" type="Sprite2D"]
+[node name="PinkPeonySeeds" type="Sprite2D"]
 texture = ExtResource("1_hj8mb")
 hframes = 9
 vframes = 8
-frame = 17
+frame = 8
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_hejc0")]
-collectable_name = "PinkPeony"
+collectable_name = "PinkPeonySeeds"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
 shape = SubResource("CircleShape2D_0d21n")

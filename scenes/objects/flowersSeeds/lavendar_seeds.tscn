@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfkms4timy3i3"]
+[gd_scene load_steps=4 format=3 uid="uid://dqwf8ripqptru"]
 
 [ext_resource type="Texture2D" uid="uid://cakp6ynjpfcgn" path="res://assetss/Terrain/Plants/flowers.png" id="1_yne8j"]
 [ext_resource type="PackedScene" uid="uid://c6f8lhamjo7uw" path="res://scenes/components/collectable_component.tscn" id="2_kgmii"]
@@ -6,14 +6,14 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_0d21n"]
 radius = 8.0
 
-[node name="Lavendar" type="Sprite2D"]
+[node name="LavendarSeeds" type="Sprite2D"]
 texture = ExtResource("1_yne8j")
 hframes = 9
 vframes = 8
-frame = 14
+frame = 5
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_kgmii")]
-collectable_name = "Lavendar"
+collectable_name = "LavendarSeeds"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
 shape = SubResource("CircleShape2D_0d21n")

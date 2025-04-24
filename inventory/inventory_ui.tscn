@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtq04rmxfsuau"]
+
+[ext_resource type="Script" uid="uid://bryiculbn5sas" path="res://inventory/inventory_ui.gd" id="1_hfbh7"]
+[ext_resource type="Theme" uid="uid://1xnp12064f86" path="res://scenes/UI/tool_panel.tres" id="2_2hut1"]
+[ext_resource type="PackedScene" uid="uid://bpypub51uutso" path="res://inventory/item_slot.tscn" id="3_cedrj"]
+
+[node name="Inventory_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 163.0
+offset_bottom = 126.0
+script = ExtResource("1_hfbh7")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+offset_right = 154.0
+offset_bottom = 118.0
+theme = ExtResource("2_2hut1")
+theme_type_variation = &"WoodPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="Item_slot1" parent="PanelContainer/MarginContainer/GridContainer" instance=ExtResource("3_cedrj")]
+layout_mode = 2
+
+[node name="Item_slot2" parent="PanelContainer/MarginContainer/GridContainer" instance=ExtResource("3_cedrj")]
+layout_mode = 2
+
+[node name="Item_slot3" parent="PanelContainer/MarginContainer/GridContainer" instance=ExtResource("3_cedrj")]
+layout_mode = 2
+
+[node name="Item_slot4" parent="PanelContainer/MarginContainer/GridContainer" instance=ExtResource("3_cedrj")]
+layout_mode = 2
+
+[node name="Item_slot5" parent="PanelContainer/MarginContainer/GridContainer" instance=ExtResource("3_cedrj")]
+layout_mode = 2
+
+[node name="Item_slot6" parent="PanelContainer/MarginContainer/GridContainer" instance=ExtResource("3_cedrj")]
+layout_mode = 2
+
+[node name="Item_slot7" parent="PanelContainer/MarginContainer/GridContainer" instance=ExtResource("3_cedrj")]
+layout_mode = 2
+
+[node name="Item_slot8" parent="PanelContainer/MarginContainer/GridContainer" instance=ExtResource("3_cedrj")]
+layout_mode = 2
+
+[node name="Item_slot9" parent="PanelContainer/MarginContainer/GridContainer" instance=ExtResource("3_cedrj")]
+layout_mode = 2
+
+[node name="Item_slot10" parent="PanelContainer/MarginContainer/GridContainer" instance=ExtResource("3_cedrj")]
+layout_mode = 2
+
+[node name="Item_slot11" parent="PanelContainer/MarginContainer/GridContainer" instance=ExtResource("3_cedrj")]
+layout_mode = 2
+
+[node name="Item_slot12" parent="PanelContainer/MarginContainer/GridContainer" instance=ExtResource("3_cedrj")]
+layout_mode = 2

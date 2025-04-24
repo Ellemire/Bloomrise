@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=4 format=3 uid="uid://c547m2mr6hm04"]
+
+[ext_resource type="Script" uid="uid://cfyvouwltvh6q" path="res://inventory/inventory_item.gd" id="1_fhmpx"]
+[ext_resource type="Texture2D" uid="uid://cakp6ynjpfcgn" path="res://assetss/Terrain/Plants/flowers.png" id="2_g1dm0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3ul3"]
+atlas = ExtResource("2_g1dm0")
+region = Rect2(48, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_fhmpx")
+name = "sunflower_seeds"
+texture = SubResource("AtlasTexture_r3ul3")
+metadata/_custom_type_script = "uid://cfyvouwltvh6q"
