@@ -6,8 +6,18 @@ enum Tools {
 	TillGround,
 	WaterCrops,
 	MineStone,
-	PlantRose,
-	PlantSunflower
+	Log,
+	Stone,
+	BluebellSeeds,
+	LavendarSeeds,
+	OrangeLilySeeds,
+	PinkPeonySeeds,
+	PinkTulipSeeds,
+	PurpleOrchidSeeds,
+	RedRoseSeeds,
+	SunflowerSeeds,
+	PlantRose,	#u should delete this and use RoseSeeds
+	PlantSunflower #u should delete this and use SunflowerSeeds
 }
 
 enum GrowthStates {

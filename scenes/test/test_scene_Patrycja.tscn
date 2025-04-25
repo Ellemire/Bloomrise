@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://cc1l888cdaams"]
+[gd_scene load_steps=29 format=4 uid="uid://cc1l888cdaams"]
 
 [ext_resource type="PackedScene" uid="uid://dumhg3qnfib2g" path="res://scenes/UI/hud.tscn" id="1_47ptp"]
 [ext_resource type="TileSet" uid="uid://dnuof7ol07rqb" path="res://Tilesets/game_tile_set.tres" id="1_wvq6k"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://b8tuys5jq3wy4" path="res://scenes/objects/flowersSeeds/pink_peony_seeds.tscn" id="25_i0bve"]
 [ext_resource type="PackedScene" uid="uid://bcarux4cu0y8p" path="res://scenes/objects/flowersSeeds/orange_lily_seeds.tscn" id="26_n0sr7"]
 [ext_resource type="PackedScene" uid="uid://dqwf8ripqptru" path="res://scenes/objects/flowersSeeds/lavendar_seeds.tscn" id="27_078tc"]
+[ext_resource type="PackedScene" uid="uid://dba80mxcosll3" path="res://scenes/objects/flowersSeeds/red_rose_seeds.tscn" id="28_i0bve"]
 
 [node name="TestScene" type="Node2D"]
 y_sort_enabled = true
@@ -187,3 +188,6 @@ position = Vector2(423, 298)
 
 [node name="LavendarSeeds" parent="." instance=ExtResource("27_078tc")]
 position = Vector2(463, 296)
+
+[node name="RedRoseSeeds" parent="." instance=ExtResource("28_i0bve")]
+position = Vector2(193, 101)

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=4 format=3 uid="uid://cr4kevh6d3ff3"]
+
+[ext_resource type="Script" uid="uid://cfyvouwltvh6q" path="res://inventory/inventory_item.gd" id="1_g38cs"]
+[ext_resource type="Texture2D" uid="uid://b7tnkr1nxkwjd" path="res://assetss/Tools/Basic_tools_and_meterials.png" id="2_xp357"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3ul3"]
+atlas = ExtResource("2_xp357")
+region = Rect2(32, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_g38cs")
+name = "Tiller"
+texture = SubResource("AtlasTexture_r3ul3")
+metadata/_custom_type_script = "uid://cfyvouwltvh6q"

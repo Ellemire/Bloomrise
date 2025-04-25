@@ -22,7 +22,11 @@ var item_db: Dictionary = {
 	"RedRose": preload("res://inventory/items/red_rose.tres"),
 	"RedRoseSeeds": preload("res://inventory/items/red_rose_seeds.tres"),
 	"Log": preload("res://inventory/items/wood.tres"),
-	"Stone": preload("res://inventory/items/stone.tres")
+	"Stone": preload("res://inventory/items/stone.tres"),
+	"Axe": preload("res://inventory/items/axe.tres"),
+	"Pickaxe": preload("res://inventory/items/pickaxe.tres"),
+	"Tiller": preload("res://inventory/items/tiller.tres"),
+	"WateringCan": preload("res://inventory/items/watering_can.tres")
 }
 
 var drop_scene_db := {
@@ -49,7 +53,11 @@ var drop_scene_db := {
 	"SunflowerSeeds": preload("res://scenes/objects/flowersSeeds/sunflower_seeds.tscn"),
 	
 	"Log": preload("res://scenes/objects/trees/log.tscn"),
-	"Stone": preload("res://scenes/objects/stones/stone.tscn")
+	"Stone": preload("res://scenes/objects/stones/stone.tscn"),
+	"Axe": preload("res://inventory/items/axe.tres"),
+	"Pickaxe": preload("res://inventory/items/pickaxe.tres"),
+	"Tiller": preload("res://inventory/items/tiller.tres"),
+	"WateringCan": preload("res://inventory/items/watering_can.tres")
 }
 
 

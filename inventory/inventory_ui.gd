@@ -2,7 +2,8 @@ extends Control
 
 @onready var inv: Inv = preload("res://inventory/playerinv.tres")
 @onready var slots: Array = $PanelContainer/MarginContainer/GridContainer.get_children()
-
+@onready var ToolsPanel: PanelContainer = $"../ToolsPanel"
+	
 var is_open = false
 
 func _ready():
@@ -13,6 +14,11 @@ func _ready():
 func update_slots():
 	for i in range(min(inv.slots.size(), slots.size())):
 		slots[i].update(inv.slots[i])
+		
+		# Podłącz sygnał jeśli nie jest jeszcze podłączony
+		if not slots[i].is_connected("item_sent_to_toolbar", Callable(self, "_on_item_sent_to_toolbar")):
+			slots[i].connect("item_sent_to_toolbar", Callable(self, "_on_item_sent_to_toolbar"))
+
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("inventory_open"):
@@ -20,6 +26,10 @@ func _process(delta: float) -> void:
 			close()
 		else:
 			open()
+
+func _on_item_sent_to_toolbar(item):
+	print("📥 Otrzymano item_sent_to_toolbar:", item.name)
+	ToolsPanel.add_item_to_first_free_slot(item)
 
 func open():
 	visible = true

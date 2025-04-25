@@ -1,35 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bjn7v5mhuia0u"]
+[gd_scene load_steps=4 format=3 uid="uid://bjn7v5mhuia0u"]
 
 [ext_resource type="Theme" uid="uid://1xnp12064f86" path="res://scenes/UI/tool_panel.tres" id="1_kf3o0"]
 [ext_resource type="Script" uid="uid://b7qexdirjl7hn" path="res://scenes/UI/tools_panel.gd" id="2_bcghl"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kf3o0"]
-load_path = "res://.godot/imported/pickaxe.png-9539731d819bbdade10f6d49e3f5d95f.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bcghl"]
-atlas = SubResource("CompressedTexture2D_kf3o0")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oeuwq"]
-load_path = "res://.godot/imported/Basic_tools_and_meterials.png-ae6f87fd2af7e7885e9941e46c89d68d.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jx3yg"]
-atlas = SubResource("CompressedTexture2D_oeuwq")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kv5om"]
-load_path = "res://.godot/imported/Basic_tools_and_meterials.png-ae6f87fd2af7e7885e9941e46c89d68d.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5dgqh"]
-atlas = SubResource("CompressedTexture2D_kv5om")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ykx2u"]
-load_path = "res://.godot/imported/Basic_tools_and_meterials.png-ae6f87fd2af7e7885e9941e46c89d68d.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hsw8x"]
-atlas = SubResource("CompressedTexture2D_ykx2u")
-region = Rect2(0, 0, 16, 16)
+[ext_resource type="PackedScene" uid="uid://beg1obtvwe50t" path="res://inventory/tool_slot.tscn" id="3_oeuwq"]
 
 [node name="ToolsPanel" type="PanelContainer"]
 offset_right = 40.0
@@ -44,47 +17,20 @@ layout_mode = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="ToolPickaxe" type="Button" parent="MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(26, 26)
+[node name="Tool_slot1" parent="MarginContainer/HBoxContainer" instance=ExtResource("3_oeuwq")]
 layout_mode = 2
-theme_type_variation = &"ToolsButton"
-icon = SubResource("AtlasTexture_bcghl")
-icon_alignment = 1
 
-[node name="ToolAxe" type="Button" parent="MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(26, 26)
+[node name="Tool_slot2" parent="MarginContainer/HBoxContainer" instance=ExtResource("3_oeuwq")]
 layout_mode = 2
-theme_type_variation = &"ToolsButton"
-icon = SubResource("AtlasTexture_jx3yg")
-icon_alignment = 1
 
-[node name="ToolTilling" type="Button" parent="MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(26, 26)
+[node name="Tool_slot3" parent="MarginContainer/HBoxContainer" instance=ExtResource("3_oeuwq")]
 layout_mode = 2
-theme_type_variation = &"ToolsButton"
-icon = SubResource("AtlasTexture_5dgqh")
-icon_alignment = 1
 
-[node name="ToolWatering" type="Button" parent="MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(26, 26)
+[node name="Tool_slot4" parent="MarginContainer/HBoxContainer" instance=ExtResource("3_oeuwq")]
 layout_mode = 2
-theme_type_variation = &"ToolsButton"
-icon = SubResource("AtlasTexture_hsw8x")
-icon_alignment = 1
 
-[node name="ToolWatering2" type="Button" parent="MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(26, 26)
+[node name="Tool_slot5" parent="MarginContainer/HBoxContainer" instance=ExtResource("3_oeuwq")]
 layout_mode = 2
-theme_type_variation = &"ToolsButton"
-icon_alignment = 1
 
-[node name="ToolWatering3" type="Button" parent="MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(26, 26)
+[node name="Tool_slot6" parent="MarginContainer/HBoxContainer" instance=ExtResource("3_oeuwq")]
 layout_mode = 2
-theme_type_variation = &"ToolsButton"
-icon_alignment = 1
-
-[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolPickaxe" to="." method="_on_tool_pickaxe_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolAxe" to="." method="_on_tool_axe_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTilling" to="." method="_on_tool_tilling_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolWatering" to="." method="_on_tool_watering_pressed"]
