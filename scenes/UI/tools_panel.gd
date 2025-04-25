@@ -1,6 +1,7 @@
 extends PanelContainer
 
 var tool_slots: Array = []
+@onready var inventory := InventoryManager.inventory
 
 func _ready():
 	call_deferred("_init_tool_slots")
@@ -33,20 +34,19 @@ func _on_tool_slot_pressed(slot):
 	if not slot.is_empty():
 		ToolManager.select_tool(slot.tool_data)
 
-func add_item_to_first_free_slot(item):
+func add_item_to_first_free_slot(item) -> bool:
 	print("🔧 Próbuję dodać:", item.name)
-	print("🧩 ToolsPanel instance:", self)
-	print("🧩 Tool slots count:", tool_slots.size())
 	for slot in tool_slots:
-		print("iteruje")
 		if slot.tool_data == DataTypes.Tools.None:
 			slot.set_item(item)
 			if slot.tool_data == DataTypes.Tools.None:
 				print("⚠️ Przedmiot nie był narzędziem – pominięto")
 				continue
 			print("✅ Dodano:", item.name)
-			return
+			return true
 	print("❌ Brak wolnych slotów lub brak narzędzi w przedmiocie")
+	return false
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("release_tool"):

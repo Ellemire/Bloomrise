@@ -9,6 +9,7 @@ enum Tools {
 	Log,
 	Stone,
 	BluebellSeeds,
+	BlueDaisySeeds,
 	LavendarSeeds,
 	OrangeLilySeeds,
 	PinkPeonySeeds,

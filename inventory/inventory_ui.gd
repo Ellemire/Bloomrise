@@ -27,9 +27,18 @@ func _process(delta: float) -> void:
 		else:
 			open()
 
-func _on_item_sent_to_toolbar(item):
-	print("📥 Otrzymano item_sent_to_toolbar:", item.name)
-	ToolsPanel.add_item_to_first_free_slot(item)
+func _on_item_sent_to_toolbar(item_slot: InvSlot):
+	print("📥 Otrzymano item_sent_to_toolbar:", item_slot.item.name)
+	var success = ToolsPanel.add_item_to_first_free_slot(item_slot.item)
+	if success:
+		print("🗑 Usuwam z inventory:", item_slot.item.name)
+		item_slot.amount -= 1
+		if item_slot.amount <= 0:
+			item_slot.item = null
+		inv.update_slots.emit()
+	else:
+		print("⚠️ Nie udało się dodać do toolbar – przedmiot zostaje w inventory")
+
 
 func open():
 	visible = true

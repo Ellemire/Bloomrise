@@ -54,10 +54,10 @@ var drop_scene_db := {
 	
 	"Log": preload("res://scenes/objects/trees/log.tscn"),
 	"Stone": preload("res://scenes/objects/stones/stone.tscn"),
-	"Axe": preload("res://inventory/items/axe.tres"),
-	"Pickaxe": preload("res://inventory/items/pickaxe.tres"),
-	"Tiller": preload("res://inventory/items/tiller.tres"),
-	"WateringCan": preload("res://inventory/items/watering_can.tres")
+	"Axe": preload("res://scenes/objects/tools/axe.tscn"),
+	"Pickaxe": preload("res://scenes/objects/tools/pickaxe.tscn"),
+	"Tiller": preload("res://scenes/objects/tools/tiller.tscn"),
+	"WateringCan": preload("res://scenes/objects/tools/watering_can.tscn")
 }
 
 

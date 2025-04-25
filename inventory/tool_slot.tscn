@@ -15,20 +15,9 @@ script = ExtResource("2_3mws8")
 custom_minimum_size = Vector2(32, 24)
 layout_mode = 0
 offset_right = 32.0
-offset_bottom = 24.0
+offset_bottom = 31.0
 
 [node name="Tool_icon" type="TextureRect" parent="CenterContainer"]
 layout_mode = 2
-
-[node name="AmountLabel" type="Label" parent="."]
-layout_mode = 2
-offset_left = 3.0
-offset_top = 19.0
-offset_right = 29.0
-offset_bottom = 28.0
-theme = ExtResource("1_3mws8")
-theme_type_variation = &"InventoryLabel"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

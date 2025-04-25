@@ -59,7 +59,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 
 [node name="Inventory_UI" parent="." instance=ExtResource("5_0jeyp")]
-offset_left = 471.0
-offset_top = 229.0
-offset_right = 634.0
-offset_bottom = 355.0
+offset_left = 474.0
+offset_top = 230.0
+offset_right = 637.0
+offset_bottom = 356.0

@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://cownp3qo2o136"]
+
+[ext_resource type="Theme" uid="uid://1xnp12064f86" path="res://scenes/UI/tool_panel.tres" id="1_a2arw"]
+[ext_resource type="Script" uid="uid://vjsmbcgm4y5x" path="res://inventory/chest_ui.gd" id="1_bpmv6"]
+[ext_resource type="FontFile" uid="uid://d2s6ogr3tyrcb" path="res://assetss/Fonts/SFPixelate.ttf" id="2_bpmv6"]
+[ext_resource type="PackedScene" uid="uid://bpypub51uutso" path="res://inventory/item_slot.tscn" id="2_fmi8v"]
+
+[node name="ChestUI" type="CanvasLayer"]
+script = ExtResource("1_bpmv6")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_right = 154.0
+offset_bottom = 118.0
+theme = ExtResource("1_a2arw")
+theme_type_variation = &"WoodPanel"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_bpmv6")
+theme_override_font_sizes/font_size = 10
+text = "Chest"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 0
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="Item_slot1" parent="PanelContainer/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("2_fmi8v")]
+layout_mode = 2
+
+[node name="Item_slot2" parent="PanelContainer/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("2_fmi8v")]
+layout_mode = 2
+
+[node name="Item_slot3" parent="PanelContainer/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("2_fmi8v")]
+layout_mode = 2
+
+[node name="Item_slot4" parent="PanelContainer/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("2_fmi8v")]
+layout_mode = 2
+
+[node name="Item_slot5" parent="PanelContainer/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("2_fmi8v")]
+layout_mode = 2
+
+[node name="Item_slot6" parent="PanelContainer/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("2_fmi8v")]
+layout_mode = 2
+
+[node name="Item_slot7" parent="PanelContainer/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("2_fmi8v")]
+layout_mode = 2
+
+[node name="Item_slot8" parent="PanelContainer/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("2_fmi8v")]
+layout_mode = 2
+
+[node name="Item_slot9" parent="PanelContainer/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("2_fmi8v")]
+layout_mode = 2
+
+[node name="Item_slot10" parent="PanelContainer/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("2_fmi8v")]
+layout_mode = 2
+
+[node name="Item_slot11" parent="PanelContainer/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("2_fmi8v")]
+layout_mode = 2
+
+[node name="Item_slot12" parent="PanelContainer/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("2_fmi8v")]
+layout_mode = 2
