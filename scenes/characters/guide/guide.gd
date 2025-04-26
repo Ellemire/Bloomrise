@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var interactable_label_component: Control = $InteractableLabelComponent
 @onready var interactable_component: InteractableComponent = $InteractableComponent
+var tutorial_finished = false
 
 var balloon_scene = preload("res://dialogues/game_dialogue_balloon.tscn")
 var dialogue_resource: DialogueResource = preload("res://dialogues/conversations/guide.dialogue")
@@ -25,4 +26,18 @@ func _unhandled_input(event: InputEvent) -> void:
 		var balloon = balloon_scene.instantiate() as BaseGameDialogueBalloon
 		get_tree().root.add_child(balloon)
 
-		balloon.start(dialogue_resource, "start") # 🌟 Zawsze zaczynamy rozmowę od "start"
+		match GameState.guide_checkpoint:
+			"start":
+				balloon.start(dialogue_resource, "start")
+			"after_gathering":
+				balloon.start(dialogue_resource, "pause") # <- po zbieraniu wracamy do ~pause
+			"after_inv":
+				balloon.start(dialogue_resource, "after_inv_pause")
+			"after_chest":
+				balloon.start(dialogue_resource, "after_chest_pause")
+			"after_planting":
+				balloon.start(dialogue_resource, "after_planting_pause")
+			"after_watering":
+				balloon.start(dialogue_resource, "after_watering_pause")
+			_:
+				balloon.start(dialogue_resource, "start")

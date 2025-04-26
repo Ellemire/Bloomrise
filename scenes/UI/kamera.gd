@@ -1,0 +1,17 @@
+extends Camera2D
+
+@export var follow_speed: float = 5.0 # Im większe, tym szybciej dogania
+
+var target: Node2D
+
+func _ready() -> void:
+	target = get_parent() # albo przypisz ręcznie np. playera
+	make_current()
+
+func _process(delta: float) -> void:
+	if not target:
+		return
+
+	# Smooth movement - lerpowanie pozycji
+	global_position = lerp(global_position, target.global_position, follow_speed * delta)
+	global_position = global_position.round()

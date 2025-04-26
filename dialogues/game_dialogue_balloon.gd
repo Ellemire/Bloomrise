@@ -47,3 +47,23 @@ func _on_mutated(mutation: Dictionary) -> void:
 		print("🚿 Rose Seeds!")
 		var item = InventoryManager.item_db["RedRoseSeeds"]
 		ToolsPanel.add_item_to_first_free_slot(item)
+	
+	elif mutation.has("checkpoint_after_gathering"):
+		GameState.guide_checkpoint = "after_gathering"
+		queue_free()
+
+	elif mutation.has("checkpoint_after_chest"):
+		GameState.guide_checkpoint = "after_chest"
+		queue_free()
+
+	elif mutation.has("checkpoint_after_planting"):
+		GameState.guide_checkpoint = "after_planting"
+		queue_free()
+
+	elif mutation.has("checkpoint_after_watering"):
+		GameState.guide_checkpoint = "after_watering"
+		queue_free()
+	
+	elif mutation.has("checkpoint_after_inv"):
+		GameState.guide_checkpoint = "after_inv"
+		queue_free()

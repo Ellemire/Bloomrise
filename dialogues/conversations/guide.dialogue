@@ -1,12 +1,12 @@
 ~ start
-Wisowl: [[Hi|Hello|Good morning]], welcome to Bloomrise!
-Wisowl: I'm Wisowl, your guide and companion on this journey.
+Wisowl: [[Hi|Hello|Good morning]] and welcome to Bloomrise!
+Wisowl: I'm Wisowl, your guide and companion on this wonderful journey.
 Wisowl: Before you start, would you like a quick tutorial?
 - Yes, please. => tutorial
 - No, I already know everything. => skip_tutorial
 
 ~ skip_tutorial
-Wisowl: Oh, confident one! Good luck then. 🌟
+Wisowl: Oho, a confident spirit! I like that. Good luck out there! 🌟
 @mutation tool_pickaxe
 @mutation tool_axe
 @mutation tool_tiller
@@ -15,61 +15,87 @@ Wisowl: Oh, confident one! Good luck then. 🌟
 => END
 
 ~ tutorial
-Wisowl: Great! Let's begin your adventure!
-Wisowl: First, let's learn to gather some basic resources. 🪨🌳
+Wisowl: Fantastic! Let’s get you started. 🌟
+Wisowl: First things first — let's gather some basic resources! 🪨🌳
 @mutation tool_pickaxe
 @mutation tool_axe
 Wisowl: I just gave you a Pickaxe and an Axe!
-Wisowl: To use any tool, select it on your toolbar using Left Mouse Button (LMB), then click on the world with LMB to use it.
-Wisowl: Look around — you will find stones and trees to gather materials from.
+Wisowl: Equip them from your toolbar (use Left Mouse Button), then click Q on rocks and trees to gather materials.
 Wisowl: Stones and wood are valuable resources — you can sell them to earn coins! 🪙
-Wisowl: Once you feel ready, come back to me.
-=> pause
+Wisowl:  Gather a few resources, then we'll move on!
+@mutation checkpoint_after_gathering
 
 ~ pause
-Wisowl: Ready to continue?
-- Yes, next! => inventory_tip
-- I need a moment. => wait_more
+Wisowl: Gathered some materials? Ready for the next step?
+- Yes, show me more! => inventory_tip
+- Still collecting... => wait_more_after_gathering
 
-~ wait_more
-Wisowl: Take your time. Come back when you're ready.
-=> pause
+~ wait_more_after_gathering
+Wisowl: No rush — explore and gather as much as you like! 🪨🌳
+@mutation checkpoint_after_gathering
+
 
 ~ inventory_tip
-Wisowl: Now let's learn about your inventory! 🎒
+Wisowl: Now, let’s take a look at your Inventory! 🎒
 Wisowl: Press E to open your Inventory. You can see there your collected stones and logs.
 Wisowl: To move an item to your toolbar, click it with LMB.
-Wisowl: To throw an item away, right-click it (PPM).
-Wisowl: If you want to move an item back from the toolbar into your inventory, right-click it again (PPM).
-Wisowl: Remember — Toolbar items are only your tools and seeds!
+Wisowl: To throw an item away, right-click it (RMB).
+Wisowl: If you want to move an item back from the toolbar into your inventory, right-click it again (RMB).
+Wisowl: Explore your inventory a bit and come back when you're ready. 🎒
+@mutation checkpoint_after_inv
 
-Wisowl: Also, in your house you will find a Chest! 🏠
-Wisowl: It works just like your inventory — but to move items to or from the chest, hold Shift while clicking.
+~ after_inv_pause
+Wisowl: Did you check your inventory?
+- Yes, let's continue! => chest_tip
+- I need a moment. => wait_more_after_inv
 
+~ wait_more_after_inv
+Wisowl: Take your time exploring your inventory. 🎒
+@mutation checkpoint_after_inv
 
-Wisowl: Ready to move on?
-- Let's plant something! => planting
-- Maybe later. => end_conversation
+~ chest_tip
+Wisowl: In your house you will find a Chest! To open it, stand close to the chest and click on it.
+Wisowl: Hold Shift while clicking to move items between your inventory and the chest.
+Wisowl: Feel free to check out your house and explore a bit before we continue. 🏡
+@mutation checkpoint_after_chest
+
+~ after_chest_pause
+Wisowl: Ready to plant something?
+- Let’s do it!  => planting
+- IGive me a moment. => wait_more_after_chest
+
+~ wait_more_after_chest
+Wisowl: Take your time. Explore your house and the surroundings. 🏠
+@mutation checkpoint_after_chest
 
 ~ planting
 Wisowl: Great! You need to prepare the soil first.
 @mutation tool_tiller
 @mutation rose_seeds
 Wisowl: I've given you a Tiller. Use it to till the ground and get it ready for planting.
-Wisowl: After that, plant seeds, water them daily, and soon they will grow!
+Wisowl: Then, select the Seeds and plant them! 🌹
+Wisowl:  Practice and come back when you're ready.
+@mutation checkpoint_after_planting
 
-Wisowl: Would you like a tip on watering your crops?
-- Yes, please! => watering
-- No, I'm good. => end_conversation
+~ after_planting_pause
+Wisowl: Seeds planted? Time to water!
+- Yes, ready! => watering
+- I need a moment. => wait_more_after_planting
+
+~ wait_more_after_planting
+Wisowl: Planting takes patience. Take your time! 🌱
+@mutation checkpoint_after_planting
 
 ~ watering
 Wisowl: Here's a Watering Can! 🌱💧
 @mutation tool_watering_can
 Wisowl: Water your plants every day to keep them healthy and help them grow strong.
+Wisowl: Give it a try!
+@mutation checkpoint_after_watering
 
-
-Wisowl: Lastly — if you follow the road leading from your farm, you will reach a Shop. 🛒
-Wisowl: There, you can sell items you collect and buy new seeds to grow more plants!
+~ after_watering_pause
+Wisowl: One last thing — follow the road from your house to find the shop! 🛒
+Wisowl: You can sell your goods and buy new seeds there.
 => end_conversation
 
 ~ end_conversation

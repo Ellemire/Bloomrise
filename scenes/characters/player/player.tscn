@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://c13tmr8qqiem0"]
+[gd_scene load_steps=65 format=3 uid="uid://c13tmr8qqiem0"]
 
 [ext_resource type="Texture2D" uid="uid://dhcyoyq3twqas" path="res://assetss/MainCharacter/Basic Charakter Actions.png" id="1_686vu"]
 [ext_resource type="Script" uid="uid://bbh8x7fdotori" path="res://scenes/characters/player/player.gd" id="1_mk55u"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://bm2g85ftl35se" path="res://scenes/characters/player/watering_state.gd" id="10_3xnwo"]
 [ext_resource type="Script" uid="uid://dynbum0bgwav1" path="res://scenes/characters/player/mining_state.gd" id="11_djydg"]
 [ext_resource type="PackedScene" uid="uid://cjnh2c4ky6hkf" path="res://scenes/components/hit_component.tscn" id="12_bsn6e"]
+[ext_resource type="PackedScene" uid="uid://enebjtq3jf32" path="res://scenes/UI/kamera.tscn" id="13_blysn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6avc5"]
 atlas = ExtResource("1_686vu")
@@ -540,3 +541,5 @@ position = Vector2(0, -3)
 [node name="HitComponentCollisionShape2D" type="CollisionShape2D" parent="HitComponent"]
 shape = SubResource("CircleShape2D_bsn6e")
 debug_color = Color(0.950529, 2.5028e-06, 0.56815, 0.42)
+
+[node name="Kamera" parent="." instance=ExtResource("13_blysn")]
