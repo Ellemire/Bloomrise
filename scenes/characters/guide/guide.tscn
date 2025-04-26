@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=3 uid="uid://cjw7letek1w48"]
+
+[ext_resource type="Texture2D" uid="uid://c55axawa6cw8i" path="res://assetss/MainCharacter/guide.png" id="1_fuflw"]
+[ext_resource type="Script" uid="uid://c2s6alkcpjwl0" path="res://scenes/characters/guide/guide.gd" id="1_pdv8u"]
+[ext_resource type="Texture2D" uid="uid://c6a0ew6p864ek" path="res://assetss/MainCharacter/guide — kopia.png" id="2_rl4q2"]
+[ext_resource type="PackedScene" uid="uid://cpbq4aser3ta4" path="res://scenes/components/interactable_component.tscn" id="3_g6y3g"]
+[ext_resource type="PackedScene" uid="uid://bwf0xl1a2xsm2" path="res://scenes/components/interactable_label_component.tscn" id="5_qnx84"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fuflw"]
+atlas = ExtResource("1_fuflw")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl4q2"]
+atlas = ExtResource("2_rl4q2")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g6y3g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fuflw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rl4q2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yvxhl"]
+radius = 26.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pdv8u"]
+radius = 4.0
+
+[node name="Guide" type="Node2D"]
+script = ExtResource("1_pdv8u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_g6y3g")
+animation = &"idle"
+frame_progress = 0.220979
+
+[node name="InteractableComponent" parent="." instance=ExtResource("3_g6y3g")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+position = Vector2(0, -12)
+shape = SubResource("CircleShape2D_yvxhl")
+
+[node name="InteractableLabelComponent" parent="." instance=ExtResource("5_qnx84")]
+offset_left = -24.0
+offset_top = -37.0
+offset_right = -6.0
+offset_bottom = -19.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_pdv8u")
+debug_color = Color(0.966863, 9.62615e-08, 0.477876, 0.42)

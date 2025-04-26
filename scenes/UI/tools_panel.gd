@@ -16,8 +16,6 @@ func _init_tool_slots():
 			slot.add_to_group("tool_slot")
 		print("✅ Gotowe! Sloty załadowane:", tool_slots.size())
 		print("🎯 Loaded ToolsPanel instance:", self)
-
-		_add_initial_tools()
 	else:
 		print("❌ Nadal nie widzę HBoxContainer.")
 

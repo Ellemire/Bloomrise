@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://twyhfwevndsj"]
+[gd_scene load_steps=30 format=4 uid="uid://twyhfwevndsj"]
 
 [ext_resource type="PackedScene" uid="uid://cpulfwlny6ucj" path="res://scenes/components/WeatherEffectComponent.tscn" id="1_655cm"]
 [ext_resource type="PackedScene" uid="uid://dumhg3qnfib2g" path="res://scenes/UI/hud.tscn" id="2_8ukjb"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://c6jttq6e83nn6" path="res://scenes/objects/flowersPlanting/purple_orchid.tscn" id="21_teij2"]
 [ext_resource type="PackedScene" uid="uid://bcarux4cu0y8p" path="res://scenes/objects/flowersSeeds/orange_lily_seeds.tscn" id="26_n0sr7"]
 [ext_resource type="PackedScene" uid="uid://dqwf8ripqptru" path="res://scenes/objects/flowersSeeds/lavendar_seeds.tscn" id="27_078tc"]
+[ext_resource type="PackedScene" uid="uid://cjw7letek1w48" path="res://scenes/characters/guide/guide.tscn" id="27_tdwgn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_notc5"]
 texture = ExtResource("6_b1ler")
@@ -130,6 +131,18 @@ tile_set = ExtResource("11_qesy0")
 [node name="BushesFlowers" type="TileMapLayer" parent="Exterior"]
 tile_set = ExtResource("5_25ngf")
 
+[node name="Guide" parent="." instance=ExtResource("27_tdwgn")]
+position = Vector2(354, 198)
+
+[node name="Chest" type="Node2D" parent="."]
+
+[node name="ChestUI" parent="Chest" instance=ExtResource("13_wocnc")]
+offset = Vector2(474, 85)
+transform = Transform2D(1, 0, 0, 1, 474, 85)
+
+[node name="Chest" parent="Chest" instance=ExtResource("14_p4sxf")]
+position = Vector2(426, 119)
+
 [node name="Player" parent="." instance=ExtResource("12_i3u7j")]
 position = Vector2(404, 249)
 
@@ -188,12 +201,3 @@ position = Vector2(461, 314)
 
 [node name="Log2" parent="." instance=ExtResource("13_ktudl")]
 position = Vector2(490, 327)
-
-[node name="Chest" type="Node2D" parent="."]
-
-[node name="ChestUI" parent="Chest" instance=ExtResource("13_wocnc")]
-offset = Vector2(474, 85)
-transform = Transform2D(1, 0, 0, 1, 474, 85)
-
-[node name="Chest" parent="Chest" instance=ExtResource("14_p4sxf")]
-position = Vector2(426, 119)

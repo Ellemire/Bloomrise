@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwf0xl1a2xsm2"]
+
+[ext_resource type="Texture2D" uid="uid://baq6ybmknhspc" path="res://assetss/UI/Sprite sheet for Basic Pack.png" id="1_am6vt"]
+[ext_resource type="FontFile" uid="uid://c5hc23w342t5i" path="res://assetss/Fonts/ZX Palm.ttf" id="2_kjian"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17df2"]
+atlas = ExtResource("1_am6vt")
+region = Rect2(519, 104, 18, 17)
+
+[node name="InteractableLabelComponent" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 18.0
+offset_bottom = 18.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 18.0
+offset_bottom = 18.0
+texture = SubResource("AtlasTexture_17df2")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 18.0
+offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("2_kjian")
+theme_override_font_sizes/font_size = 8
+text = "R"
+horizontal_alignment = 1
+vertical_alignment = 1

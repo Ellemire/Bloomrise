@@ -1,0 +1,79 @@
+~ start
+Wisowl: [[Hi|Hello|Good morning]], welcome to Bloomrise!
+Wisowl: I'm Wisowl, your guide and companion on this journey.
+Wisowl: Before you start, would you like a quick tutorial?
+- Yes, please. => tutorial
+- No, I already know everything. => skip_tutorial
+
+~ skip_tutorial
+Wisowl: Oh, confident one! Good luck then. 🌟
+@mutation tool_pickaxe
+@mutation tool_axe
+@mutation tool_tiller
+@mutation tool_watering_can
+@mutation rose_seeds
+=> END
+
+~ tutorial
+Wisowl: Great! Let's begin your adventure!
+Wisowl: First, let's learn to gather some basic resources. 🪨🌳
+@mutation tool_pickaxe
+@mutation tool_axe
+Wisowl: I just gave you a Pickaxe and an Axe!
+Wisowl: To use any tool, select it on your toolbar using Left Mouse Button (LMB), then click on the world with LMB to use it.
+Wisowl: Look around — you will find stones and trees to gather materials from.
+Wisowl: Stones and wood are valuable resources — you can sell them to earn coins! 🪙
+Wisowl: Once you feel ready, come back to me.
+=> pause
+
+~ pause
+Wisowl: Ready to continue?
+- Yes, next! => inventory_tip
+- I need a moment. => wait_more
+
+~ wait_more
+Wisowl: Take your time. Come back when you're ready.
+=> pause
+
+~ inventory_tip
+Wisowl: Now let's learn about your inventory! 🎒
+Wisowl: Press E to open your Inventory. You can see there your collected stones and logs.
+Wisowl: To move an item to your toolbar, click it with LMB.
+Wisowl: To throw an item away, right-click it (PPM).
+Wisowl: If you want to move an item back from the toolbar into your inventory, right-click it again (PPM).
+Wisowl: Remember — Toolbar items are only your tools and seeds!
+
+Wisowl: Also, in your house you will find a Chest! 🏠
+Wisowl: It works just like your inventory — but to move items to or from the chest, hold Shift while clicking.
+
+
+Wisowl: Ready to move on?
+- Let's plant something! => planting
+- Maybe later. => end_conversation
+
+~ planting
+Wisowl: Great! You need to prepare the soil first.
+@mutation tool_tiller
+@mutation rose_seeds
+Wisowl: I've given you a Tiller. Use it to till the ground and get it ready for planting.
+Wisowl: After that, plant seeds, water them daily, and soon they will grow!
+
+Wisowl: Would you like a tip on watering your crops?
+- Yes, please! => watering
+- No, I'm good. => end_conversation
+
+~ watering
+Wisowl: Here's a Watering Can! 🌱💧
+@mutation tool_watering_can
+Wisowl: Water your plants every day to keep them healthy and help them grow strong.
+
+
+Wisowl: Lastly — if you follow the road leading from your farm, you will reach a Shop. 🛒
+Wisowl: There, you can sell items you collect and buy new seeds to grow more plants!
+=> end_conversation
+
+~ end_conversation
+Wisowl: That's all I can teach you for now.
+Wisowl: Good luck, Bloomseeker! 🌟
+Wisowl: Your journey in Bloomrise begins!
+=> END
