@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0pi0h4sidru1"]
+[gd_scene load_steps=5 format=3 uid="uid://c0pi0h4sidru1"]
 
 [ext_resource type="Theme" uid="uid://dr7jls8tp4rcw" path="res://scenes/UI/game_ui_theme.tres" id="1_iv8ii"]
+[ext_resource type="Script" uid="uid://d3156ec24fus0" path="res://scenes/UI/game_menu_screen.gd" id="1_nccrm"]
 [ext_resource type="Texture2D" uid="uid://di6o5qeeu2mff" path="res://assetss/UI/Logo.png" id="2_ttouv"]
 
+[sub_resource type="GDScript" id="GDScript_67wv4"]
+script/source = "extends Button
+"
+
 [node name="GameMenuScreen" type="CanvasLayer"]
+script = ExtResource("1_nccrm")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -24,8 +30,10 @@ custom_minimum_size = Vector2(100, 29)
 layout_mode = 2
 theme = ExtResource("1_iv8ii")
 text = "START"
+script = SubResource("GDScript_67wv4")
 
 [node name="SaveGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(100, 29)
 layout_mode = 2
 theme = ExtResource("1_iv8ii")
@@ -54,3 +62,7 @@ text = "BLOOMRISE"
 layout_mode = 2
 texture = ExtResource("2_ttouv")
 expand_mode = 3
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/SaveGameButton" to="." method="_on_save_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
