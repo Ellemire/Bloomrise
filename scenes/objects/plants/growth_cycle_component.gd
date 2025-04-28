@@ -13,6 +13,7 @@ var current_day: int
 
 func _ready() -> void:
 	DayAndNightCycleManager.time_tick_day.connect(on_time_tick_day)
+	WeatherManager.weather_changed.connect(on_weather_changed)
 	
 func on_time_tick_day(day: int) -> void:
 	if is_watered:
@@ -21,6 +22,7 @@ func on_time_tick_day(day: int) -> void:
 			
 		growth_states(starting_day, day)
 		harvest_state(starting_day, day)
+		
 			
 func growth_states(starting_day: int, current_day: int):
 	if current_growth_state == DataTypes.GrowthStates.Maturity:
@@ -37,6 +39,8 @@ func growth_states(starting_day: int, current_day: int):
 	
 	if current_growth_state == DataTypes.GrowthStates.Maturity:
 		crop_maturity.emit()
+		
+	is_watered = false
 	
 func harvest_state(starting_day: int, current_day: int):
 	if current_growth_state == DataTypes.GrowthStates.Harvesting:
@@ -50,4 +54,7 @@ func harvest_state(starting_day: int, current_day: int):
 	
 func get_current_growth_state() -> DataTypes.GrowthStates:
 	return current_growth_state
-	
+
+func on_weather_changed(new_weather: int) -> void:
+	if new_weather == WeatherManager.Weather.RAINY:
+		is_watered = true

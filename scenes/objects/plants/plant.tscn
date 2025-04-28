@@ -26,10 +26,8 @@ vframes = 4
 region_rect = Rect2(0, 0, 144, 128)
 
 [node name="WateringParticles" parent="." instance=ExtResource("2_l8fdw")]
-visible = false
 
 [node name="FloweringParticles" parent="." instance=ExtResource("3_yopfj")]
-visible = false
 
 [node name="GrowthCycleComponent" parent="." instance=ExtResource("5_v1u08")]
 

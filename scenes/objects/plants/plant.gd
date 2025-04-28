@@ -49,9 +49,7 @@ func update_sprite_for_state(state: int) -> void:
 func on_hurt(hit_damage: int) -> void:
 	print("Plant is watered!")
 	if !growth_cycle_component.is_watered:
-		watering_particles.emitting = true
-		await get_tree().create_timer(5.0).timeout
-		watering_particles.emitting = false
+		emit_watering_particles()
 		growth_cycle_component.is_watered = true
 
 func on_crop_maturity() -> void:
@@ -63,3 +61,8 @@ func on_crop_harvesting() -> void:
 	get_parent().add_child(harvest_instance)
 	
 	queue_free()
+		
+func emit_watering_particles() -> void:
+	watering_particles.emitting = true
+	await get_tree().create_timer(2.0).timeout
+	watering_particles.emitting = false
