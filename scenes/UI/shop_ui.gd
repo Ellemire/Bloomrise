@@ -16,15 +16,15 @@ func _ready():
 
 func _create_items():
 	var item_data = [
-		{"id": "seed_1", "name": "Red Rose", "price": 5, "icon_index": 0},
-		{"id": "seed_2", "name": "Orange Lily", "price": 6, "icon_index": 1},
-		{"id": "seed_3", "name": "Blue Daisy", "price": 7, "icon_index": 2},
+		{"id": "seed_1", "name": "RedRose", "price": 5, "icon_index": 0},
+		{"id": "seed_2", "name": "OrangeLily", "price": 6, "icon_index": 1},
+		{"id": "seed_3", "name": "BlueDaisy", "price": 7, "icon_index": 2},
 		{"id": "seed_4", "name": "Sunflower", "price": 4, "icon_index": 3},
 		{"id": "seed_5", "name": "Bluebell", "price": 6, "icon_index": 4},
 		{"id": "seed_6", "name": "Lavendar", "price": 5, "icon_index": 5},
-		{"id": "seed_7", "name": "Orchid", "price": 8, "icon_index": 6},
-		{"id": "seed_8", "name": "Pink Tulip", "price": 9, "icon_index": 7},
-		{"id": "seed_9", "name": "Pink Peony", "price": 10, "icon_index": 8},
+		{"id": "seed_7", "name": "PurpleOrchid", "price": 8, "icon_index": 6},
+		{"id": "seed_8", "name": "PinkTulip", "price": 9, "icon_index": 7},
+		{"id": "seed_9", "name": "PinkPeony", "price": 10, "icon_index": 8},
 	]
 
 	for item in item_data:
@@ -55,6 +55,7 @@ func _buy_item(item):
 	if player_gold >= item.price:
 		player_gold -= item.price
 		update_gold()
+		InventoryManager.add_collectable(item.name + "Seeds")
 		print("Bought:", item.name)
 	else:
 		print("Not enough gold!")

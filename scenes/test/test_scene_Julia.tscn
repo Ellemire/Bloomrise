@@ -104,6 +104,7 @@ position = Vector2(176, 242)
 [node name="Seller" parent="Shop" instance=ExtResource("8_n0w7j")]
 
 [node name="ShopUI" parent="Shop" instance=ExtResource("7_3kgl4")]
+visible = false
 
 [node name="Exterior" type="Node2D" parent="."]
 z_index = 1
