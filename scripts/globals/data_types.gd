@@ -22,10 +22,9 @@ enum Tools {
 }
 
 enum GrowthStates {
-	Seed,
-	Harvesting,
 	Germination,
 	Vegetative,
 	Reproduction,
 	Maturity,
+	Harvesting
 }

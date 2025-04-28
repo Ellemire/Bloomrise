@@ -7,7 +7,7 @@ const WEATHER = preload("res://assetss/UI/WeatherIcons/Weather.png")
 
 
 @export var normal_speed: int = 5
-@export var fast_speed: int = 100
+@export var fast_speed: int = 200
 
 func _ready() -> void:
 	DayAndNightCycleManager.time_tick.connect(on_time_tick)

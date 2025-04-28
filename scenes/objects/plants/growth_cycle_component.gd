@@ -29,7 +29,7 @@ func growth_states(starting_day: int, current_day: int):
 	var num_states = 5
 	
 	var growth_days_passed = (current_day - starting_day) % num_states
-	var states_index = growth_days_passed % num_states - 1
+	var states_index = growth_days_passed % num_states
 	
 	current_growth_state = states_index
 	
