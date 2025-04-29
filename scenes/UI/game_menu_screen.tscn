@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0pi0h4sidru1"]
+[gd_scene load_steps=6 format=3 uid="uid://c0pi0h4sidru1"]
 
 [ext_resource type="Theme" uid="uid://dr7jls8tp4rcw" path="res://scenes/UI/game_ui_theme.tres" id="1_iv8ii"]
 [ext_resource type="Script" uid="uid://d3156ec24fus0" path="res://scenes/UI/game_menu_screen.gd" id="1_nccrm"]
 [ext_resource type="Texture2D" uid="uid://di6o5qeeu2mff" path="res://assetss/UI/Logo.png" id="2_ttouv"]
+[ext_resource type="Texture2D" uid="uid://dxi2joh3n2x7c" path="res://scenes/UI/20250429_1207_Cozy Cat Farming_simple_compose_01jt0g4y2cewb8qwadexpzzre9.png" id="4_67wv4"]
 
 [sub_resource type="GDScript" id="GDScript_67wv4"]
 script/source = "extends Button
@@ -10,6 +11,14 @@ script/source = "extends Button
 
 [node name="GameMenuScreen" type="CanvasLayer"]
 script = ExtResource("1_nccrm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 4.0
+offset_top = -10.0
+offset_right = 1594.0
+offset_bottom = 1014.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_67wv4")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -21,8 +30,8 @@ theme = ExtResource("1_iv8ii")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
+size_flags_horizontal = 8
+size_flags_vertical = 8
 theme = ExtResource("1_iv8ii")
 
 [node name="StartGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
@@ -47,6 +56,7 @@ theme = ExtResource("1_iv8ii")
 text = "EXIT"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+visible = false
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_horizontal = 8

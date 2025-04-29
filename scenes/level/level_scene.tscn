@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://ckorr1pj0dt5a"]
+[gd_scene load_steps=22 format=4 uid="uid://ckorr1pj0dt5a"]
 
 [ext_resource type="PackedScene" uid="uid://cglryq6nbfl75" path="res://scenes/components/day_and_night_cycle_component.tscn" id="1_5rubo"]
 [ext_resource type="PackedScene" uid="uid://dumhg3qnfib2g" path="res://scenes/UI/hud.tscn" id="1_nm8e3"]
@@ -12,10 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://cqjlqfvu2s187" path="res://assetss/TileSets/Water.png" id="6_shrs6"]
 [ext_resource type="PackedScene" uid="uid://b3kpwsmb2oe6h" path="res://scenes/UI/ShopUI.tscn" id="7_e8kwp"]
 [ext_resource type="PackedScene" uid="uid://c27t8i6lyao4c" path="res://scenes/components/crops_cursor_component.tscn" id="7_ppdpw"]
+[ext_resource type="Script" uid="uid://nsjvkuuu5hso" path="res://scenes/components/crops_cursor_component.gd" id="8_18uvy"]
 [ext_resource type="PackedScene" uid="uid://qkitahuoo31" path="res://scenes/components/field_cursor_component.tscn" id="8_155vy"]
 [ext_resource type="PackedScene" uid="uid://bwjmh1u8mmla1" path="res://scenes/characters/shopkeeper/seller.tscn" id="8_mwav5"]
+[ext_resource type="Script" uid="uid://da4tk12m42xnm" path="res://scenes/components/field_cursor_component.gd" id="10_k56ju"]
 [ext_resource type="PackedScene" uid="uid://cownp3qo2o136" path="res://inventory/chest_ui.tscn" id="13_d1pbj"]
 [ext_resource type="PackedScene" uid="uid://cv3cpcx1y4xc8" path="res://inventory/chest.tscn" id="14_4codf"]
+[ext_resource type="PackedScene" uid="uid://cjw7letek1w48" path="res://scenes/characters/guide/guide.tscn" id="17_155vy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_notc5"]
 texture = ExtResource("6_shrs6")
@@ -87,9 +90,16 @@ tile_set = SubResource("TileSet_d1pbj")
 [node name="TilledSoil" type="TileMapLayer" parent="GameTileMap"]
 tile_set = ExtResource("1_wvq6k")
 
-[node name="CropsCursorComponent" parent="." instance=ExtResource("7_ppdpw")]
+[node name="CropFileds" type="Node2D" parent="."]
 
-[node name="FiledCursorComponent" parent="." instance=ExtResource("8_155vy")]
+[node name="CropsCursorComponent" parent="." node_paths=PackedStringArray("tilled_soil_tilemap_layer") instance=ExtResource("7_ppdpw")]
+script = ExtResource("8_18uvy")
+tilled_soil_tilemap_layer = NodePath("../GameTileMap/TilledSoil")
+
+[node name="FiledCursorComponent" parent="." node_paths=PackedStringArray("grass_tilemap_layer", "tilled_soil_tilemap_layer") instance=ExtResource("8_155vy")]
+script = ExtResource("10_k56ju")
+grass_tilemap_layer = NodePath("../GameTileMap/Grass")
+tilled_soil_tilemap_layer = NodePath("../GameTileMap/TilledSoil")
 
 [node name="House" parent="." instance=ExtResource("3_rjb07")]
 
@@ -138,3 +148,6 @@ position = Vector2(404, 249)
 
 [node name="Chest" parent="Chest" instance=ExtResource("14_4codf")]
 position = Vector2(347, 228)
+
+[node name="Guide" parent="." instance=ExtResource("17_155vy")]
+position = Vector2(346, 193)

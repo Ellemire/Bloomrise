@@ -47,7 +47,6 @@ func update_sprite_for_state(state: int) -> void:
 	sprite_2d.frame = frames_per_stage * state + start_frame_offset
 
 func on_hurt(hit_damage: int) -> void:
-	print("Plant is watered!")
 	if !growth_cycle_component.is_watered:
 		emit_watering_particles()
 		growth_cycle_component.is_watered = true
