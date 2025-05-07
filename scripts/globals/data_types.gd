@@ -17,8 +17,6 @@ enum Tools {
 	PurpleOrchidSeeds,
 	RedRoseSeeds,
 	SunflowerSeeds,
-	PlantRose,	#u should delete this and use RoseSeeds
-	PlantSunflower #u should delete this and use SunflowerSeeds
 }
 
 enum GrowthStates {

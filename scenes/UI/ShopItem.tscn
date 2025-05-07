@@ -15,7 +15,7 @@ atlas = ExtResource("5_a7dsx")
 region = Rect2(2, 2, 12, 12)
 
 [node name="ShopItem" type="Control"]
-custom_minimum_size = Vector2(96, 108)
+custom_minimum_size = Vector2(100, 130)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,13 +27,13 @@ grow_vertical = 2
 self_modulate = Color(0.37568, 0.285668, 0.159271, 1)
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 0
-offset_right = 65.0
-offset_bottom = 83.0
+offset_right = 90.0
+offset_bottom = 119.0
 theme = ExtResource("1_wj65w")
 alignment = 1
 
 [node name="Panel" type="Panel" parent="MarginContainer"]
-custom_minimum_size = Vector2(85, 85)
+custom_minimum_size = Vector2(85, 100)
 layout_mode = 2
 theme = ExtResource("2_udfg0")
 theme_type_variation = &"WoodPanel"
@@ -59,11 +59,15 @@ texture = SubResource("AtlasTexture_i1atw")
 stretch_mode = 5
 
 [node name="NameLabel" type="Label" parent="MarginContainer/Panel/MarginContainer"]
+custom_minimum_size = Vector2(74, 24)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("4_2jwl7")
 theme_override_font_sizes/font_size = 10
 text = "Rose"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer"]
 layout_mode = 2
@@ -81,6 +85,25 @@ layout_mode = 2
 texture = SubResource("AtlasTexture_38bbl")
 stretch_mode = 5
 
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="MinusButton" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "-"
+
+[node name="Number" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_2jwl7")
+theme_override_font_sizes/font_size = 10
+text = "0"
+
+[node name="PlusButton" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "+"
+
 [node name="BuyButton" type="Button" parent="MarginContainer"]
 custom_minimum_size = Vector2(20, 15)
 layout_mode = 2
@@ -88,3 +111,12 @@ size_flags_vertical = 4
 theme = ExtResource("1_wj65w")
 theme_override_font_sizes/font_size = 10
 text = "Buy"
+
+[node name="SellButton" type="Button" parent="MarginContainer"]
+visible = false
+custom_minimum_size = Vector2(20, 15)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("1_wj65w")
+theme_override_font_sizes/font_size = 10
+text = "Sell"

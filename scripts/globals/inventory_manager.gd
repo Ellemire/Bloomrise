@@ -76,3 +76,6 @@ func add_collectable(name: String) -> bool:
 	else:
 		push_warning("❌ Item not found in database: " + name)
 		return false
+		
+func remove_item(item: InvItem, amount: int) -> bool:
+	return inventory.remove(item, amount)

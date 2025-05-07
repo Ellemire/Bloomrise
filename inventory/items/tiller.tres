@@ -11,4 +11,5 @@ region = Rect2(32, 0, 16, 16)
 script = ExtResource("1_g38cs")
 name = "Tiller"
 texture = SubResource("AtlasTexture_r3ul3")
+sell_price = 0
 metadata/_custom_type_script = "uid://cfyvouwltvh6q"

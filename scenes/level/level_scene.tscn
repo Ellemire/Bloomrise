@@ -147,7 +147,7 @@ position = Vector2(404, 249)
 [node name="ChestUI" parent="Chest" instance=ExtResource("13_d1pbj")]
 
 [node name="Chest" parent="Chest" instance=ExtResource("14_4codf")]
-position = Vector2(347, 228)
+position = Vector2(426, 119)
 
 [node name="Guide" parent="." instance=ExtResource("17_155vy")]
 position = Vector2(346, 193)

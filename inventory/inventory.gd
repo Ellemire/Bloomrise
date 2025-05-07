@@ -27,3 +27,18 @@ func insert(item: InvItem) -> bool:
 		return true
 
 	return false
+
+func remove(item: InvItem, amount: int) -> bool:
+	for slot in slots:
+		if slot.item == item:
+			if slot.amount >= amount:
+				slot.amount -= amount
+				if slot.amount == 0:
+					slot.item = null
+				update_slots.emit()
+				return true
+			else:
+				print("❌ Not enough items to remove")
+				return false
+	print("❌ Item not found in inventory")
+	return false

@@ -137,14 +137,15 @@ region_rect = Rect2(3, 3, 20, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5gi0c"]
 atlas = ExtResource("5_qbwhy")
-region = Rect2(11, 70, 26, 19)
+region = Rect2(11, 70, 26, 20)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1d4xv"]
 texture = SubResource("AtlasTexture_5gi0c")
 texture_margin_left = 4.02191
 texture_margin_top = 4.0
-texture_margin_right = 1.0
-region_rect = Rect2(0, 0, 23, 13)
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+region_rect = Rect2(0, 0, 26, 19)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k5kyg"]
 
