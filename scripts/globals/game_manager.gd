@@ -4,7 +4,7 @@ var main_scene_path: String = "res://scenes/level/level_scene.tscn"
 var main_scene: PackedScene
 var main_scene_instance: Node
 
-var player_gold: int = 100
+var player_gold: int = 10
 signal gold_changed(new_value: int)
 
 func start_game() -> void:

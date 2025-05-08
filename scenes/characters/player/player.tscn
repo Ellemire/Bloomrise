@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cjnh2c4ky6hkf" path="res://scenes/components/hit_component.tscn" id="12_bsn6e"]
 [ext_resource type="PackedScene" uid="uid://enebjtq3jf32" path="res://scenes/UI/kamera.tscn" id="13_blysn"]
 [ext_resource type="AudioStream" uid="uid://dqi220hhm87fv" path="res://assetss/Sounds/water-191999.mp3" id="14_hv5x3"]
-[ext_resource type="AudioStream" uid="uid://cabxd1cm4ebo3" path="res://assetss/Sounds/mixkit-garden-shovel-stab-1918.mp3" id="14_i1nod"]
+[ext_resource type="AudioStream" uid="uid://bf4p3q7c4y033" path="res://assetss/Sounds/mixkit-garden-shovel-stab-1918.mp3" id="14_i1nod"]
 [ext_resource type="AudioStream" uid="uid://dvanwbd4ebei2" path="res://assetss/Sounds/axe-slash-1-106748.wav" id="15_4kqyw"]
 [ext_resource type="AudioStream" uid="uid://bsjrcdc65vkbj" path="res://assetss/Sounds/26_sword_hit_2.wav" id="17_4kqyw"]
 [ext_resource type="AudioStream" uid="uid://diqv4l40wq3sw" path="res://assetss/Sounds/item-equip-6904.mp3" id="18_svuau"]
