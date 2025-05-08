@@ -28,7 +28,7 @@ load_path = "res://.godot/imported/nutki.png-366894a1c83882014cff0da4604350b8.ct
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k00v8"]
 atlas = SubResource("CompressedTexture2D_h03ao")
-region = Rect2(22, 0, 22, 22)
+region = Rect2(0, 0, 22, 22)
 
 [node name="GameScreen" type="CanvasLayer"]
 

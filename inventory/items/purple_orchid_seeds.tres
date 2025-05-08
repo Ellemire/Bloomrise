@@ -11,4 +11,5 @@ region = Rect2(96, 0, 16, 16)
 script = ExtResource("1_y82d6")
 name = "PurpleOrchidSeeds"
 texture = SubResource("AtlasTexture_r3ul3")
+sell_price = 1
 metadata/_custom_type_script = "uid://cfyvouwltvh6q"

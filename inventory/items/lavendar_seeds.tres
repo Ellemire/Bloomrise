@@ -11,4 +11,5 @@ region = Rect2(80, 0, 16, 16)
 script = ExtResource("1_ron3j")
 name = "LavendarSeeds"
 texture = SubResource("AtlasTexture_r3ul3")
+sell_price = 1
 metadata/_custom_type_script = "uid://cfyvouwltvh6q"

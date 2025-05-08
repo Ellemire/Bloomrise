@@ -21,7 +21,7 @@ func _update_icon() -> void:
 	var atlas = AtlasTexture.new()
 	atlas.atlas = music_icon_texture
 	if is_music_playing:
-		atlas.region = Rect2(Vector2(22, 0), Vector2(22, 22))
-	else:
 		atlas.region = Rect2(Vector2(0, 0), Vector2(22, 22))
+	else:
+		atlas.region = Rect2(Vector2(22, 0), Vector2(22, 22))
 	sound_button.icon = atlas
