@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwjmh1u8mmla1"]
+[gd_scene load_steps=7 format=3 uid="uid://bwjmh1u8mmla1"]
 
 [ext_resource type="Script" uid="uid://wr3ax5owr5a1" path="res://scenes/characters/shopkeeper/seller.gd" id="1_0a238"]
 [ext_resource type="Texture2D" uid="uid://ctcc2h1mdfkl4" path="res://assetss/NPC/seller.png" id="1_gb4p0"]
+[ext_resource type="PackedScene" uid="uid://cpbq4aser3ta4" path="res://scenes/components/interactable_component.tscn" id="3_ptesw"]
+[ext_resource type="PackedScene" uid="uid://bwf0xl1a2xsm2" path="res://scenes/components/interactable_label_component.tscn" id="4_o6c4i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0a238"]
 animations = [{
@@ -14,9 +16,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o6c4i"]
-radius = 8.0
-height = 16.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_o6c4i"]
+radius = 30.0666
 
 [node name="Seller" type="Node2D"]
 script = ExtResource("1_0a238")
@@ -24,7 +25,13 @@ script = ExtResource("1_0a238")
 [node name="Seller" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0a238")
 
-[node name="ClickArea" type="Area2D" parent="."]
+[node name="InteractableComponent" parent="." instance=ExtResource("3_ptesw")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
-shape = SubResource("CapsuleShape2D_o6c4i")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+shape = SubResource("CircleShape2D_o6c4i")
+
+[node name="InteractableLabelComponent" parent="." instance=ExtResource("4_o6c4i")]
+offset_left = -27.0
+offset_top = -28.0
+offset_right = -9.0
+offset_bottom = -10.0

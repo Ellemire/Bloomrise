@@ -72,3 +72,15 @@ func _on_mutated(mutation: Dictionary) -> void:
 	elif mutation.has("checkpoint_after_inv"):
 		GameState.guide_checkpoint = "after_inv"
 		queue_free()
+	
+	elif mutation.has("add_tasks"):
+		print("📚 Skipping tutorial – dodajemy wszystkie zadania.")
+		GameState.guide_checkpoint = "after_watering"
+
+		TaskManager.add_task("Till the ground", "tilling", 3, 3)
+		TaskManager.add_task("Plant some roses", "plant_rose", 3, 8)
+		TaskManager.add_task("Water the roses", "watering", 3, 3)
+		TaskManager.add_task("Collect the roses", "redrose", 3, 8)
+		TaskManager.add_task("Sell the roses", "sell_RedRose", 3, 8)
+		TaskManager.add_task("Buy sunflower seeds", "buy_Sunflower", 1, 8)
+		TaskManager.add_task("Earn 50 coins", "gold_earned", 50, 10)

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bol4ri3375i2p"]
+
+[ext_resource type="Theme" uid="uid://b2hvntq11uj4a" path="res://dialogues/dialogue_ballon_theme.tres" id="1_elu8i"]
+[ext_resource type="FontFile" uid="uid://bviwccsvpj1fe" path="res://assetss/Fonts/SFPixelate-Bold.ttf" id="2_smw2c"]
+[ext_resource type="Script" uid="uid://ienqjwtop75c" path="res://scenes/UI/task_ui.gd" id="2_xfhyt"]
+
+[node name="TaskUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 120.0
+offset_bottom = 60.0
+theme = ExtResource("1_elu8i")
+script = ExtResource("2_xfhyt")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 60.0
+
+[node name="TaskListLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 116.0
+offset_bottom = 56.0
+theme_override_fonts/normal_font = ExtResource("2_smw2c")
+theme_override_font_sizes/normal_font_size = 10
+text = "123"

@@ -39,6 +39,9 @@ func _ready() -> void:
 	growth_cycle_component.crop_maturity.connect(on_crop_maturity)
 	growth_cycle_component.crop_harvesting.connect(on_crop_harvesting)
 	growth_cycle_component.growth_state_changed.connect(update_sprite_for_state)
+	
+	if start_frame_offset == 0:
+		TaskManager.report_progress("plant_rose")
 
 func _process(delta: float) -> void:
 	var growth_state = growth_cycle_component.get_current_growth_state()

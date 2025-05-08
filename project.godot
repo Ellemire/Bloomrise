@@ -26,6 +26,7 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GameState="*res://dialogues/GameState.gd"
 GameManager="*res://scripts/globals/game_manager.gd"
 SceneManager="*res://scripts/globals/scene_manager.gd"
+TaskManager="*res://scripts/globals/task_manager.gd"
 
 [display]
 

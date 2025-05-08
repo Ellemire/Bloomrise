@@ -109,6 +109,7 @@ func _buy_item(item):
 		update_gold()
 		InventoryManager.add_collectable(get_base_name(item.name))
 		print("Bought:", item.name)
+		TaskManager.report_progress("buy_" + item.name)
 	else:
 		print("Not enough gold!")
 
@@ -178,7 +179,8 @@ func _add_sell_item(slot):
 			GameManager.add_gold(price * current_count)
 			update_gold()
 			populate_sell_items()
-			print("✅ Sold:", item_name)
+			print("✅ Sold: ", item_name)
+			TaskManager.report_progress("sell_" + item_name, current_count)
 	)
 
 	sell_grid.add_child(item_instance)

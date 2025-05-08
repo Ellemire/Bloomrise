@@ -12,6 +12,7 @@ Wisowl: Oho, a confident spirit! I like that. Good luck out there! 🌟
 @mutation tool_tiller
 @mutation tool_watering_can
 @mutation rose_seeds
+@mutation add_tasks
 => END
 
 ~ tutorial
@@ -72,7 +73,7 @@ Wisowl: Take your time. Explore your house and the surroundings. 🏠
 Wisowl: Great! You need to prepare the soil first.
 @mutation tool_tiller
 @mutation rose_seeds
-Wisowl: I've given you a Tiller. Use it to till the ground and get it ready for planting.
+Wisowl: I've given you a Tiller. Use it to till the ground and get it ready for planting. Also, you can "untill" the ground using CAPSLOCK.
 Wisowl: Then, select the Seeds and plant them! 🌹
 Wisowl:  Practice and come back when you're ready.
 @mutation checkpoint_after_planting

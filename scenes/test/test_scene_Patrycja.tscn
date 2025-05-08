@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://twyhfwevndsj"]
+[gd_scene load_steps=32 format=4 uid="uid://twyhfwevndsj"]
 
 [ext_resource type="PackedScene" uid="uid://cpulfwlny6ucj" path="res://scenes/components/WeatherEffectComponent.tscn" id="1_655cm"]
 [ext_resource type="PackedScene" uid="uid://dumhg3qnfib2g" path="res://scenes/UI/hud.tscn" id="2_8ukjb"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://dqwf8ripqptru" path="res://scenes/objects/flowersSeeds/lavendar_seeds.tscn" id="27_078tc"]
 [ext_resource type="PackedScene" uid="uid://cjw7letek1w48" path="res://scenes/characters/guide/guide.tscn" id="27_tdwgn"]
 [ext_resource type="PackedScene" uid="uid://dk0cbooslwrly" path="res://scenes/objects/plants/plant.tscn" id="28_i0bve"]
+[ext_resource type="PackedScene" uid="uid://dng7ott7jseyk" path="res://scenes/objects/flowersPlanting/red_rose.tscn" id="29_n0sr7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_notc5"]
 texture = ExtResource("6_b1ler")
@@ -203,3 +204,6 @@ position = Vector2(490, 327)
 
 [node name="Plant" parent="." instance=ExtResource("28_i0bve")]
 position = Vector2(322, 233)
+
+[node name="RedRose" parent="." instance=ExtResource("29_n0sr7")]
+position = Vector2(353, 235)

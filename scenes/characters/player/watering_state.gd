@@ -39,7 +39,8 @@ func _on_enter() -> void:
 	else:
 		animated_sprite_2d.play("watering_front")
 		hit_component_collision_shape.position = Vector2(0, 3)
-		
+	
+	TaskManager.report_progress("watering")
 	hit_component_collision_shape.disabled = false
 
 func _on_exit() -> void:

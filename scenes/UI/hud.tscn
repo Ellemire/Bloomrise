@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dumhg3qnfib2g"]
+[gd_scene load_steps=18 format=3 uid="uid://dumhg3qnfib2g"]
 
 [ext_resource type="PackedScene" uid="uid://bjn7v5mhuia0u" path="res://scenes/UI/ToolsPanel.tscn" id="1_18exe"]
 [ext_resource type="Theme" uid="uid://dr7jls8tp4rcw" path="res://scenes/UI/game_ui_theme.tres" id="1_vphgt"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dtq04rmxfsuau" path="res://inventory/inventory_ui.tscn" id="5_0jeyp"]
 [ext_resource type="Script" uid="uid://bdh4sqyoj5j44" path="res://scenes/UI/music_container.gd" id="5_k00v8"]
 [ext_resource type="AudioStream" uid="uid://8r57c6inhx6l" path="res://assetss/Sounds/Sweet Memories.wav" id="6_h03ao"]
+[ext_resource type="PackedScene" uid="uid://bol4ri3375i2p" path="res://scenes/UI/task_ui.tscn" id="9_7wvwv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t76gd"]
 atlas = ExtResource("3_l8xe2")
@@ -105,6 +106,12 @@ offset_left = 474.0
 offset_top = 230.0
 offset_right = 637.0
 offset_bottom = 356.0
+
+[node name="TaskUI" parent="." instance=ExtResource("9_7wvwv")]
+offset_left = 4.0
+offset_top = 183.0
+offset_right = 124.0
+offset_bottom = 243.0
 
 [connection signal="ready" from="MarginContainer/MusicContainer" to="MarginContainer/MusicContainer" method="_on_ready"]
 [connection signal="pressed" from="MarginContainer/MusicContainer/SoundButton" to="MarginContainer/MusicContainer" method="_on_sound_button_pressed"]

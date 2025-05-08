@@ -40,7 +40,7 @@ func _on_enter() -> void:
 	else:
 		animated_sprite_2d.play("mining_front")
 		hit_component_collision_shape.position = Vector2(0, 3)
-	
+
 	hit_component_collision_shape.disabled = false
 
 func _on_exit() -> void:

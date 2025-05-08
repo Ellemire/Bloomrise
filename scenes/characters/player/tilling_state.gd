@@ -41,6 +41,7 @@ func _on_enter() -> void:
 		animated_sprite_2d.play("tiling_front")
 		hit_component_collision_shape.position = Vector2(0, 3)
 	
+	TaskManager.report_progress("tilling")
 	hit_component_collision_shape.disabled = false
 
 func _on_exit() -> void:

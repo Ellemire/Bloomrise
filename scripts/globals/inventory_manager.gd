@@ -69,6 +69,7 @@ func add_collectable(name: String) -> bool:
 		var added = inventory.insert(item)
 		if added:
 			print("✔ Added to inventory:", name)
+			TaskManager.report_progress(name)
 			return true
 		else:
 			print("❌ Inventory full – could not add:", name)
