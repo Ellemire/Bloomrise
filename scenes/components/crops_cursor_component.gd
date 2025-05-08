@@ -26,7 +26,7 @@ var tool_to_flower_offset: Dictionary = {
 }
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("remove_dirt"):
+	if event.is_action_pressed("unhit"):
 		if ToolManager.selected_tool == DataTypes.Tools.TillGround:
 			get_cell_under_player()
 			remove_crop()

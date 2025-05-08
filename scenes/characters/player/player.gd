@@ -15,3 +15,6 @@ func on_tool_selected(tool: DataTypes.Tools) -> void:
 	current_tool = tool
 	hit_component.current_tool = tool
 	print("tool ", tool)
+
+func get_player_direction() -> Vector2:
+	return player_direction
