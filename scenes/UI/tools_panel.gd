@@ -2,6 +2,7 @@ extends PanelContainer
 
 var tool_slots: Array = []
 @onready var inventory := InventoryManager.inventory
+@onready var item_sound: AudioStreamPlayer2D = $ItemSound
 
 func _ready():
 	call_deferred("_init_tool_slots")
@@ -31,6 +32,7 @@ func _add_initial_tools():
 func _on_tool_slot_pressed(slot):
 	if not slot.is_empty():
 		ToolManager.select_tool(slot.tool_data)
+		item_sound.play()
 
 func add_item_to_first_free_slot(item) -> bool:
 	print("🔧 Próbuję dodać:", item.name)

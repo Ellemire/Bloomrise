@@ -3,6 +3,8 @@ extends StaticBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var interactable_component: InteractableComponent = $InteractableComponent
+@onready var open_door_sound: AudioStreamPlayer2D = $OpenDoorSound
+@onready var close_door_sound: AudioStreamPlayer2D = $CloseDoorSound
 
 func _ready() -> void:
 	interactable_component.interactable_activated.connect(on_interactable_activated)
@@ -12,7 +14,9 @@ func _ready() -> void:
 func on_interactable_activated() -> void:
 	animated_sprite_2d.play("open_door")
 	collision_layer = 2
+	open_door_sound.play()
 
 func on_interactable_deactivated() -> void:
 	animated_sprite_2d.play("close_door")
 	collision_layer = 1
+	close_door_sound.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dk0cbooslwrly"]
+[gd_scene load_steps=10 format=3 uid="uid://dk0cbooslwrly"]
 
 [ext_resource type="Script" uid="uid://bk78cwn05vn5d" path="res://scenes/objects/plants/plant.gd" id="1_6uksv"]
 [ext_resource type="PackedScene" uid="uid://r5ujv8gtxkkt" path="res://scenes/objects/plants/watering_particles.tscn" id="2_l8fdw"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cgrgr0ktanmkk" path="res://scenes/components/hurt_component.tscn" id="2_ovkd4"]
 [ext_resource type="PackedScene" uid="uid://b5c6qgol4j50w" path="res://scenes/objects/plants/flowering_particles.tscn" id="3_yopfj"]
 [ext_resource type="PackedScene" uid="uid://drsta23k6ng4r" path="res://scenes/objects/plants/growth_cycle_component.tscn" id="5_v1u08"]
+[ext_resource type="AudioStream" uid="uid://cqahatrp1phgk" path="res://assetss/Sounds/hit-plant-01-266293.mp3" id="7_ja25c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_llm8w"]
 atlas = ExtResource("2_llm8w")
@@ -37,3 +38,6 @@ tool = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
 shape = SubResource("RectangleShape2D_yopfj")
+
+[node name="PlantSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_ja25c")

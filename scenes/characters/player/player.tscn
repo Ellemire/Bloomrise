@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://c13tmr8qqiem0"]
+[gd_scene load_steps=70 format=3 uid="uid://c13tmr8qqiem0"]
 
 [ext_resource type="Texture2D" uid="uid://dhcyoyq3twqas" path="res://assetss/MainCharacter/Basic Charakter Actions.png" id="1_686vu"]
 [ext_resource type="Script" uid="uid://bbh8x7fdotori" path="res://scenes/characters/player/player.gd" id="1_mk55u"]
@@ -13,6 +13,11 @@
 [ext_resource type="Script" uid="uid://dynbum0bgwav1" path="res://scenes/characters/player/mining_state.gd" id="11_djydg"]
 [ext_resource type="PackedScene" uid="uid://cjnh2c4ky6hkf" path="res://scenes/components/hit_component.tscn" id="12_bsn6e"]
 [ext_resource type="PackedScene" uid="uid://enebjtq3jf32" path="res://scenes/UI/kamera.tscn" id="13_blysn"]
+[ext_resource type="AudioStream" uid="uid://dqi220hhm87fv" path="res://assetss/Sounds/water-191999.mp3" id="14_hv5x3"]
+[ext_resource type="AudioStream" uid="uid://cabxd1cm4ebo3" path="res://assetss/Sounds/mixkit-garden-shovel-stab-1918.mp3" id="14_i1nod"]
+[ext_resource type="AudioStream" uid="uid://dvanwbd4ebei2" path="res://assetss/Sounds/axe-slash-1-106748.wav" id="15_4kqyw"]
+[ext_resource type="AudioStream" uid="uid://bsjrcdc65vkbj" path="res://assetss/Sounds/26_sword_hit_2.wav" id="17_4kqyw"]
+[ext_resource type="AudioStream" uid="uid://diqv4l40wq3sw" path="res://assetss/Sounds/item-equip-6904.mp3" id="18_svuau"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6avc5"]
 atlas = ExtResource("1_686vu")
@@ -543,3 +548,18 @@ shape = SubResource("CircleShape2D_bsn6e")
 debug_color = Color(0.950529, 2.5028e-06, 0.56815, 0.42)
 
 [node name="Kamera" parent="." instance=ExtResource("13_blysn")]
+
+[node name="TillingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_i1nod")
+
+[node name="ChoppingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_4kqyw")
+
+[node name="WateringSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_hv5x3")
+
+[node name="MiningSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_4kqyw")
+
+[node name="ToolSelectedSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_svuau")

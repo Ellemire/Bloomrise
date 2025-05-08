@@ -8,6 +8,7 @@ extends Node2D
 @onready var flowering_particles: GPUParticles2D = $FloweringParticles
 @onready var growth_cycle_component: GrowthCycleComponent = $GrowthCycleComponent
 @onready var hurt_component: HurtComponent = $HurtComponent
+@onready var plant_sound: AudioStreamPlayer2D = $PlantSound
 
 var growth_state: DataTypes.GrowthStates = DataTypes.GrowthStates.Germination
 var harvest_scene: PackedScene
@@ -24,6 +25,7 @@ var flowers_preload: Dictionary = {
 }
 
 func _ready() -> void:
+	plant_sound.play()
 	watering_particles.emitting = false
 	flowering_particles.emitting = false
 	growth_cycle_component.starting_day = DayAndNightCycleManager.current_day

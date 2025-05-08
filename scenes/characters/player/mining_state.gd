@@ -3,6 +3,7 @@ extends NodeState
 @export var player: Player
 @export var animated_sprite_2d: AnimatedSprite2D
 @export var hit_component_collision_shape: CollisionShape2D
+@onready var mining_sound: AudioStreamPlayer2D = $"../../MiningSound"
 
 
 func _ready() -> void:
@@ -23,6 +24,7 @@ func _on_next_transitions() -> void:
 
 
 func _on_enter() -> void:
+	mining_sound.play()
 	if player.player_direction == Vector2.UP:
 		animated_sprite_2d.play("mining_back")
 		hit_component_collision_shape.position = Vector2(0, -18)

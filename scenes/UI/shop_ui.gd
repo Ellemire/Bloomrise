@@ -5,6 +5,8 @@ extends CanvasLayer
 @onready var close_button: Button = $MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/CloseButton
 @onready var sell_grid: GridContainer = $MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer/SellTab/SellScroll/SellGrid
 @onready var tab_container: TabContainer = $MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer
+@onready var coin_recived_sound: AudioStreamPlayer2D = $CoinRecivedSound
+@onready var buy_sound: AudioStreamPlayer2D = $BuySound
 
 var player_gold: int = 100
 
@@ -103,6 +105,7 @@ func get_icon(index: int) -> AtlasTexture:
 func _buy_item(item):
 	if GameManager.player_gold >= item.price:
 		GameManager.subtract_gold(item.price)
+		buy_sound.play()
 		update_gold()
 		InventoryManager.add_collectable(get_base_name(item.name))
 		print("Bought:", item.name)
@@ -171,6 +174,7 @@ func _add_sell_item(slot):
 		var item_name = slot.item.name
 
 		if InventoryManager.remove_item(slot.item, count):
+			coin_recived_sound.play()
 			GameManager.add_gold(price * current_count)
 			update_gold()
 			populate_sell_items()

@@ -1,8 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://cv3cpcx1y4xc8"]
+[gd_scene load_steps=16 format=3 uid="uid://cv3cpcx1y4xc8"]
 
 [ext_resource type="Texture2D" uid="uid://dbrhgbege6f8f" path="res://assetss/Tools/chest1.png" id="1_sevpx"]
 [ext_resource type="Script" uid="uid://dswyosfhexb4x" path="res://inventory/chest.gd" id="1_taoi7"]
 [ext_resource type="Resource" uid="uid://bs14on5w6poqc" path="res://inventory/wooden_chest.tres" id="2_4akt0"]
+[ext_resource type="AudioStream" uid="uid://dpmqtwonnjacl" path="res://assetss/Sounds/01_chest_open_4.wav" id="4_r3j3d"]
+[ext_resource type="AudioStream" uid="uid://0yby4vbqh3og" path="res://assetss/Sounds/02_chest_close_3.wav" id="5_277xk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_taoi7"]
 atlas = ExtResource("1_sevpx")
@@ -100,3 +102,9 @@ shape = SubResource("CapsuleShape2D_1xaki")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("CircleShape2D_4akt0")
 debug_color = Color(0.962499, 2.69532e-06, 0.50422, 0.42)
+
+[node name="ChestOpen" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_r3j3d")
+
+[node name="ChestColse" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_277xk")

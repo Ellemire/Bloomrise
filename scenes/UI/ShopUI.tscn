@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3kpwsmb2oe6h"]
+[gd_scene load_steps=8 format=3 uid="uid://b3kpwsmb2oe6h"]
 
 [ext_resource type="Theme" uid="uid://dr7jls8tp4rcw" path="res://scenes/UI/game_ui_theme.tres" id="1_i6mk6"]
 [ext_resource type="Script" uid="uid://dvbw5ylc53ou2" path="res://scenes/UI/shop_ui.gd" id="1_sqpqv"]
 [ext_resource type="FontFile" uid="uid://d2s6ogr3tyrcb" path="res://assetss/Fonts/SFPixelate.ttf" id="3_4mebp"]
 [ext_resource type="Texture2D" uid="uid://dxsclv770aya0" path="res://assetss/UI/coin.png" id="4_l4yji"]
+[ext_resource type="AudioStream" uid="uid://do8m5f2xj85gf" path="res://assetss/Sounds/coin-257878.mp3" id="5_l4yji"]
+[ext_resource type="AudioStream" uid="uid://dwv4ydv8skj7b" path="res://assetss/Sounds/user-interface-click-234656.mp3" id="6_5j0fq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5j0fq"]
 atlas = ExtResource("4_l4yji")
@@ -107,5 +109,11 @@ layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 8
 text = "Close"
+
+[node name="CoinRecivedSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_l4yji")
+
+[node name="BuySound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_5j0fq")
 
 [connection signal="tab_changed" from="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer" to="." method="_on_tab_container_tab_changed"]

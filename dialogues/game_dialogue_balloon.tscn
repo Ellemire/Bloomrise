@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=8 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" uid="uid://dvyr76mpdsto5" path="res://dialogues/game_dialogue_balloon.gd" id="1_ibdja"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_7ton5"]
 [ext_resource type="Theme" uid="uid://b2hvntq11uj4a" path="res://dialogues/dialogue_ballon_theme.tres" id="2_wiqg4"]
 [ext_resource type="PackedScene" uid="uid://j7is7la1yqdo" path="res://dialogues/emotes_panel.tscn" id="3_76tp7"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_wiqg4"]
+[ext_resource type="AudioStream" uid="uid://dc4b02nersree" path="res://assetss/Sounds/mixkit-bonus-collect-award-1937.wav" id="6_76tp7"]
+[ext_resource type="AudioStream" uid="uid://drtm8giu326j5" path="res://assetss/Sounds/owl-hooting-223549.mp3" id="7_susxn"]
 
 [node name="GameDialogueBalloon" type="CanvasLayer"]
 layer = 100
@@ -99,6 +101,12 @@ response_template = NodePath("ResponseExample")
 [node name="ResponseExample" type="Button" parent="Balloon/Responses/ResponsesMenu"]
 layout_mode = 2
 text = "Response example"
+
+[node name="RecivedSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_76tp7")
+
+[node name="OwlSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_susxn")
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

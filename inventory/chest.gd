@@ -4,6 +4,8 @@ extends Node2D
 @onready var chest_ui = $"../ChestUI"
 @onready var chest_anim: AnimatedSprite2D = $ChestAnim
 @onready var player: Player = $"../../Player"
+@onready var chest_open_sound: AudioStreamPlayer2D = $ChestOpen
+@onready var chest_colse_sound: AudioStreamPlayer2D = $ChestColse
 
 var is_open = false
 
@@ -29,10 +31,12 @@ func toggle():
 		return
 	if is_open:
 		chest_anim.play("chest_close")
+		chest_colse_sound.play()
 		is_open = false
 		chest_ui.close()
 	else:
 		chest_anim.play("chest_open")
+		chest_open_sound.play()
 		is_open = true
 		print("📦 Skrzynia otwarta!")
 		chest_ui.open_for(chest_data)
