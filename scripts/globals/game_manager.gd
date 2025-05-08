@@ -4,6 +4,9 @@ var main_scene_path: String = "res://scenes/level/level_scene.tscn"
 var main_scene: PackedScene
 var main_scene_instance: Node
 
+var player_gold: int = 100
+signal gold_changed(new_value: int)
+
 func start_game() -> void:
 	print("Starting game...")
 	
@@ -27,3 +30,17 @@ func end_game() -> void:
 		main_scene_instance = null
 		
 	get_tree().quit()
+
+func add_gold(amount: int):
+	player_gold += amount
+	gold_changed.emit(player_gold)
+	
+func subtract_gold(amount: int) -> bool:
+	if player_gold >= amount:
+		player_gold -= amount
+		gold_changed.emit(player_gold)
+		return true
+	return false
+
+func get_gold() -> int:
+	return player_gold

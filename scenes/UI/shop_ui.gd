@@ -36,7 +36,7 @@ func close():
 	visible = false
 	
 func update_gold():
-	gold_label.text = "Gold: %d" % player_gold
+	gold_label.text = "Gold: %d" % GameManager.get_gold()
 
 func _on_tab_container_tab_changed(tab: int) -> void:
 	var tab_name = tab_container.get_tab_title(tab)
@@ -101,8 +101,8 @@ func get_icon(index: int) -> AtlasTexture:
 	return tex
 
 func _buy_item(item):
-	if player_gold >= item.price:
-		player_gold -= item.price
+	if GameManager.player_gold >= item.price:
+		GameManager.subtract_gold(item.price)
 		update_gold()
 		InventoryManager.add_collectable(get_base_name(item.name))
 		print("Bought:", item.name)
@@ -171,7 +171,7 @@ func _add_sell_item(slot):
 		var item_name = slot.item.name
 
 		if InventoryManager.remove_item(slot.item, count):
-			player_gold += price * current_count
+			GameManager.add_gold(price * current_count)
 			update_gold()
 			populate_sell_items()
 			print("✅ Sold:", item_name)
