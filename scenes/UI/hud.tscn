@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dtq04rmxfsuau" path="res://inventory/inventory_ui.tscn" id="5_0jeyp"]
 [ext_resource type="Script" uid="uid://bdh4sqyoj5j44" path="res://scenes/UI/music_container.gd" id="5_k00v8"]
 [ext_resource type="AudioStream" uid="uid://8r57c6inhx6l" path="res://assetss/Sounds/Sweet Memories.wav" id="6_h03ao"]
-[ext_resource type="PackedScene" uid="uid://bol4ri3375i2p" path="res://scenes/UI/task_ui.tscn" id="9_7wvwv"]
+[ext_resource type="PackedScene" path="res://scenes/UI/task_ui.tscn" id="9_7wvwv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t76gd"]
 atlas = ExtResource("3_l8xe2")
