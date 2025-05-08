@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpulfwlny6ucj"]
+[gd_scene load_steps=6 format=3 uid="uid://cpulfwlny6ucj"]
 
 [ext_resource type="Script" uid="uid://bbts5nq4moyj" path="res://scenes/components/weather_effect_component.gd" id="1_ll4ck"]
 [ext_resource type="Texture2D" uid="uid://mhmwovygnjwp" path="res://assetss/UI/WeatherIcons/Weather.png" id="2_3nvje"]
+[ext_resource type="AudioStream" uid="uid://bttf88xly3nux" path="res://scenes/components/rain.wav" id="3_3nvje"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1v1tf"]
 atlas = ExtResource("2_3nvje")
@@ -36,3 +37,4 @@ visibility_rect = Rect2(0, 0, 640, 360)
 process_material = SubResource("ParticleProcessMaterial_t3rve")
 
 [node name="RainSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3nvje")

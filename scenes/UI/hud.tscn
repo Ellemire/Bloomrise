@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dumhg3qnfib2g"]
+[gd_scene load_steps=17 format=3 uid="uid://dumhg3qnfib2g"]
 
 [ext_resource type="PackedScene" uid="uid://bjn7v5mhuia0u" path="res://scenes/UI/ToolsPanel.tscn" id="1_18exe"]
 [ext_resource type="Theme" uid="uid://dr7jls8tp4rcw" path="res://scenes/UI/game_ui_theme.tres" id="1_vphgt"]
@@ -6,10 +6,29 @@
 [ext_resource type="Script" uid="uid://3fk1wbhec0fn" path="res://scenes/UI/coin_label.gd" id="2_cg4gw"]
 [ext_resource type="Texture2D" uid="uid://dxsclv770aya0" path="res://assetss/UI/coin.png" id="3_l8xe2"]
 [ext_resource type="PackedScene" uid="uid://dtq04rmxfsuau" path="res://inventory/inventory_ui.tscn" id="5_0jeyp"]
+[ext_resource type="Script" uid="uid://bdh4sqyoj5j44" path="res://scenes/UI/music_container.gd" id="5_k00v8"]
+[ext_resource type="AudioStream" uid="uid://dpjjwx0qut370" path="res://scenes/UI/Sweet Memories.wav" id="7_xh8q5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t76gd"]
 atlas = ExtResource("3_l8xe2")
 region = Rect2(210, 2, 12, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7wvwv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t6axx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kj32l"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k00v8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h03ao"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h03ao"]
+load_path = "res://.godot/imported/nutki.png-366894a1c83882014cff0da4604350b8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k00v8"]
+atlas = SubResource("CompressedTexture2D_h03ao")
+region = Rect2(22, 0, 22, 22)
 
 [node name="GameScreen" type="CanvasLayer"]
 
@@ -52,6 +71,25 @@ stretch_mode = 5
 layout_mode = 2
 mouse_filter = 2
 
+[node name="MusicContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+script = ExtResource("5_k00v8")
+
+[node name="SoundButton" type="Button" parent="MarginContainer/MusicContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxTexture_7wvwv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_t6axx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kj32l")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_k00v8")
+theme_override_styles/normal = SubResource("StyleBoxTexture_h03ao")
+icon = SubResource("AtlasTexture_k00v8")
+icon_alignment = 1
+
+[node name="GameMusic" type="AudioStreamPlayer2D" parent="MarginContainer/MusicContainer"]
+stream = ExtResource("7_xh8q5")
+
 [node name="ToolsPanel" parent="." instance=ExtResource("1_18exe")]
 offset_left = 221.0
 offset_top = 302.0
@@ -65,3 +103,6 @@ offset_left = 474.0
 offset_top = 230.0
 offset_right = 637.0
 offset_bottom = 356.0
+
+[connection signal="ready" from="MarginContainer/MusicContainer" to="MarginContainer/MusicContainer" method="_on_ready"]
+[connection signal="pressed" from="MarginContainer/MusicContainer/SoundButton" to="MarginContainer/MusicContainer" method="_on_sound_button_pressed"]
