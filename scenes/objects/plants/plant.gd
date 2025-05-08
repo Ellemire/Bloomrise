@@ -26,7 +26,8 @@ var flowers_preload: Dictionary = {
 func _ready() -> void:
 	watering_particles.emitting = false
 	flowering_particles.emitting = false
-	
+	growth_cycle_component.starting_day = DayAndNightCycleManager.current_day
+
 	if flowers_preload.has(start_frame_offset):
 		harvest_scene = flowers_preload[start_frame_offset]
 	else:
@@ -35,21 +36,19 @@ func _ready() -> void:
 	hurt_component.hurt.connect(on_hurt)
 	growth_cycle_component.crop_maturity.connect(on_crop_maturity)
 	growth_cycle_component.crop_harvesting.connect(on_crop_harvesting)
+	growth_cycle_component.growth_state_changed.connect(update_sprite_for_state)
 
 func _process(delta: float) -> void:
 	var growth_state = growth_cycle_component.get_current_growth_state()
-	update_sprite_for_state(growth_state)
-	
-	if growth_state == DataTypes.GrowthStates.Maturity:
-		flowering_particles.emitting = true
+	#if growth_state == DataTypes.GrowthStates.Maturity:
+		#flowering_particles.emitting = true
 		
 func update_sprite_for_state(state: int) -> void:
 	sprite_2d.frame = frames_per_stage * state + start_frame_offset
 
 func on_hurt(hit_damage: int) -> void:
-	if !growth_cycle_component.is_watered:
-		emit_watering_particles()
-		growth_cycle_component.is_watered = true
+	emit_watering_particles()
+	growth_cycle_component.is_watered_today()
 
 func on_crop_maturity() -> void:
 	flowering_particles.emitting = true
