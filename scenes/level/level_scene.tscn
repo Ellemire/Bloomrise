@@ -145,6 +145,8 @@ position = Vector2(404, 249)
 [node name="Chest" type="Node2D" parent="."]
 
 [node name="ChestUI" parent="Chest" instance=ExtResource("13_d1pbj")]
+offset = Vector2(474, 85)
+transform = Transform2D(1, 0, 0, 1, 474, 85)
 
 [node name="Chest" parent="Chest" instance=ExtResource("14_4codf")]
 position = Vector2(426, 119)
