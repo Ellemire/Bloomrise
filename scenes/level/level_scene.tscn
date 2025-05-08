@@ -33,7 +33,7 @@ physics_layer_0/collision_layer = 32
 physics_layer_0/collision_mask = 33
 sources/0 = SubResource("TileSetAtlasSource_notc5")
 
-[node name="MainScene" type="Node2D"]
+[node name="MainScene2" type="Node2D"]
 
 [node name="WeatherEffectComponent" parent="." instance=ExtResource("3_mwav5")]
 

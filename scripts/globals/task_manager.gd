@@ -5,6 +5,13 @@ signal tasks_updated
 var task_queue: Array[Dictionary] = []
 var current_task: Dictionary = {}
 
+var task_complete_sound: AudioStreamPlayer = AudioStreamPlayer.new()
+var task_sound_stream := preload("res://assetss/Sounds/collect-points-190037.mp3")
+
+func _ready():
+	add_child(task_complete_sound)
+	task_complete_sound.stream = task_sound_stream
+
 func add_task(name: String, id: String, target: int, award: int = 10) -> void:
 	task_queue.append({
 		"name": name,
@@ -50,8 +57,9 @@ func _on_task_completed() -> void:
 	var award = current_task.get("award", 10)
 
 	GameManager.add_gold(award)
-	print("💰 10 coins awarded!")
-	
+	print("💰 %d coins awarded!" % award)
+
+	task_complete_sound.play()
 
 	current_task = {}
 	_next_task()
