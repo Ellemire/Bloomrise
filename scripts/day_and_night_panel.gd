@@ -2,9 +2,6 @@ extends Control
 @onready var time_label: Label = $TimeLabel
 @onready var day_label: Label = $DayLabel
 @onready var weather_img := $Weather_img
-@onready var game_music: AudioStreamPlayer2D = $GameMusic
-@onready var play_button: Button = $HBoxContainer/PlayButton
-@onready var pause_button: Button = $HBoxContainer/PauseButton
 
 const WEATHER = preload("res://assetss/UI/WeatherIcons/Weather.png")
 
@@ -33,13 +30,3 @@ func update_icon(weather):
 	atlas.atlas = WEATHER
 	atlas.region = Rect2(Vector2(weather * 32, 0), Vector2(32, 32))
 	weather_img.texture = atlas
-
-func _on_play_button_pressed() -> void:
-	game_music.play()
-	play_button.visible = false
-	pause_button.visible = true
-
-func _on_pause_button_pressed() -> void:
-	game_music.stop()
-	play_button.visible = true
-	pause_button.visible = false
