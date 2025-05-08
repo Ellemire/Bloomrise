@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dtq04rmxfsuau" path="res://inventory/inventory_ui.tscn" id="5_0jeyp"]
 [ext_resource type="Script" uid="uid://bdh4sqyoj5j44" path="res://scenes/UI/music_container.gd" id="5_k00v8"]
 [ext_resource type="AudioStream" uid="uid://8r57c6inhx6l" path="res://assetss/Sounds/Sweet Memories.wav" id="6_h03ao"]
-[ext_resource type="PackedScene" path="res://scenes/UI/task_ui.tscn" id="9_7wvwv"]
+[ext_resource type="PackedScene" uid="uid://bol4ri3375i2p" path="res://scenes/UI/task_ui.tscn" id="9_7wvwv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t76gd"]
 atlas = ExtResource("3_l8xe2")
@@ -72,27 +72,6 @@ stretch_mode = 5
 layout_mode = 2
 mouse_filter = 2
 
-[node name="MusicContainer" type="HBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 8
-script = ExtResource("5_k00v8")
-
-[node name="SoundButton" type="Button" parent="MarginContainer/MusicContainer"]
-custom_minimum_size = Vector2(25, 25)
-layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxTexture_7wvwv")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_t6axx")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kj32l")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_k00v8")
-theme_override_styles/normal = SubResource("StyleBoxTexture_h03ao")
-icon = SubResource("AtlasTexture_k00v8")
-icon_alignment = 1
-
-[node name="GameMusic" type="AudioStreamPlayer2D" parent="MarginContainer/MusicContainer"]
-stream = ExtResource("6_h03ao")
-volume_db = -2.0
-autoplay = true
-
 [node name="ToolsPanel" parent="." instance=ExtResource("1_18exe")]
 offset_left = 221.0
 offset_top = 302.0
@@ -108,10 +87,34 @@ offset_right = 637.0
 offset_bottom = 356.0
 
 [node name="TaskUI" parent="." instance=ExtResource("9_7wvwv")]
-offset_left = 4.0
-offset_top = 183.0
-offset_right = 124.0
-offset_bottom = 243.0
+offset_left = 8.0
+offset_top = 293.0
+offset_right = 128.0
+offset_bottom = 353.0
 
-[connection signal="ready" from="MarginContainer/MusicContainer" to="MarginContainer/MusicContainer" method="_on_ready"]
-[connection signal="pressed" from="MarginContainer/MusicContainer/SoundButton" to="MarginContainer/MusicContainer" method="_on_sound_button_pressed"]
+[node name="MusicContainer" type="HBoxContainer" parent="."]
+offset_left = 8.0
+offset_top = 262.0
+offset_right = 33.0
+offset_bottom = 288.0
+size_flags_vertical = 8
+script = ExtResource("5_k00v8")
+
+[node name="SoundButton" type="Button" parent="MusicContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxTexture_7wvwv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_t6axx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kj32l")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_k00v8")
+theme_override_styles/normal = SubResource("StyleBoxTexture_h03ao")
+icon = SubResource("AtlasTexture_k00v8")
+icon_alignment = 1
+
+[node name="GameMusic" type="AudioStreamPlayer2D" parent="MusicContainer"]
+stream = ExtResource("6_h03ao")
+volume_db = -2.0
+autoplay = true
+
+[connection signal="ready" from="MusicContainer" to="MusicContainer" method="_on_ready"]
+[connection signal="pressed" from="MusicContainer/SoundButton" to="MusicContainer" method="_on_sound_button_pressed"]
