@@ -23,6 +23,7 @@ size = Vector2(18, 12)
 size = Vector2(22, 25)
 
 [node name="DeciduousTree" type="Sprite2D"]
+y_sort_enabled = true
 material = SubResource("ShaderMaterial_kdpqe")
 texture = SubResource("AtlasTexture_mvnfu")
 script = ExtResource("2_08a8y")
