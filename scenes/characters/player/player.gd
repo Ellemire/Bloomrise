@@ -5,6 +5,7 @@ extends CharacterBody2D
 
 @export var current_tool: DataTypes.Tools = DataTypes.Tools.None
 @onready var tool_selected_sound: AudioStreamPlayer2D = $ToolSelectedSound
+@onready var collected_sound: AudioStreamPlayer2D = $CollectedSound
 
 var player_direction: Vector2
 
@@ -20,3 +21,6 @@ func on_tool_selected(tool: DataTypes.Tools) -> void:
 
 func get_player_direction() -> Vector2:
 	return player_direction
+
+func _on_collectable_collected(name: String) -> void:
+	collected_sound.play()

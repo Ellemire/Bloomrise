@@ -1,15 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6f8lhamjo7uw"]
+[gd_scene load_steps=2 format=3 uid="uid://c6f8lhamjo7uw"]
 
 [ext_resource type="Script" uid="uid://dqpcskiawc8nj" path="res://scenes/components/collectable_component.gd" id="1_14mdg"]
-[ext_resource type="AudioStream" uid="uid://bnglucik5hwad" path="res://assetss/Sounds/collect-points-190037.mp3" id="2_nhysb"]
 
 [node name="CollectableComponent" type="Area2D"]
 collision_layer = 32
 collision_mask = 2
 script = ExtResource("1_14mdg")
 
-[node name="CollectingSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_nhysb")
-volume_db = 20.0
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="ready" from="." to="." method="_on_ready"]

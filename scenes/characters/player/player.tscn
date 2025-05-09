@@ -563,3 +563,5 @@ stream = ExtResource("17_4kqyw")
 
 [node name="ToolSelectedSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("18_svuau")
+
+[node name="CollectedSound" type="AudioStreamPlayer2D" parent="."]
