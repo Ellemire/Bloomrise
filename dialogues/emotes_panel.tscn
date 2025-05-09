@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://j7is7la1yqdo"]
 
 [ext_resource type="Theme" uid="uid://1xnp12064f86" path="res://scenes/UI/tool_panel.tres" id="1_gw36v"]
-[ext_resource type="Script" uid="uid://b6guqbgpjtf5e" path="res://emotes_panel.gd" id="2_6tdya"]
+[ext_resource type="Script" uid="uid://b6guqbgpjtf5e" path="res://dialogues/emotes_panel.gd" id="2_6tdya"]
 [ext_resource type="Texture2D" uid="uid://b1qsmokxmtws5" path="res://assetss/MainCharacter/owl_emotes.png" id="3_l5rfv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vutid"]

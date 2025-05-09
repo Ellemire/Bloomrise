@@ -13,7 +13,7 @@ func play_emote(animation: String) -> void:
 
 func _on_emote_idle_timer_timeout() -> void:
 	var index = randi_range(0,0)
-	var emote = idle_emotes[index]
+	var emote = idle_emotes[index] 
 	
 	animated_sprite_2d.play(emote)
 
