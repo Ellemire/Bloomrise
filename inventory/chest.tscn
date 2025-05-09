@@ -1,10 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://cv3cpcx1y4xc8"]
+[gd_scene load_steps=18 format=3 uid="uid://cv3cpcx1y4xc8"]
 
 [ext_resource type="Texture2D" uid="uid://dbrhgbege6f8f" path="res://assetss/Tools/chest1.png" id="1_sevpx"]
 [ext_resource type="Script" uid="uid://dswyosfhexb4x" path="res://inventory/chest.gd" id="1_taoi7"]
 [ext_resource type="Resource" uid="uid://bs14on5w6poqc" path="res://inventory/wooden_chest.tres" id="2_4akt0"]
 [ext_resource type="AudioStream" uid="uid://dpmqtwonnjacl" path="res://assetss/Sounds/01_chest_open_4.wav" id="4_r3j3d"]
 [ext_resource type="AudioStream" uid="uid://0yby4vbqh3og" path="res://assetss/Sounds/02_chest_close_3.wav" id="5_277xk"]
+[ext_resource type="PackedScene" uid="uid://cpbq4aser3ta4" path="res://scenes/components/interactable_component.tscn" id="6_r77y8"]
+[ext_resource type="PackedScene" uid="uid://bwf0xl1a2xsm2" path="res://scenes/components/interactable_label_component.tscn" id="7_utrf2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_taoi7"]
 atlas = ExtResource("1_sevpx")
@@ -73,12 +75,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1xaki"]
-radius = 8.0
-height = 16.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_4akt0"]
 radius = 5.09902
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s2u8n"]
+radius = 30.0666
 
 [node name="Chest" type="Node2D"]
 script = ExtResource("1_taoi7")
@@ -89,13 +90,6 @@ position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_s2u8n")
 animation = &"chest_open"
 autoplay = "chest"
-
-[node name="ClickArea" type="Area2D" parent="."]
-position = Vector2(0, 10)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
-position = Vector2(0, -10)
-shape = SubResource("CapsuleShape2D_1xaki")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -108,3 +102,14 @@ stream = ExtResource("4_r3j3d")
 
 [node name="ChestColse" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_277xk")
+
+[node name="InteractableComponent" parent="." instance=ExtResource("6_r77y8")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+shape = SubResource("CircleShape2D_s2u8n")
+
+[node name="InteractableLabelComponent" parent="." instance=ExtResource("7_utrf2")]
+offset_left = -27.0
+offset_top = -28.0
+offset_right = -9.0
+offset_bottom = -10.0

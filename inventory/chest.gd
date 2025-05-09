@@ -6,23 +6,35 @@ extends Node2D
 @onready var player: Player = $"../../Player"
 @onready var chest_open_sound: AudioStreamPlayer2D = $ChestOpen
 @onready var chest_colse_sound: AudioStreamPlayer2D = $ChestColse
+@onready var interactable_component: InteractableComponent = $InteractableComponent
+@onready var interactable_label_component: Control = $InteractableLabelComponent
 
 var is_open = false
+var in_range: bool = false
 
 func _ready():
-	$ClickArea.input_event.connect(_on_click)
-	
+	interactable_component.interactable_activated.connect(on_interactable_activated)
+	interactable_component.interactable_deactivated.connect(on_interactable_deactivated)
+	interactable_label_component.hide()
 
-func _on_click(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		toggle()
+func on_interactable_activated() -> void:
+	interactable_label_component.show()
+	in_range = true
+
+func on_interactable_deactivated() -> void:
+	interactable_label_component.hide()
+	in_range = false
 
 func _process(delta):
 	if is_open:
 		var distance = position.distance_to(player.position)
 		if distance > 50:
 			print("📦 Gracz odszedł – zamykam skrzynię (dystans:", distance, ")")
-			toggle()  # użyj istniejącej funkcji zamykania
+			toggle()
+
+	# Sprawdzanie wciśnięcia przycisku tylko gdy gracz jest blisko
+	if in_range and Input.is_action_just_pressed("show_dialogue"):
+		toggle()
 
 func toggle():
 	var distance = position.distance_to(player.position)

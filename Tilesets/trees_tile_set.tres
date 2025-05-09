@@ -1,10 +1,11 @@
-[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://b6tspch8jexw2"]
+[gd_resource type="TileSet" load_steps=10 format=3 uid="uid://b6tspch8jexw2"]
 
 [ext_resource type="Texture2D" uid="uid://dd2yyd374xwq1" path="res://assetss/TileSets/Nature Tileset.png" id="1_jedpl"]
 [ext_resource type="PackedScene" uid="uid://3ko8e5gckmav" path="res://scenes/objects/trees/deciduous_tree.tscn" id="2_icqvn"]
 [ext_resource type="PackedScene" uid="uid://bspp6m02otiaw" path="res://scenes/objects/trees/conifer_tree.tscn" id="3_ytjcr"]
 [ext_resource type="PackedScene" uid="uid://bqsb26p0bh4dp" path="res://scenes/objects/stones/big_stone.tscn" id="4_vnjaj"]
 [ext_resource type="PackedScene" uid="uid://crp5imj662u71" path="res://scenes/objects/stones/medium_stone.tscn" id="5_0iuch"]
+[ext_resource type="Texture2D" uid="uid://c5yja3uoqgywj" path="res://assetss/Terrain/Basic_Grass_Biom_things.png" id="6_7jmjv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8smpy"]
 texture = ExtResource("1_jedpl")
@@ -79,6 +80,26 @@ scenes/2/scene = ExtResource("3_ytjcr")
 scenes/3/scene = ExtResource("4_vnjaj")
 scenes/4/scene = ExtResource("5_0iuch")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k3yiw"]
+texture = ExtResource("6_7jmjv")
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.43887, -2.69788, 3.23746, -2.87774, 3.41732, 1.79859, -1.61873, 1.61873)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.07915, 1.97845, 1.97845, 1.43887, 1.79859, -1.43887, -1.43887, -1.79859)
+6:2/0 = 0
+7:2/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+8:2/size_in_atlas = Vector2i(1, 2)
+8:2/0 = 0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.43887, -3.23746, 1.07915, -3.41732, 1.25901, 13.3095, -0.719435, 13.6693)
+
 [resource]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_8smpy")
 sources/1 = SubResource("TileSetScenesCollectionSource_ytjcr")
+sources/2 = SubResource("TileSetAtlasSource_k3yiw")

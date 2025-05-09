@@ -58,7 +58,7 @@ func _gui_input(event: InputEvent) -> void:
 					# Z inventory DO skrzyni
 					print("📦 Przenoszę z inventory do skrzyni:", slot_data.item.name)
 					# Wybierz najbliższą otwartą skrzynię – uproszczone
-					var chest_ui = get_tree().get_root().get_node("MainScene/Chest/ChestUI")  # ← DOPASUJ ŚCIEŻKĘ
+					var chest_ui = get_tree().get_current_scene().get_node("YSorting/Chest/ChestUI")
 					if chest_ui and chest_ui.chest:
 						var success = chest_ui.chest.insert(slot_data.item)
 						if success:

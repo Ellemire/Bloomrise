@@ -55,7 +55,7 @@ Wisowl: Take your time exploring your inventory. 🎒
 @mutation checkpoint_after_inv
 
 ~ chest_tip
-Wisowl: In your house you will find a Chest! To open it, stand close to the chest and click on it.
+Wisowl: In your house you will find a Chest!
 Wisowl: Hold Shift while clicking to move items between your inventory and the chest.
 Wisowl: Feel free to check out your house and explore a bit before we continue. 🏡
 @mutation checkpoint_after_chest

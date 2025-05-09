@@ -1,7 +1,7 @@
 extends BaseGameDialogueBalloon
 
 @onready var emotes_panel: Panel = $Balloon/Panel/Dialogue/HBoxContainer/EmotesPanel
-@onready var ToolsPanel = get_tree().get_root().get_node("MainScene2/GameScreen/ToolsPanel")
+@onready var ToolsPanel = get_tree().get_root().get_node("MainScene/GameScreen/ToolsPanel")
 @onready var recived_sound: AudioStreamPlayer2D = $RecivedSound
 @onready var owl_sound: AudioStreamPlayer2D = $OwlSound
 
