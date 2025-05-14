@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://ckorr1pj0dt5a"]
+[gd_scene load_steps=22 format=4 uid="uid://ckorr1pj0dt5a"]
 
 [ext_resource type="PackedScene" uid="uid://cglryq6nbfl75" path="res://scenes/components/day_and_night_cycle_component.tscn" id="1_5rubo"]
 [ext_resource type="PackedScene" uid="uid://dumhg3qnfib2g" path="res://scenes/UI/hud.tscn" id="1_nm8e3"]
@@ -15,7 +15,6 @@
 [ext_resource type="Script" uid="uid://nsjvkuuu5hso" path="res://scenes/components/crops_cursor_component.gd" id="8_18uvy"]
 [ext_resource type="PackedScene" uid="uid://qkitahuoo31" path="res://scenes/components/field_cursor_component.tscn" id="8_155vy"]
 [ext_resource type="PackedScene" uid="uid://bwjmh1u8mmla1" path="res://scenes/characters/shopkeeper/seller.tscn" id="8_mwav5"]
-[ext_resource type="PackedScene" uid="uid://dtfcj210ly5jp" path="res://scenes/objects/stones/stone.tscn" id="9_k56ju"]
 [ext_resource type="Script" uid="uid://da4tk12m42xnm" path="res://scenes/components/field_cursor_component.gd" id="10_k56ju"]
 [ext_resource type="PackedScene" uid="uid://cownp3qo2o136" path="res://inventory/chest_ui.tscn" id="13_d1pbj"]
 [ext_resource type="PackedScene" uid="uid://cv3cpcx1y4xc8" path="res://inventory/chest.tscn" id="14_4codf"]
@@ -39,7 +38,6 @@ sources/0 = SubResource("TileSetAtlasSource_notc5")
 [node name="WeatherEffectComponent" parent="." instance=ExtResource("3_mwav5")]
 
 [node name="GameScreen" parent="." instance=ExtResource("1_nm8e3")]
-visible = false
 
 [node name="DayAndNightCycleComponent" parent="." instance=ExtResource("1_5rubo")]
 
@@ -86,6 +84,7 @@ position = Vector2(346, 193)
 y_sort_enabled = true
 
 [node name="ChestUI" parent="YSorting/Chest" instance=ExtResource("13_d1pbj")]
+visible = false
 offset = Vector2(474, 85)
 transform = Transform2D(1, 0, 0, 1, 474, 85)
 
@@ -173,6 +172,3 @@ tile_set = ExtResource("1_wvq6k")
 
 [node name="TilledSoil" type="TileMapLayer" parent="YSorting"]
 tile_set = ExtResource("1_wvq6k")
-
-[node name="Stone" parent="." instance=ExtResource("9_k56ju")]
-position = Vector2(429, 234)

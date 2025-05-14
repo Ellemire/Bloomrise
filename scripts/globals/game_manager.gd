@@ -31,10 +31,13 @@ func end_game() -> void:
 		
 	get_tree().quit()
 
-func add_gold(amount: int):
+func add_gold(amount: int, report_progress: bool = true):
 	player_gold += amount
 	gold_changed.emit(player_gold)
-	TaskManager.report_progress("gold_earned", amount)
+
+	if report_progress:
+		TaskManager.report_progress("gold_earned", amount)
+
 	
 func subtract_gold(amount: int) -> bool:
 	if player_gold >= amount:
