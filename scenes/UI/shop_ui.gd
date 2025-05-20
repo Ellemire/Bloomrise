@@ -8,8 +8,6 @@ extends CanvasLayer
 @onready var coin_recived_sound: AudioStreamPlayer2D = $CoinRecivedSound
 @onready var buy_sound: AudioStreamPlayer2D = $BuySound
 
-var player_gold: int = 100
-
 var flowers_texture = preload("res://assetss/Terrain/Plants/flowers.png")
 var ShopItemScene = preload("res://scenes/UI/ShopItem.tscn")
 var name_dictionary = {
@@ -149,32 +147,34 @@ func _add_sell_item(slot):
 	name_label.text = format_name(slot.item.name)
 	price_label.text = str(slot.item.sell_price)
 
-	var count := int(slot.amount)
-	number_label.text = str(count)
+	number_label.text = str(slot.amount)
 
 	minus_button.pressed.connect(func():
-		if count > 1:
+		var count := int(number_label.text)
+		if count > 0:
 			count -= 1
 			number_label.text = str(count)
 	)
 
 	plus_button.pressed.connect(func():
-		if count < slot.amount:
+		var count := int(number_label.text)
+		if count < int(slot.amount):
 			count += 1
 			number_label.text = str(count)
 	)
 
 	sell_button.pressed.connect(func():
 		var current_count := int(number_label.text)
+		print("Count: ", current_count)
 		
-		if count > slot.amount:
+		if current_count > slot.amount:
 			print("❌ Not enough items!")
 			return
 
 		var price = slot.item.sell_price
 		var item_name = slot.item.name
 
-		if InventoryManager.remove_item(slot.item, count):
+		if InventoryManager.remove_item(slot.item, current_count):
 			coin_recived_sound.play()
 			GameManager.add_gold(price * current_count)
 			update_gold()
