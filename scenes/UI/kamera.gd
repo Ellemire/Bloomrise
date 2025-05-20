@@ -1,14 +1,14 @@
 extends Camera2D
 
-@export var follow_speed: float = 5.0 # Im większe, tym szybciej dogania
+@export var follow_speed: float = 5.0 
 
 var target: Node2D
 
 func _ready() -> void:
-	target = get_parent() # albo przypisz ręcznie np. playera
+	target = get_parent() 
 	make_current()
 
-func _process(delta: float) -> void:
+func _process(delta: float) -> void:	
 	if not target:
 		return
 

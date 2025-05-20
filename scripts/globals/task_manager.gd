@@ -46,23 +46,29 @@ func report_progress(resource_id: String, amount: int = 1) -> void:
 		current_task["progress"] += amount
 		current_task["progress"] = min(current_task["progress"], current_task["target"])
 		print("📈 Progress:", current_task["progress"], "/", current_task["target"])
+		
+		# Upewnij się, że emitujesz tylko raz
+		print("📡 Emitting signal: tasks_updated")
 		emit_signal("tasks_updated")
 
 		if current_task["progress"] >= current_task["target"]:
 			_on_task_completed()
+
 
 func _on_task_completed() -> void:
 	print("🎉 Task completed:", current_task["name"])
 
 	var award = current_task.get("award", 10)
 
-	GameManager.add_gold(award)
+	# Nie zgłaszaj postępu przy nagrodzie
+	GameManager.add_gold(award, false)
 	print("💰 %d coins awarded!" % award)
 
 	task_complete_sound.play()
 
 	current_task = {}
 	_next_task()
+
 
 func get_task_descriptions() -> Array[String]:
 	if current_task.is_empty():
