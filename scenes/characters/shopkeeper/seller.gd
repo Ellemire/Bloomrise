@@ -22,4 +22,4 @@ func on_interactable_deactivated() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if in_range and event.is_action_pressed("show_dialogue"):
 		if shop_ui:
-			shop_ui.visible = true
+			shop_ui.open()
